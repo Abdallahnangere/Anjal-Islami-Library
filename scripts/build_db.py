@@ -11,6 +11,20 @@ IDX_DIR = os.path.join(ROOT, "data", "index")
 DB = os.path.join(IDX_DIR, "library.db")
 
 
+def clean_text(value: str) -> str:
+    if value is None:
+        return value
+    s = value.replace("\ufeff", "").strip()
+    # Heuristic mojibake repair for UTF-8 text decoded as Latin-1/CP1252.
+    if any(ch in s for ch in ("Ø", "Ù", "ï»¿")):
+        try:
+            repaired = s.encode("latin-1").decode("utf-8")
+            s = repaired.replace("\ufeff", "").strip()
+        except Exception:
+            pass
+    return s
+
+
 def init_db(conn: sqlite3.Connection) -> None:
     cur = conn.cursor()
     cur.executescript(
@@ -127,7 +141,7 @@ def load_csv(conn: sqlite3.Connection, filename: str, table: str) -> int:
     cols = list(rows[0].keys())
     placeholders = ", ".join(["?"] * len(cols))
     sql = f"INSERT INTO {table} ({', '.join(cols)}) VALUES ({placeholders})"
-    data = [tuple(r[c] for c in cols) for r in rows]
+    data = [tuple(clean_text(r[c]) if isinstance(r[c], str) else r[c] for c in cols) for r in rows]
     conn.executemany(sql, data)
     conn.commit()
     return len(rows)
