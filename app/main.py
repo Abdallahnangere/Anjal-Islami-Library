@@ -81,6 +81,7 @@ def home() -> str:
             <h1>Anjal Islamic Library API</h1>
             <p class="subtitle">Versioned Islamic data infrastructure for building reliable year-round products: Quran, Hadith, Hijri, and Prayer Times.</p>
             <p class="meta">Maintainer: <strong>Abdallah Nangere</strong> · <a href="mailto:founder@ramadanbot.app">founder@ramadanbot.app</a> · <a href="tel:+2348164135836">+2348164135836</a></p>
+            <p class="meta">Production endpoint: <a href="https://islamiclibrary.anjalventures.com">https://islamiclibrary.anjalventures.com</a> (HTTPS-only; HTTP returns 308 redirect).</p>
             <div>
               <span class="pill">API Version: v1</span>
               <span class="pill">FastAPI</span>

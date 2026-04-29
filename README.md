@@ -16,6 +16,8 @@ Contact: **founder@ramadanbot.app** | **+2348164135836**
 
 - Current: `v1`
 - Base URL (local): `http://127.0.0.1:8000`
+- Production URL: `https://islamiclibrary.anjalventures.com`
+- Note: Production is **HTTPS-only**. `http://` requests return `308 Permanent Redirect`.
 
 ## Quick Start
 
