@@ -3,11 +3,14 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
+from app.bootstrap import ensure_db
 from app.routers.hadith import router as hadith_router
 from app.routers.hijri import router as hijri_router
 from app.routers.meta import router as meta_router
 from app.routers.prayer import router as prayer_router
 from app.routers.quran import router as quran_router
+
+ensure_db()
 
 
 app = FastAPI(

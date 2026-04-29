@@ -5,7 +5,7 @@ import sqlite3
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DB_PATH = os.path.join(ROOT_DIR, "data", "index", "library.db")
+DB_PATH = os.getenv("ANJAL_DB_PATH", os.path.join(ROOT_DIR, "data", "index", "library.db"))
 
 
 def get_conn() -> sqlite3.Connection:
