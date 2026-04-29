@@ -1,0 +1,124 @@
+{
+  "method": 2,
+  "timeout_seconds": 20,
+  "notes": [
+    "Default target set mirrors currently selected non-Nigeria cities in the dataset.",
+    "Nigeria full coverage is represented as a strategy placeholder plus explicit major cities for reliable refresh runs."
+  ],
+  "nigeria_strategy": {
+    "mode": "major_cities_placeholder",
+    "full_coverage_placeholder": "To expand to all LGAs/cities, replace Nigeria.cities with a generated full list from your trusted source.",
+    "major_cities_seeded": true
+  },
+  "targets": [
+    {
+      "country": "Australia",
+      "cities": ["Sydney", "Melbourne", "Brisbane"]
+    },
+    {
+      "country": "Benin",
+      "cities": ["Porto-Novo", "Cotonou", "Parakou"]
+    },
+    {
+      "country": "Brazil",
+      "cities": ["Sao Paulo", "Rio de Janeiro", "Brasilia"]
+    },
+    {
+      "country": "Cameroon",
+      "cities": ["Yaounde", "Douala", "Garoua"]
+    },
+    {
+      "country": "Canada",
+      "cities": ["Toronto", "Montreal", "Vancouver"]
+    },
+    {
+      "country": "Chad",
+      "cities": ["N'Djamena", "Moundou", "Sarh"]
+    },
+    {
+      "country": "China",
+      "cities": ["Beijing", "Shanghai", "Guangzhou"]
+    },
+    {
+      "country": "Egypt",
+      "cities": ["Cairo", "Alexandria", "Giza"]
+    },
+    {
+      "country": "France",
+      "cities": ["Paris", "Lyon", "Marseille"]
+    },
+    {
+      "country": "Germany",
+      "cities": ["Berlin", "Hamburg", "Munich"]
+    },
+    {
+      "country": "India",
+      "cities": ["Delhi", "Mumbai", "Hyderabad"]
+    },
+    {
+      "country": "Indonesia",
+      "cities": ["Jakarta", "Surabaya", "Bandung"]
+    },
+    {
+      "country": "Japan",
+      "cities": ["Tokyo", "Osaka", "Nagoya"]
+    },
+    {
+      "country": "Mexico",
+      "cities": ["Mexico City", "Guadalajara", "Monterrey"]
+    },
+    {
+      "country": "Niger",
+      "cities": ["Niamey", "Zinder", "Maradi"]
+    },
+    {
+      "country": "Nigeria",
+      "cities": [
+        "Lagos",
+        "Abuja",
+        "Kano",
+        "Ibadan",
+        "Port Harcourt",
+        "Benin City",
+        "Kaduna",
+        "Maiduguri",
+        "Ilorin",
+        "Jos",
+        "Aba",
+        "Enugu",
+        "Abeokuta",
+        "Akure",
+        "Onitsha",
+        "Owerri",
+        "Sokoto",
+        "Calabar",
+        "Uyo",
+        "Yola"
+      ]
+    },
+    {
+      "country": "Pakistan",
+      "cities": ["Karachi", "Lahore", "Islamabad"]
+    },
+    {
+      "country": "Saudi Arabia",
+      "cities": ["Riyadh", "Jeddah", "Mecca", "Medina", "Dammam"]
+    },
+    {
+      "country": "South Africa",
+      "cities": ["Johannesburg", "Cape Town", "Durban"]
+    },
+    {
+      "country": "Turkey",
+      "cities": ["Istanbul", "Ankara", "Izmir"]
+    },
+    {
+      "country": "United Kingdom",
+      "cities": ["London", "Birmingham", "Manchester", "Glasgow"]
+    },
+    {
+      "country": "United States",
+      "cities": ["New York", "Los Angeles", "Chicago", "Houston", "Washington"]
+    }
+  ]
+}

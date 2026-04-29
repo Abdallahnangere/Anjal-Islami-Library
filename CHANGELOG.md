@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.1.0] - 2026-04-29
+
+### Added
+- API key authentication support for protected API consumption workflows.
+- Rate-limiting behavior and accompanying integration-facing response controls.
+- Pagination support for high-volume listing and search endpoints.
+- Extended filtering capabilities across query-based endpoint usage.
+- New SDK-style client examples and documentation updates for cURL, JavaScript, and Python.
+
 ## [1.0.0] - 2026-04-29
 
 ### Added

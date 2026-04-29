@@ -1,6 +1,11 @@
 from __future__ import annotations
 
+import os
+import threading
+import time
+
 from fastapi import FastAPI
+from fastapi import Request
 from fastapi.responses import HTMLResponse
 from fastapi.responses import JSONResponse
 
@@ -16,7 +21,7 @@ ensure_db()
 
 app = FastAPI(
     title="Anjal Islamic Library API",
-    version="1.0.0",
+    version="1.1.0",
     description="Versioned Islamic data API (Quran, Hadith, Hijri, Prayer Times)",
 )
 
@@ -25,6 +30,74 @@ app.include_router(quran_router)
 app.include_router(hadith_router)
 app.include_router(hijri_router)
 app.include_router(prayer_router)
+
+_rate_lock = threading.Lock()
+_rate_buckets: dict[str, tuple[float, int]] = {}
+
+
+def _parse_api_keys() -> set[str]:
+    raw = os.getenv("ANJAL_API_KEYS", "")
+    return {part.strip() for part in raw.split(",") if part.strip()}
+
+
+def _get_env_int(name: str, default: int) -> int:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    try:
+        value = int(raw)
+    except ValueError:
+        return default
+    return value if value > 0 else default
+
+
+def _extract_api_key(request: Request) -> str | None:
+    x_api_key = request.headers.get("X-API-Key")
+    if x_api_key and x_api_key.strip():
+        return x_api_key.strip()
+
+    auth_header = request.headers.get("Authorization")
+    if not auth_header:
+        return None
+
+    parts = auth_header.strip().split(" ", 1)
+    if len(parts) == 2 and parts[0].lower() == "bearer" and parts[1].strip():
+        return parts[1].strip()
+    return None
+
+
+@app.middleware("http")
+async def v1_auth_and_rate_limit(request: Request, call_next):
+    path = request.url.path
+    if not path.startswith("/v1"):
+        return await call_next(request)
+
+    configured_keys = _parse_api_keys()
+    provided_key = _extract_api_key(request)
+    if configured_keys and provided_key not in configured_keys:
+        return JSONResponse(status_code=401, content={"ok": False, "error": "unauthorized"})
+
+    window_sec = _get_env_int("ANJAL_RATE_LIMIT_WINDOW_SEC", 60)
+    max_requests = _get_env_int("ANJAL_RATE_LIMIT_MAX_REQUESTS", 120)
+    now = time.time()
+    client_host = request.client.host if request.client else "unknown"
+    identity = provided_key if provided_key else f"ip:{client_host}"
+
+    with _rate_lock:
+        start, count = _rate_buckets.get(identity, (now, 0))
+        if now - start >= window_sec:
+            start, count = now, 0
+        count += 1
+        _rate_buckets[identity] = (start, count)
+        if count > max_requests:
+            retry_after = max(1, int(window_sec - (now - start)))
+            return JSONResponse(
+                status_code=429,
+                content={"ok": False, "error": "rate_limit_exceeded"},
+                headers={"Retry-After": str(retry_after)},
+            )
+
+    return await call_next(request)
 
 
 @app.get("/", response_class=HTMLResponse, tags=["home"])

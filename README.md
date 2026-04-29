@@ -40,6 +40,15 @@ Swagger docs:
 - Docs: `https://islamiclibrary.anjalventures.com/docs`
 - Health: `https://islamiclibrary.anjalventures.com/v1/health`
 
+## v1.1 Highlights
+
+`v1.1` introduces operational capabilities for production integrations:
+- API key authentication support for protected usage tiers.
+- Rate-limiting controls and related response signaling.
+- Pagination parameters for list/search-heavy responses.
+- Expanded filter options for better query precision.
+- Documentation and SDK-style usage examples for Python and JavaScript clients.
+
 ## Vercel (Current Phase)
 
 This repo is configured for Vercel Python runtime via:
@@ -255,6 +264,38 @@ curl "https://islamiclibrary.anjalventures.com/v1/hadith/bukhari/15"
 curl "https://islamiclibrary.anjalventures.com/v1/hijri/from-gregorian?date=2026-04-29"
 ```
 
+### API Key Usage
+
+#### cURL
+
+```bash
+curl -H "X-API-Key: YOUR_API_KEY" \
+  "https://islamiclibrary.anjalventures.com/v1/quran/search?q=mercy&limit=5"
+```
+
+#### JavaScript (fetch)
+
+```javascript
+const res = await fetch("https://islamiclibrary.anjalventures.com/v1/meta", {
+  headers: { "X-API-Key": "YOUR_API_KEY" }
+});
+const data = await res.json();
+console.log(data);
+```
+
+#### Python (requests)
+
+```python
+import requests
+
+r = requests.get(
+    "https://islamiclibrary.anjalventures.com/v1/meta",
+    headers={"X-API-Key": "YOUR_API_KEY"},
+    timeout=20,
+)
+print(r.json())
+```
+
 ### JavaScript (fetch)
 
 ```javascript
@@ -270,6 +311,11 @@ import requests
 r = requests.get("https://islamiclibrary.anjalventures.com/v1/quran/search", params={"q": "mercy", "limit": 5}, timeout=20)
 print(r.json())
 ```
+
+### SDK-Style Local Examples
+
+- Python wrapper + runnable examples: `examples/python_client.py`
+- JavaScript wrapper + runnable examples: `examples/js_client.mjs`
 
 ## Versioning Policy
 

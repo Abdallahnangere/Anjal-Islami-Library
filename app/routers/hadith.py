@@ -28,28 +28,37 @@ def get_hadith(collection: str, hadith_number: int) -> dict:
 def search_hadith(
     q: str = Query(..., min_length=1),
     collection: str | None = None,
+    book_number: int | None = None,
     limit: int = Query(20, ge=1, le=100),
+    offset: int = Query(0, ge=0),
 ) -> dict:
     conn = get_conn()
+    clauses = ["hadith_fts MATCH ?"]
+    params: list[object] = [q]
+
     if collection:
-        rows = conn.execute(
-            """
-            SELECT h.* FROM hadith_fts f
-            JOIN hadith_entries h ON h.id = f.rowid
-            WHERE hadith_fts MATCH ? AND lower(h.collection_key) = lower(?)
-            LIMIT ?
-            """,
-            (q, collection, limit),
-        ).fetchall()
-    else:
-        rows = conn.execute(
-            """
-            SELECT h.* FROM hadith_fts f
-            JOIN hadith_entries h ON h.id = f.rowid
-            WHERE hadith_fts MATCH ?
-            LIMIT ?
-            """,
-            (q, limit),
-        ).fetchall()
+        clauses.append("lower(h.collection_key) = lower(?)")
+        params.append(collection)
+    if book_number is not None:
+        clauses.append("h.book_number = ?")
+        params.append(book_number)
+
+    where_sql = " AND ".join(clauses)
+    rows = conn.execute(
+        f"""
+        SELECT h.* FROM hadith_fts f
+        JOIN hadith_entries h ON h.id = f.rowid
+        WHERE {where_sql}
+        LIMIT ? OFFSET ?
+        """,
+        (*params, limit, offset),
+    ).fetchall()
     conn.close()
-    return {"query": q, "collection": collection, "count": len(rows), "results": [dict(r) for r in rows]}
+    return {
+        "query": q,
+        "collection": collection,
+        "book_number": book_number,
+        "offset": offset,
+        "count": len(rows),
+        "results": [dict(r) for r in rows],
+    }
