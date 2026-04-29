@@ -5,6 +5,8 @@ Versioned Islamic data API repository for year-round app usage and public develo
 Maintainer: **Abdallah Nangere**  
 Contact: **founder@ramadanbot.app** | **+2348164135836**
 
+GitHub: `https://github.com/Abdallahnangere/Anjal-Islami-Library`
+
 ## Included Datasets
 
 - Umm al-Qura Hijri dates (`1343-01-01 AH` to `1500-12-30 AH`)
@@ -31,6 +33,12 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000
 
 Swagger docs:
 - `http://127.0.0.1:8000/docs`
+
+## Public Usage
+
+- Live API root: `https://islamiclibrary.anjalventures.com`
+- Docs: `https://islamiclibrary.anjalventures.com/docs`
+- Health: `https://islamiclibrary.anjalventures.com/v1/health`
 
 ## Vercel (Current Phase)
 
@@ -236,6 +244,44 @@ data/
   source/     # source CSV datasets
   index/      # generated SQLite index (library.db)
 ```
+
+## Client Examples
+
+### cURL
+
+```bash
+curl "https://islamiclibrary.anjalventures.com/v1/quran/ayah/1/1"
+curl "https://islamiclibrary.anjalventures.com/v1/hadith/bukhari/15"
+curl "https://islamiclibrary.anjalventures.com/v1/hijri/from-gregorian?date=2026-04-29"
+```
+
+### JavaScript (fetch)
+
+```javascript
+const res = await fetch("https://islamiclibrary.anjalventures.com/v1/prayer/search-city?q=Abuja");
+const data = await res.json();
+console.log(data);
+```
+
+### Python
+
+```python
+import requests
+r = requests.get("https://islamiclibrary.anjalventures.com/v1/quran/search", params={"q": "mercy", "limit": 5}, timeout=20)
+print(r.json())
+```
+
+## Versioning Policy
+
+- Stable path for current contract: `/v1`
+- Breaking changes go to a new major path (e.g. `/v2`)
+- Backward-compatible enhancements can be added within current version
+
+## Governance
+
+- License: [LICENSE](./LICENSE)
+- Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Release history: [CHANGELOG.md](./CHANGELOG.md)
 
 ## Notes
 
