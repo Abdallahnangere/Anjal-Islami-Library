@@ -1,0 +1,837 @@
+﻿date_gregorian,date_hijri,country,city,timezone,method,fajr,sunrise,dhuhr,asr,maghrib,isha
+29-04-2026,12-11-1447,Australia,Sydney,Australia/Sydney,Islamic Society of North America (ISNA),05:18,06:28,11:53,14:55,17:17,18:27
+29-04-2026,12-11-1447,Australia,Melbourne,Australia/Melbourne,Islamic Society of North America (ISNA),05:45,06:59,12:18,15:14,17:36,18:49
+29-04-2026,12-11-1447,Australia,Brisbane,Australia/Brisbane,Islamic Society of North America (ISNA),05:07,06:12,11:45,14:56,17:18,18:24
+29-04-2026,12-11-1447,Benin,Porto-Novo,Africa/Porto-Novo,Islamic Society of North America (ISNA),05:37,06:37,12:47,16:04,18:57,19:56
+29-04-2026,12-11-1447,Benin,Cotonou,Africa/Porto-Novo,Islamic Society of North America (ISNA),05:38,06:38,12:48,16:05,18:58,19:57
+29-04-2026,12-11-1447,Benin,Parakou,Africa/Porto-Novo,Islamic Society of North America (ISNA),05:34,06:34,12:47,16:01,19:00,20:00
+29-04-2026,12-11-1447,Brazil,Sao Paulo,America/Sao_Paulo,Islamic Society of North America (ISNA),05:23,06:26,12:04,15:18,17:42,18:45
+29-04-2026,12-11-1447,Brazil,Rio de Janeiro,America/Sao_Paulo,Islamic Society of North America (ISNA),05:10,06:13,11:51,15:06,17:30,18:33
+29-04-2026,12-11-1447,Brazil,Brasilia,America/Sao_Paulo,Islamic Society of North America (ISNA),05:22,06:22,12:09,15:29,17:56,18:56
+29-04-2026,12-11-1447,Cameroon,Yaounde,Africa/Douala,Islamic Society of North America (ISNA),05:05,06:04,12:11,15:30,18:19,19:18
+29-04-2026,12-11-1447,Cameroon,Douala,Africa/Douala,Islamic Society of North America (ISNA),05:12,06:11,12:19,15:37,18:26,19:25
+29-04-2026,12-11-1447,Cameroon,Garoua,Africa/Douala,Islamic Society of North America (ISNA),04:51,05:51,12:04,15:18,18:17,19:17
+29-04-2026,12-11-1447,Canada,Toronto,America/Toronto,Islamic Society of North America (ISNA),04:43,06:13,13:15,17:08,20:18,21:48
+29-04-2026,12-11-1447,Canada,Montreal,America/Toronto,Islamic Society of North America (ISNA),04:11,05:45,12:52,16:47,19:59,21:34
+29-04-2026,12-11-1447,Canada,Vancouver,America/Vancouver,Islamic Society of North America (ISNA),04:08,05:54,13:10,17:08,20:27,22:13
+29-04-2026,12-11-1447,Chad,N'Djamena,Africa/Ndjamena,Islamic Society of North America (ISNA),04:40,05:41,11:57,15:08,18:14,19:14
+29-04-2026,12-11-1447,Chad,Moundou,Africa/Ndjamena,Islamic Society of North America (ISNA),04:41,05:41,11:53,15:08,18:05,19:05
+29-04-2026,12-11-1447,Chad,Sarh,Africa/Ndjamena,Islamic Society of North America (ISNA),04:31,05:31,11:44,14:58,17:57,18:57
+29-04-2026,12-11-1447,China,Beijing,Asia/Shanghai,Islamic Society of North America (ISNA),03:55,05:18,12:12,16:00,19:06,20:30
+29-04-2026,12-11-1447,China,Shanghai,Asia/Shanghai,Islamic Society of North America (ISNA),04:00,05:12,11:51,15:29,18:32,19:44
+29-04-2026,12-11-1447,China,Guangzhou,Asia/Shanghai,Islamic Society of North America (ISNA),04:50,05:55,12:24,15:48,18:53,19:59
+29-04-2026,12-11-1447,Egypt,Cairo,Africa/Cairo,Islamic Society of North America (ISNA),05:03,06:14,12:52,16:28,19:31,20:42
+29-04-2026,12-11-1447,Egypt,Alexandria,Africa/Cairo,Islamic Society of North America (ISNA),05:06,06:18,12:58,16:35,19:38,20:50
+29-04-2026,12-11-1447,Egypt,Giza,Africa/Cairo,Islamic Society of North America (ISNA),05:04,06:14,12:53,16:28,19:31,20:42
+29-04-2026,12-11-1447,France,Paris,Europe/Paris,Islamic Society of North America (ISNA),04:50,06:34,13:48,17:46,21:03,22:47
+29-04-2026,12-11-1447,France,Lyon,Europe/Paris,Islamic Society of North America (ISNA),04:57,06:32,13:38,17:33,20:45,22:20
+29-04-2026,12-11-1447,France,Marseille,Europe/Paris,Islamic Society of North America (ISNA),05:05,06:35,13:36,17:28,20:38,22:07
+29-04-2026,12-11-1447,Germany,Berlin,Europe/Berlin,Islamic Society of North America (ISNA),03:40,05:39,13:04,17:05,20:29,22:29
+29-04-2026,12-11-1447,Germany,Hamburg,Europe/Berlin,Islamic Society of North America (ISNA),03:45,05:49,13:17,17:19,20:46,22:51
+29-04-2026,12-11-1447,Germany,Munich,Europe/Berlin,Islamic Society of North America (ISNA),04:17,05:59,13:11,17:08,20:24,22:06
+29-04-2026,12-11-1447,India,Delhi,Asia/Kolkata,Islamic Society of North America (ISNA),04:33,05:43,12:19,15:52,18:55,20:05
+29-04-2026,12-11-1447,India,Mumbai,Asia/Kolkata,Islamic Society of North America (ISNA),05:09,06:12,12:36,15:52,19:00,20:03
+29-04-2026,12-11-1447,India,Hyderabad,Asia/Kolkata,Islamic Society of North America (ISNA),04:49,05:51,12:14,15:26,18:36,19:38
+29-04-2026,12-11-1447,Indonesia,Jakarta,Asia/Jakarta,Islamic Society of North America (ISNA),04:54,05:53,11:50,15:12,17:47,18:46
+29-04-2026,12-11-1447,Indonesia,Surabaya,Asia/Jakarta,Islamic Society of North America (ISNA),04:32,05:31,11:27,14:49,17:22,18:21
+29-04-2026,12-11-1447,Indonesia,Bandung,Asia/Jakarta,Islamic Society of North America (ISNA),04:52,05:51,11:47,15:09,17:43,18:41
+29-04-2026,12-11-1447,Japan,Tokyo,Asia/Tokyo,Islamic Society of North America (ISNA),03:35,04:52,11:38,15:22,18:26,19:42
+29-04-2026,12-11-1447,Japan,Osaka,Asia/Tokyo,Islamic Society of North America (ISNA),03:55,05:10,11:55,15:37,18:41,19:57
+29-04-2026,12-11-1447,Japan,Nagoya,Asia/Tokyo,Islamic Society of North America (ISNA),03:48,05:04,11:50,15:32,18:36,19:52
+29-04-2026,12-11-1447,Mexico,Mexico City,America/Mexico_City,Islamic Society of North America (ISNA),05:06,06:09,12:34,15:51,18:59,20:02
+29-04-2026,12-11-1447,Mexico,Guadalajara,America/Mexico_City,Islamic Society of North America (ISNA),05:20,06:25,12:51,16:10,19:17,20:21
+29-04-2026,12-11-1447,Mexico,Monterrey,America/Monterrey,Islamic Society of North America (ISNA),04:59,06:06,12:39,16:08,19:11,20:19
+29-04-2026,12-11-1447,Niger,Niamey,Africa/Niamey,Islamic Society of North America (ISNA),05:30,06:31,12:49,15:58,19:07,20:08
+29-04-2026,12-11-1447,Niger,Zinder,Africa/Niamey,Islamic Society of North America (ISNA),05:02,06:03,12:21,15:30,18:40,19:41
+29-04-2026,12-11-1447,Niger,Maradi,Africa/Niamey,Islamic Society of North America (ISNA),05:10,06:11,12:29,15:38,18:47,19:48
+29-04-2026,12-11-1447,Nigeria,Aba North,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Aba South,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Abadam,Africa/Lagos,Islamic Society of North America (ISNA),04:45,05:46,12:04,15:13,18:22,19:23
+29-04-2026,12-11-1447,Nigeria,Abaji,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:30,15:45,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Abak,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:26,15:44,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Abakaliki,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:25,15:42,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Abeokuta North,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:34,12:45,16:01,18:56,19:55
+29-04-2026,12-11-1447,Nigeria,Abeokuta South,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:33,12:44,16:00,18:55,19:54
+29-04-2026,12-11-1447,Nigeria,Abi,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:25,15:42,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Aboh Mbaise,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Abua-Odual,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:31,15:49,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Abuja,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:15,12:28,15:42,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Adavi,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:21,12:32,15:48,18:43,19:43
+29-04-2026,12-11-1447,Nigeria,Ado,Africa/Lagos,Islamic Society of North America (ISNA),05:36,06:35,12:46,16:02,18:56,19:55
+29-04-2026,12-11-1447,Nigeria,Ado-Ekiti,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:36,15:52,18:48,19:47
+29-04-2026,12-11-1447,Nigeria,Afijio,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:42,15:58,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Afikpo North,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:26,15:43,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Afikpo South,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Agaie,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:32,15:47,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Agatu,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:14,12:26,15:41,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Agege,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:55,19:54
+29-04-2026,12-11-1447,Nigeria,Aguata,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Agwara,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:39,15:52,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Ahiazu Mbaise,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Ahoada East,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:31,15:49,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Ahoada West,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:31,15:49,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Aiyedire,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:29,12:40,15:56,18:52,19:51
+29-04-2026,12-11-1447,Nigeria,Ajaokuta,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:31,15:47,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Ajeromi-Ifelodun,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Ajingi,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:21,15:32,18:37,19:38
+29-04-2026,12-11-1447,Nigeria,Akamkpa,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:24,15:42,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Akinyele,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:30,12:42,15:58,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Akko,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:59,12:13,15:27,18:28,19:28
+29-04-2026,12-11-1447,Nigeria,Akoko Edo,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:33,15:49,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Akoko North East,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:23,12:34,15:50,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Akoko North West,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:23,12:34,15:50,18:46,19:45
+29-04-2026,12-11-1447,Nigeria,Akoko South East,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:23,12:34,15:50,18:45,19:44
+29-04-2026,12-11-1447,Nigeria,Akoko South West,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:35,15:51,18:46,19:45
+29-04-2026,12-11-1447,Nigeria,Akpabuyo,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:23,15:42,18:32,19:31
+29-04-2026,12-11-1447,Nigeria,Akuku-Toru,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:31,15:49,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Akure North,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:36,15:52,18:47,19:47
+29-04-2026,12-11-1447,Nigeria,Akure South,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:26,12:37,15:53,18:48,19:47
+29-04-2026,12-11-1447,Nigeria,Akwanga,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:24,15:38,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Albasu,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:21,15:32,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Aliero,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:23,12:39,15:50,18:56,19:57
+29-04-2026,12-11-1447,Nigeria,Alimosho,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:55,19:54
+29-04-2026,12-11-1447,Nigeria,Alkaleri,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:02,12:16,15:29,18:30,19:30
+29-04-2026,12-11-1447,Nigeria,Amuwo-Odofin,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Anambra East,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Anambra West,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Anaocha,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:29,15:46,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Andoni,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:28,15:46,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Aninri,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:27,15:44,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Aniocha North,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:31,15:48,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Aniocha South,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:31,15:49,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Anka,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:17,12:34,15:44,18:50,19:51
+29-04-2026,12-11-1447,Nigeria,Ankpa,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:27,15:43,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Apa,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:14,12:26,15:41,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Apapa,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Ardo Kola,Africa/Lagos,Islamic Society of North America (ISNA),05:00,05:59,12:12,15:27,18:25,19:25
+29-04-2026,12-11-1447,Nigeria,Arewa Dandi,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:24,12:41,15:51,18:58,19:59
+29-04-2026,12-11-1447,Nigeria,Argungu,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:39,15:49,18:56,19:57
+29-04-2026,12-11-1447,Nigeria,Arochukwu,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:43,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Asa,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:40,15:55,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Asari-Toru,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:30,15:48,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Atakunmosa East,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:38,15:54,18:50,19:49
+29-04-2026,12-11-1447,Nigeria,Atakunmosa West,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:39,15:55,18:50,19:49
+29-04-2026,12-11-1447,Nigeria,Atiba,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:30,12:42,15:57,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Atisbo,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Augie,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:22,12:39,15:49,18:56,19:57
+29-04-2026,12-11-1447,Nigeria,Auyo,Africa/Lagos,Islamic Society of North America (ISNA),05:00,06:01,12:18,15:28,18:34,19:35
+29-04-2026,12-11-1447,Nigeria,Awe,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:09,12:21,15:36,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Awgu,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Awka North,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Awka South,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Ayamelum,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Ayedaade,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:29,12:40,15:56,18:51,19:51
+29-04-2026,12-11-1447,Nigeria,Babura,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:22,15:32,18:39,19:40
+29-04-2026,12-11-1447,Nigeria,Badagry,Africa/Lagos,Islamic Society of North America (ISNA),05:36,06:36,12:46,16:03,18:56,19:55
+29-04-2026,12-11-1447,Nigeria,Bade,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:14,15:24,18:30,19:31
+29-04-2026,12-11-1447,Nigeria,Bagudo,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:25,12:40,15:52,18:56,19:56
+29-04-2026,12-11-1447,Nigeria,Bagwai,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:10,12:26,15:36,18:42,19:43
+29-04-2026,12-11-1447,Nigeria,Bakassi,Africa/Douala,Islamic Society of North America (ISNA),05:16,06:15,12:23,15:41,18:31,19:30
+29-04-2026,12-11-1447,Nigeria,Bakori,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:12,12:28,15:39,18:43,19:44
+29-04-2026,12-11-1447,Nigeria,Bakura,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:17,12:34,15:44,18:51,19:52
+29-04-2026,12-11-1447,Nigeria,Balanga,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:11,15:24,18:25,19:25
+29-04-2026,12-11-1447,Nigeria,Bali,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:02,12:13,15:29,18:25,19:25
+29-04-2026,12-11-1447,Nigeria,Bama,Africa/Lagos,Islamic Society of North America (ISNA),04:47,05:47,12:03,15:14,18:18,19:19
+29-04-2026,12-11-1447,Nigeria,Barkin Ladi,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:08,12:22,15:36,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Baruten,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:30,12:43,15:58,18:57,19:57
+29-04-2026,12-11-1447,Nigeria,Bassa,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:29,15:45,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Batagarawa,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:10,12:27,15:37,18:44,19:45
+29-04-2026,12-11-1447,Nigeria,Batsari,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:28,15:38,18:45,19:46
+29-04-2026,12-11-1447,Nigeria,Bauchi,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:04,12:18,15:31,18:32,19:32
+29-04-2026,12-11-1447,Nigeria,Baure,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:22,15:32,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Bayo,Africa/Lagos,Islamic Society of North America (ISNA),04:56,05:56,12:11,15:24,18:25,19:25
+29-04-2026,12-11-1447,Nigeria,Bebeji,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:09,12:24,15:36,18:40,19:41
+29-04-2026,12-11-1447,Nigeria,Bekwarra,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:11,12:22,15:38,18:32,19:32
+29-04-2026,12-11-1447,Nigeria,Bende,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Biase,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:25,15:43,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Bichi,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:08,12:24,15:35,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Bida,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:33,15:48,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Billiri,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:59,12:12,15:26,18:26,19:26
+29-04-2026,12-11-1447,Nigeria,Bindawa,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:09,12:26,15:36,18:43,19:44
+29-04-2026,12-11-1447,Nigeria,Binji,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:20,12:38,15:47,18:55,19:56
+29-04-2026,12-11-1447,Nigeria,Biriniwa,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:59,12:16,15:26,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Birnin Gwari,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:17,12:31,15:44,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Birnin Kebbi,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:24,12:41,15:51,18:57,19:58
+29-04-2026,12-11-1447,Nigeria,Birnin Kudu,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:04,12:19,15:31,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Biu,Africa/Lagos,Islamic Society of North America (ISNA),04:54,05:54,12:09,15:21,18:23,19:23
+29-04-2026,12-11-1447,Nigeria,Bodinga,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:20,12:37,15:47,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Bogoro,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:19,15:33,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Boki,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:11,12:21,15:38,18:31,19:31
+29-04-2026,12-11-1447,Nigeria,Bokkos,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:21,15:36,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Boluwaduro,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:38,15:54,18:50,19:49
+29-04-2026,12-11-1447,Nigeria,Bomadi,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:34,15:52,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Bonny,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:29,15:47,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Borgu,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:27,12:41,15:54,18:55,19:55
+29-04-2026,12-11-1447,Nigeria,Boripe,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:39,15:54,18:50,19:50
+29-04-2026,12-11-1447,Nigeria,Bosso,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:31,15:45,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Brass,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:32,15:51,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Buji,Africa/Lagos,Islamic Society of North America (ISNA),05:03,06:03,12:19,15:30,18:34,19:35
+29-04-2026,12-11-1447,Nigeria,Bukkuyum,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:19,12:35,15:46,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Bungudu,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:15,12:31,15:42,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Bunkure,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:35,18:39,19:40
+29-04-2026,12-11-1447,Nigeria,Bunza,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:25,12:41,15:52,18:58,19:58
+29-04-2026,12-11-1447,Nigeria,Bursari,Africa/Lagos,Islamic Society of North America (ISNA),04:54,05:55,12:12,15:22,18:29,19:29
+29-04-2026,12-11-1447,Nigeria,Buruku,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:10,12:21,15:37,18:32,19:31
+29-04-2026,12-11-1447,Nigeria,Burutu,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:35,15:53,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Bwari,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:15,12:28,15:42,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Calabar Municipal,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:24,15:42,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Calabar South,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:24,15:42,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Chanchaga,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:31,15:45,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Charanchi,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:10,12:26,15:36,18:43,19:44
+29-04-2026,12-11-1447,Nigeria,Chibok,Africa/Lagos,Islamic Society of North America (ISNA),04:51,05:51,12:06,15:18,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Chikun,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:15,12:29,15:42,18:43,19:43
+29-04-2026,12-11-1447,Nigeria,Dala,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Damaturu,Africa/Lagos,Islamic Society of North America (ISNA),04:53,05:54,12:10,15:21,18:25,19:26
+29-04-2026,12-11-1447,Nigeria,Damban,Africa/Lagos,Islamic Society of North America (ISNA),04:58,05:59,12:14,15:26,18:30,19:30
+29-04-2026,12-11-1447,Nigeria,Dambatta,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:07,12:23,15:34,18:40,19:41
+29-04-2026,12-11-1447,Nigeria,Damboa,Africa/Lagos,Islamic Society of North America (ISNA),04:51,05:51,12:06,15:18,18:22,19:22
+29-04-2026,12-11-1447,Nigeria,Dan Musa,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:12,12:28,15:39,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Dandi,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:25,12:41,15:52,18:57,19:58
+29-04-2026,12-11-1447,Nigeria,DanDume,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:13,12:29,15:40,18:44,19:45
+29-04-2026,12-11-1447,Nigeria,Danja,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:12,12:27,15:39,18:43,19:43
+29-04-2026,12-11-1447,Nigeria,Danko-Wasagu,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:19,12:35,15:46,18:50,19:51
+29-04-2026,12-11-1447,Nigeria,Darazo,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:01,12:16,15:28,18:31,19:31
+29-04-2026,12-11-1447,Nigeria,Dass,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:19,15:33,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Daura,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:07,12:24,15:34,18:41,19:42
+29-04-2026,12-11-1447,Nigeria,Dawakin Kudu,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:39,19:40
+29-04-2026,12-11-1447,Nigeria,Dawakin Tofa,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:08,12:24,15:35,18:40,19:41
+29-04-2026,12-11-1447,Nigeria,Degema,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:30,15:49,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Dekina,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:29,15:45,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Demsa,Africa/Lagos,Islamic Society of North America (ISNA),04:55,05:55,12:08,15:22,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Dikwa,Africa/Lagos,Islamic Society of North America (ISNA),04:45,05:46,12:02,15:13,18:18,19:19
+29-04-2026,12-11-1447,Nigeria,Doguwa,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:23,15:35,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Doma,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:12,12:24,15:39,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Donga,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:17,15:33,18:29,19:28
+29-04-2026,12-11-1447,Nigeria,Dukku,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:59,12:14,15:27,18:29,19:29
+29-04-2026,12-11-1447,Nigeria,Dunukofia,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Dutse,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:04,12:20,15:31,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Dutsi,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:04,12:20,15:31,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Dutsin-Ma,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:11,12:27,15:38,18:44,19:45
+29-04-2026,12-11-1447,Nigeria,Eastern Obolo,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Ebonyi,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:25,15:42,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Edati,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:21,12:33,15:48,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Ede North,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:39,15:55,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Ede South,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:28,12:40,15:55,18:51,19:51
+29-04-2026,12-11-1447,Nigeria,Edu,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:37,15:51,18:49,19:49
+29-04-2026,12-11-1447,Nigeria,Efon,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:38,15:53,18:49,19:49
+29-04-2026,12-11-1447,Nigeria,Egbeda,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:30,12:41,15:57,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Egbedore,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:39,15:55,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Egor,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:35,15:52,18:45,19:44
+29-04-2026,12-11-1447,Nigeria,Ehime Mbano,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Ejigbo,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:28,12:40,15:56,18:52,19:51
+29-04-2026,12-11-1447,Nigeria,Ekeremor,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:34,15:52,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Eket,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:17,12:26,15:44,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Ekiti,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:25,12:36,15:52,18:48,19:47
+29-04-2026,12-11-1447,Nigeria,Ekiti East,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:35,15:50,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Ekiti South West,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:26,12:37,15:53,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Ekiti West,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:26,12:37,15:53,18:49,19:48
+29-04-2026,12-11-1447,Nigeria,Ekwusigo,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Eleme,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Emohua,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:30,15:48,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Emure,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:36,15:52,18:47,19:46
+29-04-2026,12-11-1447,Nigeria,Enugu East,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:27,15:44,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Enugu North,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:27,15:44,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Enugu South,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:27,15:44,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Epe,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:31,12:41,15:58,18:52,19:51
+29-04-2026,12-11-1447,Nigeria,Esan Central,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:33,15:49,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Esan North East,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:32,15:48,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Esan South East,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:31,15:48,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Esan West,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:33,15:50,18:43,19:43
+29-04-2026,12-11-1447,Nigeria,Ese Odo,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:38,15:55,18:47,19:47
+29-04-2026,12-11-1447,Nigeria,Esit Eket,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:25,15:43,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Essien Udim,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Etche,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Ethiope East,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:33,15:51,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Ethiope West,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:34,15:52,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Eti-Osa,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:33,12:43,16:00,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Etim Ekpo,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Etinan,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:26,15:44,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Etsako Central,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:31,15:48,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Etsako East,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:31,15:47,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Etsako West,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:32,15:49,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Etung,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:13,12:22,15:40,18:32,19:31
+29-04-2026,12-11-1447,Nigeria,Ewekoro,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:45,16:01,18:55,19:55
+29-04-2026,12-11-1447,Nigeria,Ezeagu,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:28,15:45,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Ezinihitte Mbaise,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Ezza North,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:25,15:42,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Ezza South,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:25,15:42,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Fagge,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:39,19:40
+29-04-2026,12-11-1447,Nigeria,Fakai,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:21,12:37,15:48,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Faskari,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:13,12:29,15:41,18:45,19:46
+29-04-2026,12-11-1447,Nigeria,Fika,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:12,15:24,18:28,19:28
+29-04-2026,12-11-1447,Nigeria,Fufore,Africa/Lagos,Islamic Society of North America (ISNA),04:54,05:54,12:07,15:21,18:20,19:20
+29-04-2026,12-11-1447,Nigeria,Funakaye,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:12,15:24,18:26,19:27
+29-04-2026,12-11-1447,Nigeria,Fune,Africa/Lagos,Islamic Society of North America (ISNA),04:55,05:56,12:11,15:23,18:27,19:28
+29-04-2026,12-11-1447,Nigeria,Funtua,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:13,12:28,15:40,18:44,19:44
+29-04-2026,12-11-1447,Nigeria,Gabasawa,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:22,15:32,18:38,19:39
+29-04-2026,12-11-1447,Nigeria,Gada,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:17,12:35,15:43,18:53,19:54
+29-04-2026,12-11-1447,Nigeria,Gagarawa,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:03,12:19,15:30,18:36,19:37
+29-04-2026,12-11-1447,Nigeria,Gamawa,Africa/Lagos,Islamic Society of North America (ISNA),04:58,05:59,12:15,15:26,18:32,19:32
+29-04-2026,12-11-1447,Nigeria,Ganjuwa,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:02,12:17,15:29,18:32,19:32
+29-04-2026,12-11-1447,Nigeria,Ganye,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:09,15:24,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Garki,Africa/Lagos,Islamic Society of North America (ISNA),05:03,06:04,12:21,15:31,18:37,19:38
+29-04-2026,12-11-1447,Nigeria,Garko,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:59,12:13,15:26,18:27,19:27
+29-04-2026,12-11-1447,Nigeria,Garun Malam,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:24,15:35,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Gashaka,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:00,12:11,15:28,18:23,19:22
+29-04-2026,12-11-1447,Nigeria,Gassol,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:03,12:16,15:30,18:28,19:28
+29-04-2026,12-11-1447,Nigeria,Gaya,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:21,15:32,18:37,19:38
+29-04-2026,12-11-1447,Nigeria,Gbako,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:33,15:48,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Gboko,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:10,12:21,15:38,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Gbonyin,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:35,15:51,18:47,19:46
+29-04-2026,12-11-1447,Nigeria,Geidam,Africa/Lagos,Islamic Society of North America (ISNA),04:52,05:53,12:10,15:19,18:27,19:28
+29-04-2026,12-11-1447,Nigeria,Gezawa,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:22,15:33,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Giade,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:01,12:17,15:28,18:32,19:33
+29-04-2026,12-11-1447,Nigeria,Girei,Africa/Lagos,Islamic Society of North America (ISNA),04:53,05:53,12:07,15:20,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Giwa,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:12,12:28,15:39,18:43,19:43
+29-04-2026,12-11-1447,Nigeria,Gokana,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Gombe,Africa/Lagos,Islamic Society of North America (ISNA),04:58,05:58,12:13,15:26,18:27,19:27
+29-04-2026,12-11-1447,Nigeria,Gombi,Africa/Lagos,Islamic Society of North America (ISNA),04:52,05:52,12:06,15:20,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Goronyo,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:17,12:35,15:44,18:52,19:54
+29-04-2026,12-11-1447,Nigeria,Gubio,Africa/Lagos,Islamic Society of North America (ISNA),04:49,05:50,12:06,15:16,18:23,19:24
+29-04-2026,12-11-1447,Nigeria,Gudu,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:22,12:39,15:48,18:57,19:58
+29-04-2026,12-11-1447,Nigeria,Gujba,Africa/Lagos,Islamic Society of North America (ISNA),04:54,05:54,12:10,15:21,18:25,19:26
+29-04-2026,12-11-1447,Nigeria,Gulani,Africa/Lagos,Islamic Society of North America (ISNA),04:56,05:56,12:11,15:23,18:25,19:26
+29-04-2026,12-11-1447,Nigeria,Guma,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:22,15:38,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Gumel,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:03,12:20,15:30,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Gummi,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:21,12:37,15:48,18:53,19:54
+29-04-2026,12-11-1447,Nigeria,Gurara,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:29,15:43,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Guri,Africa/Lagos,Islamic Society of North America (ISNA),04:58,05:59,12:16,15:26,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Gusau,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:31,15:41,18:47,19:48
+29-04-2026,12-11-1447,Nigeria,Guyuk,Africa/Lagos,Islamic Society of North America (ISNA),04:56,05:56,12:10,15:23,18:24,19:24
+29-04-2026,12-11-1447,Nigeria,Guzamala,Africa/Lagos,Islamic Society of North America (ISNA),04:47,05:47,12:04,15:14,18:22,19:22
+29-04-2026,12-11-1447,Nigeria,Gwadabawa,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:19,12:36,15:45,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Gwagwalada,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:29,15:44,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Gwale,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Gwandu,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:39,15:49,18:56,19:56
+29-04-2026,12-11-1447,Nigeria,Gwaram,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:03,12:18,15:30,18:33,19:34
+29-04-2026,12-11-1447,Nigeria,Gwarzo,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:10,12:26,15:37,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Gwer East,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:13,12:24,15:40,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Gwer West,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:13,12:25,15:40,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Gwiwa,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:07,12:24,15:34,18:41,19:42
+29-04-2026,12-11-1447,Nigeria,Gwoza,Africa/Lagos,Islamic Society of North America (ISNA),04:47,05:47,12:03,15:15,18:18,19:18
+29-04-2026,12-11-1447,Nigeria,Hadejia,Africa/Lagos,Islamic Society of North America (ISNA),05:00,06:01,12:17,15:27,18:34,19:35
+29-04-2026,12-11-1447,Nigeria,Hawul,Africa/Lagos,Islamic Society of North America (ISNA),04:53,05:54,12:08,15:21,18:22,19:23
+29-04-2026,12-11-1447,Nigeria,Hong,Africa/Lagos,Islamic Society of North America (ISNA),04:51,05:52,12:06,15:19,18:20,19:20
+29-04-2026,12-11-1447,Nigeria,Ibadan North,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:42,15:58,18:53,19:52
+29-04-2026,12-11-1447,Nigeria,Ibadan North East,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:42,15:58,18:53,19:52
+29-04-2026,12-11-1447,Nigeria,Ibadan North West,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:42,15:58,18:53,19:52
+29-04-2026,12-11-1447,Nigeria,Ibadan South East,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:42,15:58,18:53,19:52
+29-04-2026,12-11-1447,Nigeria,Ibadan South West,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:42,15:58,18:53,19:52
+29-04-2026,12-11-1447,Nigeria,Ibaji,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Ibarapa Central,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:33,12:44,16:00,18:56,19:55
+29-04-2026,12-11-1447,Nigeria,Ibarapa East,Africa/Lagos,Islamic Society of North America (ISNA),05:33,06:32,12:43,15:59,18:55,19:54
+29-04-2026,12-11-1447,Nigeria,Ibarapa North,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:33,12:45,16:01,18:56,19:56
+29-04-2026,12-11-1447,Nigeria,Ibeju-Lekki,Africa/Lagos,Islamic Society of North America (ISNA),05:33,06:32,12:42,15:59,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Ibeno,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:25,15:43,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Ibesikpo Asutan,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Ibi,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:06,12:18,15:34,18:30,19:30
+29-04-2026,12-11-1447,Nigeria,Ibiono Ibom,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Idah,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:30,15:47,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Idanre,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:37,15:53,18:48,19:47
+29-04-2026,12-11-1447,Nigeria,Ideato North,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Ideato South,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Idemili North,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Idemili South,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Ido,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:31,12:43,15:59,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Ido-Osi,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:37,15:52,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Ifako-Ijaiye,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:34,12:44,16:01,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Ife Central,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:28,12:39,15:55,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Ife East,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:39,15:55,18:50,19:50
+29-04-2026,12-11-1447,Nigeria,Ife North,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:28,12:39,15:55,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Ife South,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:28,12:39,15:55,18:50,19:49
+29-04-2026,12-11-1447,Nigeria,Ifedayo,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:26,12:37,15:53,18:49,19:49
+29-04-2026,12-11-1447,Nigeria,Ifedore,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:26,12:37,15:53,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Ifelodun,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:39,15:54,18:50,19:50
+29-04-2026,12-11-1447,Nigeria,Ifo,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:45,16:01,18:55,19:54
+29-04-2026,12-11-1447,Nigeria,Igabi,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:12,12:26,15:39,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Igalamela Odolu,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:29,15:45,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Igbo Etiti,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:28,15:44,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Igbo Eze North,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:28,15:44,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Igbo Eze South,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:28,15:44,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Igueben,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:32,15:49,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Ihiala,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Ijebu East,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:30,12:40,15:57,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Ijebu North,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:41,15:58,18:52,19:51
+29-04-2026,12-11-1447,Nigeria,Ijebu North East,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:41,15:58,18:52,19:51
+29-04-2026,12-11-1447,Nigeria,Ijebu Ode,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:31,12:42,15:58,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Ijero,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:26,12:37,15:53,18:49,19:48
+29-04-2026,12-11-1447,Nigeria,Ijumu,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:34,15:49,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Ika,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:27,15:45,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Ika North East,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:32,15:49,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Ika South,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:33,15:50,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Ikara,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:09,12:24,15:36,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Ikeduru,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:29,15:46,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Ikeja,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:55,19:54
+29-04-2026,12-11-1447,Nigeria,Ikenne,Africa/Lagos,Islamic Society of North America (ISNA),05:33,06:32,12:43,15:59,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Ikere,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:36,15:52,18:48,19:47
+29-04-2026,12-11-1447,Nigeria,Ikole,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:35,15:51,18:47,19:47
+29-04-2026,12-11-1447,Nigeria,Ikom,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:13,12:22,15:40,18:32,19:31
+29-04-2026,12-11-1447,Nigeria,Ikono,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Ikorodu,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:33,12:43,16:00,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Ikot Abasi,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:27,15:46,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Ikot Ekpene,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:44,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Ikpoba Okha,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:35,15:52,18:45,19:44
+29-04-2026,12-11-1447,Nigeria,Ikwerre,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:30,15:48,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Ikwo,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:25,15:42,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Ikwuano,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Ila,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:26,12:38,15:53,18:50,19:49
+29-04-2026,12-11-1447,Nigeria,Ilaje,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:29,12:38,15:56,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Ilejemeje,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:25,12:36,15:52,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Ilesa East,Africa/Douala,Islamic Society of North America (ISNA),04:55,05:54,12:01,15:20,18:09,19:08
+29-04-2026,12-11-1447,Nigeria,Ilesa West,Africa/Douala,Islamic Society of North America (ISNA),05:06,06:06,12:15,15:32,18:24,19:23
+29-04-2026,12-11-1447,Nigeria,Illela,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:18,12:36,15:45,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Ilorin East,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:26,12:38,15:53,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Ilorin South,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:39,15:54,18:51,19:51
+29-04-2026,12-11-1447,Nigeria,Ilorin West,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:27,12:39,15:54,18:52,19:51
+29-04-2026,12-11-1447,Nigeria,Imeko Afon,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:35,12:46,16:02,18:57,19:57
+29-04-2026,12-11-1447,Nigeria,Ingawa,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:25,15:35,18:42,19:43
+29-04-2026,12-11-1447,Nigeria,Ini,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Ipokia,Africa/Lagos,Islamic Society of North America (ISNA),05:37,06:36,12:46,16:03,18:56,19:56
+29-04-2026,12-11-1447,Nigeria,Irele,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:37,15:54,18:48,19:47
+29-04-2026,12-11-1447,Nigeria,Irepo,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:29,12:42,15:56,18:55,19:55
+29-04-2026,12-11-1447,Nigeria,Irepodun,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:39,15:55,18:51,19:51
+29-04-2026,12-11-1447,Nigeria,Irewole,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:29,12:40,15:57,18:52,19:51
+29-04-2026,12-11-1447,Nigeria,Isa,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:32,15:41,18:49,19:50
+29-04-2026,12-11-1447,Nigeria,Iseyin,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:31,12:43,15:59,18:55,19:54
+29-04-2026,12-11-1447,Nigeria,Ishielu,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:26,15:43,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Isi-Uzo,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:27,15:44,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Isiala Mbano,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Isiala Ngwa North,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:45,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Isiala Ngwa South,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:45,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Isin,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:37,15:52,18:49,19:49
+29-04-2026,12-11-1447,Nigeria,Isokan,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:30,12:41,15:57,18:52,19:51
+29-04-2026,12-11-1447,Nigeria,Isoko North,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:32,15:50,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Isoko South,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:33,15:50,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Isu,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Isuikwuato,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Itesiwaju,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:31,12:43,15:58,18:55,19:55
+29-04-2026,12-11-1447,Nigeria,Itu,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:25,15:43,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Ivo,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:27,15:44,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Iwajowa,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:33,12:45,16:01,18:57,19:57
+29-04-2026,12-11-1447,Nigeria,Iwo,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:29,12:41,15:56,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Izzi,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:14,12:24,15:41,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Jaba,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:12,12:25,15:39,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Jada,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:56,12:09,15:23,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Jahun,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:03,12:19,15:30,18:35,19:36
+29-04-2026,12-11-1447,Nigeria,Jakusko,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:58,12:14,15:25,18:31,19:32
+29-04-2026,12-11-1447,Nigeria,Jalingo,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:59,12:12,15:26,18:25,19:24
+29-04-2026,12-11-1447,Nigeria,Jama'are,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:02,12:18,15:29,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Jega,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:24,12:40,15:50,18:56,19:57
+29-04-2026,12-11-1447,Nigeria,Jema'a,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:24,15:38,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Jere,Africa/Lagos,Islamic Society of North America (ISNA),04:48,05:49,12:05,15:16,18:21,19:22
+29-04-2026,12-11-1447,Nigeria,Jibia,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:11,12:28,15:38,18:46,19:47
+29-04-2026,12-11-1447,Nigeria,Jos East,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:21,15:34,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Jos North,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:22,15:35,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Jos South,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:22,15:36,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Kabo,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:09,12:25,15:36,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Kachia,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:12,12:26,15:39,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Kaduna North,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:13,12:28,15:40,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Kaduna South,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:13,12:28,15:41,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Kafin Hausa,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:01,12:17,15:28,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Kafur,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:27,15:38,18:42,19:43
+29-04-2026,12-11-1447,Nigeria,Kaga,Africa/Lagos,Islamic Society of North America (ISNA),04:50,05:51,12:07,15:18,18:23,19:24
+29-04-2026,12-11-1447,Nigeria,Kagarko,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:13,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Kaiama,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:42,15:55,18:55,19:55
+29-04-2026,12-11-1447,Nigeria,Kaita,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:09,12:26,15:36,18:44,19:45
+29-04-2026,12-11-1447,Nigeria,Kajola,Africa/Lagos,Islamic Society of North America (ISNA),05:33,06:32,12:44,15:59,18:56,19:56
+29-04-2026,12-11-1447,Nigeria,Kajuru,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:12,12:27,15:40,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Kalgo,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:41,15:51,18:57,19:58
+29-04-2026,12-11-1447,Nigeria,Kaltungo,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:58,12:12,15:26,18:26,19:26
+29-04-2026,12-11-1447,Nigeria,Kanam,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:04,12:18,15:32,18:31,19:31
+29-04-2026,12-11-1447,Nigeria,Kankara,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:12,12:28,15:39,18:44,19:44
+29-04-2026,12-11-1447,Nigeria,Kanke,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:20,15:34,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Kankia,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:09,12:26,15:36,18:43,19:44
+29-04-2026,12-11-1447,Nigeria,Kano Municipal,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Karasuwa,Africa/Lagos,Islamic Society of North America (ISNA),04:56,05:57,12:14,15:24,18:31,19:32
+29-04-2026,12-11-1447,Nigeria,Karaye,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:11,12:26,15:38,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Karim Lamido,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:01,12:14,15:28,18:27,19:27
+29-04-2026,12-11-1447,Nigeria,Karu,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Katagum,Africa/Lagos,Islamic Society of North America (ISNA),04:59,06:00,12:16,15:26,18:32,19:33
+29-04-2026,12-11-1447,Nigeria,Katcha,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:32,15:47,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Katsina,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:10,12:27,15:36,18:44,19:45
+29-04-2026,12-11-1447,Nigeria,Katsina Ala,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:09,12:20,15:37,18:31,19:31
+29-04-2026,12-11-1447,Nigeria,Kaugama,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:02,12:18,15:29,18:35,19:36
+29-04-2026,12-11-1447,Nigeria,Kaura,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:10,12:24,15:37,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Kaura Namoda,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:31,15:41,18:48,19:49
+29-04-2026,12-11-1447,Nigeria,Kauru,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:12,12:26,15:39,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Kazaure,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:35,15:52,18:45,19:44
+29-04-2026,12-11-1447,Nigeria,Keana,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:10,12:22,15:38,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Kebbe,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:38,15:49,18:55,19:55
+29-04-2026,12-11-1447,Nigeria,Keffi,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:13,12:26,15:41,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Khana,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Kibiya,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:38,19:39
+29-04-2026,12-11-1447,Nigeria,Kirfi,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:01,12:15,15:28,18:30,19:30
+29-04-2026,12-11-1447,Nigeria,Kiri Kasama,Africa/Lagos,Islamic Society of North America (ISNA),04:59,06:00,12:16,15:27,18:33,19:34
+29-04-2026,12-11-1447,Nigeria,Kiru,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:09,12:25,15:36,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Kiyawa,Africa/Lagos,Islamic Society of North America (ISNA),05:03,06:03,12:19,15:30,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Kogi,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:30,15:45,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Kokona,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:12,12:25,15:40,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Konduga,Africa/Lagos,Islamic Society of North America (ISNA),04:48,05:48,12:04,15:15,18:20,19:20
+29-04-2026,12-11-1447,Nigeria,Konshisha,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:12,12:23,15:39,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Kontagora,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:21,12:35,15:48,18:50,19:50
+29-04-2026,12-11-1447,Nigeria,Kosofe,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:33,12:44,16:00,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Kubau,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:10,12:25,15:37,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Kudan,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:26,15:38,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Kuje,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:28,15:43,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Kukawa,Africa/Lagos,Islamic Society of North America (ISNA),04:45,05:46,12:03,15:13,18:20,19:21
+29-04-2026,12-11-1447,Nigeria,kumbotso,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:39,19:40
+29-04-2026,12-11-1447,Nigeria,Kunchi,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:08,12:24,15:35,18:41,19:42
+29-04-2026,12-11-1447,Nigeria,Kura,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:08,12:24,15:35,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Kurfi,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:11,12:27,15:37,18:44,19:45
+29-04-2026,12-11-1447,Nigeria,Kurmi,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:03,12:14,15:31,18:26,19:25
+29-04-2026,12-11-1447,Nigeria,Kusada,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:09,12:25,15:36,18:42,19:43
+29-04-2026,12-11-1447,Nigeria,Kwali,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:17,12:29,15:44,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Kwami,Africa/Lagos,Islamic Society of North America (ISNA),04:58,05:58,12:13,15:25,18:27,19:27
+29-04-2026,12-11-1447,Nigeria,Kwande,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:09,12:20,15:36,18:30,19:30
+29-04-2026,12-11-1447,Nigeria,Kware,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:19,12:36,15:45,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Kwaya Kusar,Africa/Lagos,Islamic Society of North America (ISNA),04:55,05:56,12:10,15:23,18:25,19:25
+29-04-2026,12-11-1447,Nigeria,Lafia,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:23,15:38,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Lagelu,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:30,12:41,15:57,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Lagos Island,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:34,12:44,16:01,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Lagos Mainland,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:34,12:44,16:01,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Lamurde,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:10,15:24,18:24,19:24
+29-04-2026,12-11-1447,Nigeria,Langtang North,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:18,15:32,18:31,19:31
+29-04-2026,12-11-1447,Nigeria,Langtang South,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:18,15:33,18:31,19:30
+29-04-2026,12-11-1447,Nigeria,Lapai,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:31,15:46,18:44,19:44
+29-04-2026,12-11-1447,Nigeria,Lau,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:59,12:12,15:26,18:25,19:25
+29-04-2026,12-11-1447,Nigeria,Lavun,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:35,15:49,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Lere,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:09,12:23,15:36,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Logo,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:09,12:20,15:36,18:32,19:31
+29-04-2026,12-11-1447,Nigeria,Lokoja,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:19,12:30,15:46,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Machina,Africa/Lagos,Islamic Society of North America (ISNA),04:59,06:00,12:17,15:26,18:35,19:36
+29-04-2026,12-11-1447,Nigeria,Madagali,Africa/Lagos,Islamic Society of North America (ISNA),04:48,05:48,12:03,15:15,18:18,19:18
+29-04-2026,12-11-1447,Nigeria,Madobi,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:24,15:35,18:40,19:41
+29-04-2026,12-11-1447,Nigeria,Mafa,Africa/Lagos,Islamic Society of North America (ISNA),04:46,05:46,12:03,15:13,18:19,19:19
+29-04-2026,12-11-1447,Nigeria,Magama,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:23,12:37,15:50,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Magumeri,Africa/Lagos,Islamic Society of North America (ISNA),04:49,05:50,12:06,15:17,18:22,19:23
+29-04-2026,12-11-1447,Nigeria,Mai'Adua,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:07,12:25,15:34,18:42,19:43
+29-04-2026,12-11-1447,Nigeria,Maiduguri,Africa/Lagos,Islamic Society of North America (ISNA),04:48,05:49,12:05,15:16,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Maigatari,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:03,12:20,15:29,18:37,19:38
+29-04-2026,12-11-1447,Nigeria,Maiha,Africa/Lagos,Islamic Society of North America (ISNA),04:51,05:51,12:05,15:18,18:19,19:19
+29-04-2026,12-11-1447,Nigeria,Maiyama,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:24,12:40,15:51,18:56,19:57
+29-04-2026,12-11-1447,Nigeria,Makarfi,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:27,15:39,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Makoda,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:07,12:24,15:34,18:40,19:41
+29-04-2026,12-11-1447,Nigeria,Makurdi,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:12,12:23,15:39,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Malam Madori,Africa/Lagos,Islamic Society of North America (ISNA),05:00,06:01,12:18,15:28,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Malumfashi,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:27,15:38,18:43,19:43
+29-04-2026,12-11-1447,Nigeria,Mangu,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:21,15:35,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Mani,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:09,12:26,15:36,18:43,19:44
+29-04-2026,12-11-1447,Nigeria,Maradun,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:16,12:32,15:43,18:49,19:50
+29-04-2026,12-11-1447,Nigeria,Mariga,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:19,12:33,15:47,18:47,19:47
+29-04-2026,12-11-1447,Nigeria,Marte,Africa/Lagos,Islamic Society of North America (ISNA),04:45,05:46,12:02,15:12,18:19,19:19
+29-04-2026,12-11-1447,Nigeria,Maru,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:15,12:32,15:42,18:48,19:49
+29-04-2026,12-11-1447,Nigeria,Mashegu,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:34,15:48,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Mashi,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:26,15:35,18:43,19:44
+29-04-2026,12-11-1447,Nigeria,Matazu,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:11,12:27,15:37,18:43,19:44
+29-04-2026,12-11-1447,Nigeria,Mayo Belwa,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:56,12:09,15:24,18:22,19:22
+29-04-2026,12-11-1447,Nigeria,Mbaitoli,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Mbo,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:24,15:43,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Michika,Africa/Lagos,Islamic Society of North America (ISNA),04:49,05:49,12:04,15:16,18:19,19:19
+29-04-2026,12-11-1447,Nigeria,Miga,Africa/Lagos,Islamic Society of North America (ISNA),05:02,06:02,12:19,15:29,18:35,19:36
+29-04-2026,12-11-1447,Nigeria,Mikang,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:19,15:33,18:32,19:32
+29-04-2026,12-11-1447,Nigeria,Minjibir,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Misau,Africa/Lagos,Islamic Society of North America (ISNA),05:00,06:00,12:15,15:27,18:31,19:31
+29-04-2026,12-11-1447,Nigeria,Mkpat Enin,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:26,15:45,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Moba,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:37,15:52,18:49,19:48
+29-04-2026,12-11-1447,Nigeria,Mobbar,Africa/Lagos,Islamic Society of North America (ISNA),04:49,05:50,12:06,15:16,18:23,19:24
+29-04-2026,12-11-1447,Nigeria,Mokwa,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:37,15:51,18:50,19:50
+29-04-2026,12-11-1447,Nigeria,Monguno,Africa/Lagos,Islamic Society of North America (ISNA),04:45,05:46,12:03,15:13,18:20,19:21
+29-04-2026,12-11-1447,Nigeria,Mopa-Muro,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:34,15:49,18:46,19:45
+29-04-2026,12-11-1447,Nigeria,Moro,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:39,15:54,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Mubi North,Africa/Lagos,Islamic Society of North America (ISNA),04:50,05:50,12:04,15:17,18:19,19:19
+29-04-2026,12-11-1447,Nigeria,Mubi South,Africa/Lagos,Islamic Society of North America (ISNA),04:50,05:50,12:04,15:17,18:18,19:18
+29-04-2026,12-11-1447,Nigeria,Munya,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Musawa,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:10,12:27,15:37,18:43,19:44
+29-04-2026,12-11-1447,Nigeria,Mushin,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Nafada,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:12,15:24,18:27,19:28
+29-04-2026,12-11-1447,Nigeria,Nangere,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:13,15:24,18:29,19:29
+29-04-2026,12-11-1447,Nigeria,Nasarawa,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:14,12:26,15:42,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Nasarawa Egon,Africa/Lagos,Islamic Society of North America (ISNA),05:12,06:11,12:24,15:39,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Ndokwa East,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:31,15:49,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Ndokwa West,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:32,15:50,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Nembe,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:32,15:50,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Ngala,Africa/Lagos,Islamic Society of North America (ISNA),04:44,05:44,12:01,15:11,18:17,19:18
+29-04-2026,12-11-1447,Nigeria,Nganzai,Africa/Lagos,Islamic Society of North America (ISNA),04:48,05:48,12:05,15:15,18:22,19:22
+29-04-2026,12-11-1447,Nigeria,Ngaski,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:38,15:51,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Ngor Okpala,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Nguru,Africa/Lagos,Islamic Society of North America (ISNA),04:58,05:59,12:16,15:25,18:33,19:34
+29-04-2026,12-11-1447,Nigeria,Ningi,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:04,12:19,15:31,18:34,19:35
+29-04-2026,12-11-1447,Nigeria,Njaba,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Njikoka,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:29,15:47,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Nkanu East,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:27,15:44,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Nkanu West,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:27,15:44,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Nkwerre,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:29,15:46,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Nnewi North,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Nnewi South,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Nsit Atai,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:25,15:43,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Nsit Ibom,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Nsit Ubium,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Nsukka,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:28,15:44,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Numan,Africa/Lagos,Islamic Society of North America (ISNA),04:56,05:56,12:09,15:23,18:23,19:23
+29-04-2026,12-11-1447,Nigeria,Nwangele,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:29,15:46,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Obafemi Owode,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:33,12:44,16:00,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Obanliku,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:10,12:20,15:37,18:30,19:30
+29-04-2026,12-11-1447,Nigeria,Obi,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:10,12:22,15:37,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Obi Ngwa,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:45,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Obokun,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:27,12:38,15:54,18:50,19:50
+29-04-2026,12-11-1447,Nigeria,Obot Akara,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Obowo,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Obubra,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:14,12:24,15:41,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Obudu,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:10,12:21,15:37,18:31,19:30
+29-04-2026,12-11-1447,Nigeria,Odeda,Africa/Lagos,Islamic Society of North America (ISNA),05:33,06:32,12:43,15:59,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Odigbo,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:38,15:55,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Odo-Otin,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:39,15:54,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Odogbolu,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:32,12:42,15:59,18:53,19:52
+29-04-2026,12-11-1447,Nigeria,Odukpani,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:24,15:42,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Offa,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:27,12:39,15:54,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Ofu,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:19,12:30,15:46,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Ogbadibo,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:27,15:43,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Ogbaru,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:30,15:48,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Ogbia,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:32,15:50,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Ogbomosho North,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:28,12:40,15:56,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Ogbomosho South,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:29,12:40,15:56,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Ogo Oluwa,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:29,12:41,15:56,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Ogoja,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:12,12:22,15:39,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Ogun Waterside,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:30,12:40,15:57,18:50,19:49
+29-04-2026,12-11-1447,Nigeria,Oguta,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:30,15:48,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Ohafia,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Ohaozara,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:17,12:26,15:44,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Ohaukwu,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:25,15:42,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Ohimini,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:15,12:26,15:42,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Oji-River,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:28,15:45,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Ojo,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:30,12:42,15:57,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Oju,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:13,12:24,15:40,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Oke-Ero,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:36,15:52,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Okehi,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:21,12:32,15:48,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Okene,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:32,15:48,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Okigwe,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:28,15:45,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Okitipupa,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:28,12:38,15:55,18:49,19:48
+29-04-2026,12-11-1447,Nigeria,Okobo,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:25,15:43,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Okpe,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:34,15:52,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Okpokwu,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:26,15:42,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Okrika,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:29,15:47,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Ola-Oluwa,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:29,12:41,15:56,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Olamaboro,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Olorunda,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:39,15:55,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Olorunsogo,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:29,12:41,15:56,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Oluyole,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:31,12:42,15:58,18:53,19:52
+29-04-2026,12-11-1447,Nigeria,Omala,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:27,15:43,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Omuma,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Ona Ara,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:30,12:41,15:57,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Ondo East,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:27,12:38,15:54,18:48,19:48
+29-04-2026,12-11-1447,Nigeria,Ondo West,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:38,15:55,18:49,19:49
+29-04-2026,12-11-1447,Nigeria,Onicha,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Onitsha North,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Onitsha South,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Onna,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:26,15:44,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Onuimo,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Oorelope,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Oredo,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:35,15:52,18:45,19:44
+29-04-2026,12-11-1447,Nigeria,Orhionmwon,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:33,15:51,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Ori Ire,Africa/Lagos,Islamic Society of North America (ISNA),05:29,06:28,12:41,15:56,18:53,19:52
+29-04-2026,12-11-1447,Nigeria,Oriade,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:27,12:38,15:54,18:49,19:49
+29-04-2026,12-11-1447,Nigeria,Orlu,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Orolu,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:39,15:55,18:51,19:51
+29-04-2026,12-11-1447,Nigeria,Oron,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:24,15:43,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Orsu,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Oru East,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Oru West,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Oruk Anam,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:27,15:45,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Orumba North,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Orumba South,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Ose,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:35,15:51,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Oshimili North,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:31,15:48,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Oshimili South,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:31,15:48,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Oshodi-Isolo,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Osisioma,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Osogbo,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:39,15:55,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Otukpo,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:14,12:25,15:41,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Ovia North East,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:25,12:35,15:52,18:45,19:45
+29-04-2026,12-11-1447,Nigeria,Ovia South West,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:36,15:53,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Owan East,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:33,15:49,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Owan West,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:34,15:50,18:44,19:44
+29-04-2026,12-11-1447,Nigeria,Owerri Municipal,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Owerri North,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:29,15:47,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Owerri West,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:21,12:30,15:47,18:39,19:38
+29-04-2026,12-11-1447,Nigeria,Owo,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:35,15:51,18:46,19:45
+29-04-2026,12-11-1447,Nigeria,Oye,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:36,15:52,18:48,19:47
+29-04-2026,12-11-1447,Nigeria,Oyi,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:30,15:47,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Oyigbo,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Oyo East,Africa/Lagos,Islamic Society of North America (ISNA),05:30,06:30,12:41,15:57,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Oyo West,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:30,12:42,15:58,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Oyun,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:27,12:39,15:54,18:51,19:50
+29-04-2026,12-11-1447,Nigeria,Paikoro,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:17,12:30,15:44,18:44,19:44
+29-04-2026,12-11-1447,Nigeria,Pankshin,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:06,12:20,15:34,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Patani,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:33,15:50,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Pategi,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:34,15:49,18:47,19:47
+29-04-2026,12-11-1447,Nigeria,Port Harcourt,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:29,15:48,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Potiskum,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:13,15:24,18:29,19:29
+29-04-2026,12-11-1447,Nigeria,Qua'an Pan,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:08,12:21,15:36,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Rabah,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:18,12:35,15:45,18:53,19:54
+29-04-2026,12-11-1447,Nigeria,Rafi,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:33,15:46,18:47,19:47
+29-04-2026,12-11-1447,Nigeria,Rano,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:35,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Remo North,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:32,12:42,15:59,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Rijau,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:21,12:36,15:48,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Rimi,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:10,12:27,15:36,18:44,19:45
+29-04-2026,12-11-1447,Nigeria,Rimin Gado,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:24,15:35,18:40,19:41
+29-04-2026,12-11-1447,Nigeria,Ringim,Africa/Lagos,Islamic Society of North America (ISNA),05:04,06:04,12:21,15:31,18:37,19:38
+29-04-2026,12-11-1447,Nigeria,Riyom,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:09,12:22,15:36,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Rogo,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:10,12:26,15:38,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Roni,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:24,15:34,18:41,19:42
+29-04-2026,12-11-1447,Nigeria,Sabon Birni,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:14,12:32,15:41,18:50,19:51
+29-04-2026,12-11-1447,Nigeria,Sabon Gari,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:27,15:39,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Sabuwa,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:14,12:29,15:41,18:44,19:45
+29-04-2026,12-11-1447,Nigeria,Safana,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:07,12:24,15:34,18:41,19:42
+29-04-2026,12-11-1447,Nigeria,Sagbama,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:33,15:51,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Sakaba,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:19,12:35,15:46,18:50,19:51
+29-04-2026,12-11-1447,Nigeria,Saki East,Africa/Lagos,Islamic Society of North America (ISNA),05:31,06:31,12:43,15:58,18:56,19:55
+29-04-2026,12-11-1447,Nigeria,Saki West,Africa/Lagos,Islamic Society of North America (ISNA),05:32,06:32,12:44,15:59,18:56,19:56
+29-04-2026,12-11-1447,Nigeria,Sandamu,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:07,12:24,15:34,18:41,19:42
+29-04-2026,12-11-1447,Nigeria,Sanga,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:10,12:24,15:38,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Sapele,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:35,15:52,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Sardauna,Africa/Lagos,Islamic Society of North America (ISNA),05:03,06:02,12:12,15:29,18:23,19:22
+29-04-2026,12-11-1447,Nigeria,Shagamu,Africa/Lagos,Islamic Society of North America (ISNA),05:33,06:32,12:43,15:59,18:53,19:53
+29-04-2026,12-11-1447,Nigeria,Shagari,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:21,12:37,15:47,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Shanga,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:39,15:51,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Shani,Africa/Lagos,Islamic Society of North America (ISNA),04:55,05:55,12:09,15:22,18:23,19:23
+29-04-2026,12-11-1447,Nigeria,Shanono,Africa/Lagos,Islamic Society of North America (ISNA),05:09,06:10,12:26,15:36,18:42,19:43
+29-04-2026,12-11-1447,Nigeria,Shelleng,Africa/Lagos,Islamic Society of North America (ISNA),04:56,05:56,12:09,15:23,18:23,19:23
+29-04-2026,12-11-1447,Nigeria,Shendam,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:19,15:34,18:32,19:32
+29-04-2026,12-11-1447,Nigeria,Shinkafi,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:14,12:31,15:41,18:49,19:50
+29-04-2026,12-11-1447,Nigeria,Shira,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:02,12:17,15:29,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Shiroro,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:30,15:43,18:44,19:44
+29-04-2026,12-11-1447,Nigeria,Shongom,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Silame,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:21,12:38,15:47,18:55,19:56
+29-04-2026,12-11-1447,Nigeria,Soba,Africa/Lagos,Islamic Society of North America (ISNA),05:10,06:10,12:25,15:37,18:40,19:41
+29-04-2026,12-11-1447,Nigeria,Sokoto North,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:19,12:36,15:46,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Sokoto South,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:19,12:36,15:46,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Somolu,Africa/Lagos,Islamic Society of North America (ISNA),05:34,06:34,12:44,16:01,18:54,19:53
+29-04-2026,12-11-1447,Nigeria,Song,Africa/Lagos,Islamic Society of North America (ISNA),04:53,05:53,12:07,15:20,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Southern Ijaw,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:34,15:52,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Sule Tankarkar,Africa/Lagos,Islamic Society of North America (ISNA),05:15,06:14,12:27,15:42,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Suleja,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:29,15:43,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Sumaila,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:22,15:33,18:37,19:38
+29-04-2026,12-11-1447,Nigeria,Suru,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:25,12:41,15:52,18:57,19:57
+29-04-2026,12-11-1447,Nigeria,Surulere,Africa/Lagos,Islamic Society of North America (ISNA),05:35,06:34,12:44,16:01,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Tafa,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:29,15:43,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Tafawa Balewa,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:19,15:33,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Tai,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:28,15:47,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Takai,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:21,15:32,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Takum,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:06,12:17,15:34,18:29,19:28
+29-04-2026,12-11-1447,Nigeria,Talata Mafara,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:16,12:33,15:43,18:50,19:51
+29-04-2026,12-11-1447,Nigeria,Tambuwal,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:39,15:49,18:55,19:56
+29-04-2026,12-11-1447,Nigeria,Tangaza,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:20,12:38,15:47,18:55,19:56
+29-04-2026,12-11-1447,Nigeria,Tarauni,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:39,19:40
+29-04-2026,12-11-1447,Nigeria,Tarka,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:22,15:38,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Tarmuwa,Africa/Lagos,Islamic Society of North America (ISNA),04:53,05:54,12:10,15:21,18:27,19:27
+29-04-2026,12-11-1447,Nigeria,Taura,Africa/Lagos,Islamic Society of North America (ISNA),05:03,06:04,12:20,15:31,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Tofa,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:24,15:35,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Toro,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:20,15:33,18:35,19:35
+29-04-2026,12-11-1447,Nigeria,Toto,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:17,12:29,15:44,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Toungo,Africa/Lagos,Islamic Society of North America (ISNA),04:58,05:57,12:09,15:25,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Tsafe,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:14,12:30,15:41,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Tsanyawa,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:09,12:25,15:36,18:42,19:43
+29-04-2026,12-11-1447,Nigeria,Tudun Wada,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:09,12:24,15:36,18:39,19:40
+29-04-2026,12-11-1447,Nigeria,Tureta,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:35,15:45,18:52,19:53
+29-04-2026,12-11-1447,Nigeria,Udenu,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:27,15:44,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Udi,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:28,15:45,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Udu,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:34,15:52,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Udung Uko,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:16,12:24,15:43,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Ughelli North,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:33,15:51,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Ughelli South,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:34,15:52,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Ugwunagbo,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Uhunmwonde,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:34,15:51,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Ukanafun,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:26,15:44,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Ukum,Africa/Lagos,Islamic Society of North America (ISNA),05:08,06:08,12:19,15:35,18:31,19:30
+29-04-2026,12-11-1447,Nigeria,Ukwa East,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:36,19:35
+29-04-2026,12-11-1447,Nigeria,Ukwa West,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:20,12:28,15:46,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Ukwuani,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:23,12:32,15:50,18:42,19:41
+29-04-2026,12-11-1447,Nigeria,Umu-Nneochi,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:28,15:45,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Umuahia North,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Umuahia South,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:19,12:28,15:45,18:37,19:36
+29-04-2026,12-11-1447,Nigeria,Ungogo,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:23,15:34,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Uruan,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:25,15:43,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Ushongo,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:22,15:38,18:33,19:32
+29-04-2026,12-11-1447,Nigeria,Ussa,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:06,12:17,15:34,18:28,19:28
+29-04-2026,12-11-1447,Nigeria,Uvwie,Africa/Lagos,Islamic Society of North America (ISNA),05:26,06:25,12:34,15:52,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Uyo,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Uzo-Uwani,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:29,15:46,18:39,19:39
+29-04-2026,12-11-1447,Nigeria,Vandeikya,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:21,15:38,18:32,19:31
+29-04-2026,12-11-1447,Nigeria,Wamako,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:20,12:37,15:46,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Wamba,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:10,12:23,15:38,18:36,19:36
+29-04-2026,12-11-1447,Nigeria,Warawa,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:22,15:33,18:38,19:39
+29-04-2026,12-11-1447,Nigeria,Warji,Africa/Lagos,Islamic Society of North America (ISNA),05:03,06:03,12:18,15:30,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Warri North,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:37,15:54,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Warri South,Africa/Lagos,Islamic Society of North America (ISNA),05:27,06:26,12:35,15:53,18:44,19:43
+29-04-2026,12-11-1447,Nigeria,Warri South West,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:27,12:36,15:54,18:45,19:44
+29-04-2026,12-11-1447,Nigeria,Wase,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:05,12:18,15:32,18:31,19:30
+29-04-2026,12-11-1447,Nigeria,Wudil,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:22,15:33,18:38,19:39
+29-04-2026,12-11-1447,Nigeria,Wukari,Africa/Lagos,Islamic Society of North America (ISNA),05:07,06:07,12:18,15:34,18:30,19:29
+29-04-2026,12-11-1447,Nigeria,Wurno,Africa/Lagos,Islamic Society of North America (ISNA),05:17,06:18,12:36,15:45,18:53,19:54
+29-04-2026,12-11-1447,Nigeria,Wushishi,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:23,12:37,15:50,18:51,19:51
+29-04-2026,12-11-1447,Nigeria,Yabo,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:20,12:37,15:47,18:54,19:54
+29-04-2026,12-11-1447,Nigeria,Yagba East,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:34,15:49,18:46,19:46
+29-04-2026,12-11-1447,Nigeria,Yagba West,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:23,12:35,15:50,18:47,19:47
+29-04-2026,12-11-1447,Nigeria,Yakurr,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:25,15:42,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Yala,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:13,12:23,15:40,18:34,19:33
+29-04-2026,12-11-1447,Nigeria,Yankwashi,Africa/Lagos,Islamic Society of North America (ISNA),05:06,06:06,12:23,15:33,18:40,19:41
+29-04-2026,12-11-1447,Nigeria,Yauri,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:24,12:39,15:51,18:54,19:55
+29-04-2026,12-11-1447,Nigeria,Yenagoa,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:32,15:50,18:41,19:40
+29-04-2026,12-11-1447,Nigeria,Yewa North,Africa/Lagos,Islamic Society of North America (ISNA),05:19,06:18,12:27,15:45,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Yewa South,Africa/Porto-Novo,Islamic Society of North America (ISNA),05:39,06:38,12:48,16:05,18:59,19:58
+29-04-2026,12-11-1447,Nigeria,Yola North,Africa/Lagos,Islamic Society of North America (ISNA),04:55,05:55,12:08,15:22,18:21,19:21
+29-04-2026,12-11-1447,Nigeria,Yola South,Africa/Lagos,Islamic Society of North America (ISNA),04:54,05:53,12:06,15:21,18:19,19:19
+29-04-2026,12-11-1447,Nigeria,Yorro,Africa/Lagos,Islamic Society of North America (ISNA),04:59,05:58,12:11,15:26,18:24,19:23
+29-04-2026,12-11-1447,Nigeria,Yunusari,Africa/Lagos,Islamic Society of North America (ISNA),04:52,05:53,12:10,15:20,18:28,19:29
+29-04-2026,12-11-1447,Nigeria,Yusufari,Africa/Lagos,Islamic Society of North America (ISNA),04:55,05:55,12:13,15:22,18:30,19:31
+29-04-2026,12-11-1447,Nigeria,Zaki,Africa/Lagos,Islamic Society of North America (ISNA),05:00,06:00,12:16,15:27,18:33,19:33
+29-04-2026,12-11-1447,Nigeria,Zango,Africa/Lagos,Islamic Society of North America (ISNA),05:05,06:06,12:23,15:33,18:41,19:42
+29-04-2026,12-11-1447,Nigeria,Zangon Kataf,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:11,12:24,15:38,18:38,19:38
+29-04-2026,12-11-1447,Nigeria,Zaria,Africa/Lagos,Islamic Society of North America (ISNA),05:11,06:12,12:27,15:39,18:42,19:42
+29-04-2026,12-11-1447,Nigeria,Zing,Africa/Lagos,Islamic Society of North America (ISNA),04:57,05:57,12:09,15:24,18:22,19:22
+29-04-2026,12-11-1447,Nigeria,Zurmi,Africa/Lagos,Islamic Society of North America (ISNA),05:13,06:13,12:30,15:40,18:47,19:48
+29-04-2026,12-11-1447,Nigeria,Zuru,Africa/Lagos,Islamic Society of North America (ISNA),05:21,06:21,12:36,15:48,18:52,19:52
+29-04-2026,12-11-1447,Nigeria,Ado-Odo/Ota,Africa/Lagos,Islamic Society of North America (ISNA),05:36,06:35,12:46,16:02,18:56,19:55
+29-04-2026,12-11-1447,Nigeria,Askira/Uba,Africa/Lagos,Islamic Society of North America (ISNA),04:51,05:51,12:06,15:18,18:20,19:21
+29-04-2026,12-11-1447,Nigeria,Birnin Magaji/Kiyaw,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Dange/Shuni,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:19,12:36,15:46,18:53,19:54
+29-04-2026,12-11-1447,Nigeria,Ihitte/Uboma,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:28,15:46,18:38,19:37
+29-04-2026,12-11-1447,Nigeria,Ile Oluji/Okeigbo,Africa/Lagos,Islamic Society of North America (ISNA),05:23,06:22,12:33,15:49,18:43,19:42
+29-04-2026,12-11-1447,Nigeria,Irepodun/Ifelodun,Africa/Lagos,Islamic Society of North America (ISNA),05:28,06:28,12:39,15:55,18:51,19:51
+29-04-2026,12-11-1447,Nigeria,Ise/Orun,Africa/Lagos,Islamic Society of North America (ISNA),05:25,06:24,12:36,15:52,18:47,19:46
+29-04-2026,12-11-1447,Nigeria,Itas/Gadau,Africa/Lagos,Islamic Society of North America (ISNA),05:01,06:02,12:18,15:29,18:34,19:34
+29-04-2026,12-11-1447,Nigeria,Kabba/Bunu,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:21,12:33,15:49,18:45,19:44
+29-04-2026,12-11-1447,Nigeria,Kala/Balge,Africa/Lagos,Islamic Society of North America (ISNA),05:00,06:00,12:13,15:27,18:26,19:25
+29-04-2026,12-11-1447,Nigeria,Koko/Besse,Africa/Lagos,Islamic Society of North America (ISNA),05:24,06:24,12:39,15:51,18:55,19:55
+29-04-2026,12-11-1447,Nigeria,Kolokuma/Opokuma,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Obio/Akpor,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:17,12:26,15:44,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Ogba/Egbema/Ndoni,Africa/Lagos,Islamic Society of North America (ISNA),05:18,06:18,12:29,15:45,18:41,19:41
+29-04-2026,12-11-1447,Nigeria,Ogori/Magongo,Africa/Lagos,Islamic Society of North America (ISNA),05:16,06:15,12:26,15:42,18:37,19:37
+29-04-2026,12-11-1447,Nigeria,Ogu/Bolo,Africa/Lagos,Islamic Society of North America (ISNA),05:22,06:22,12:31,15:48,18:40,19:39
+29-04-2026,12-11-1447,Nigeria,Ohaji/Egbema,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Opobo/Nkoro,Africa/Lagos,Islamic Society of North America (ISNA),05:20,06:19,12:27,15:45,18:35,19:34
+29-04-2026,12-11-1447,Nigeria,Urue Offong/Oruko,Africa/Lagos,Islamic Society of North America (ISNA),05:14,06:14,12:27,15:41,18:40,19:40
+29-04-2026,12-11-1447,Nigeria,Yamaltu/Deba,Africa/Lagos,Islamic Society of North America (ISNA),04:58,05:58,12:12,15:25,18:26,19:26
+29-04-2026,12-11-1447,Pakistan,Karachi,Asia/Karachi,Islamic Society of North America (ISNA),04:51,05:58,12:29,15:56,19:01,20:07
+29-04-2026,12-11-1447,Pakistan,Lahore,Asia/Karachi,Islamic Society of North America (ISNA),04:08,05:20,12:00,15:38,18:41,19:53
+29-04-2026,12-11-1447,Pakistan,Islamabad,Asia/Karachi,Islamic Society of North America (ISNA),04:07,05:22,12:05,15:46,18:49,20:04
+29-04-2026,12-11-1447,Saudi Arabia,Riyadh,Asia/Riyadh,Islamic Society of North America (ISNA),04:13,05:19,11:50,15:17,18:21,19:28
+29-04-2026,12-11-1447,Saudi Arabia,Jeddah,Asia/Riyadh,Islamic Society of North America (ISNA),04:49,05:53,12:20,15:41,18:48,19:52
+29-04-2026,12-11-1447,Saudi Arabia,Mecca,Asia/Riyadh,Islamic Society of North America (ISNA),04:47,05:51,12:18,15:39,18:45,19:50
+29-04-2026,12-11-1447,Saudi Arabia,Medina,Asia/Riyadh,Islamic Society of North America (ISNA),04:42,05:48,12:19,15:46,18:50,19:56
+29-04-2026,12-11-1447,Saudi Arabia,Dammam,Asia/Riyadh,Islamic Society of North America (ISNA),03:57,05:04,11:37,15:07,18:11,19:19
+29-04-2026,12-11-1447,South Africa,Johannesburg,Africa/Johannesburg,Islamic Society of North America (ISNA),05:26,06:31,12:05,15:17,17:40,18:44
+29-04-2026,12-11-1447,South Africa,Cape Town,Africa/Johannesburg,Islamic Society of North America (ISNA),06:09,07:19,12:43,15:45,18:07,19:17
+29-04-2026,12-11-1447,South Africa,Durban,Africa/Johannesburg,Islamic Society of North America (ISNA),05:16,06:23,11:53,15:01,17:23,18:30
+29-04-2026,12-11-1447,Turkey,Istanbul,Europe/Istanbul,Islamic Society of North America (ISNA),04:40,06:05,13:01,16:51,19:59,21:24
+29-04-2026,12-11-1447,Turkey,Ankara,Europe/Istanbul,Islamic Society of North America (ISNA),04:29,05:52,12:46,16:35,19:41,21:04
+29-04-2026,12-11-1447,Turkey,Izmir,Europe/Istanbul,Islamic Society of North America (ISNA),04:57,06:17,13:09,16:56,20:01,21:22
+29-04-2026,12-11-1447,United Kingdom,London,Europe/London,Islamic Society of North America (ISNA),03:42,05:36,12:58,16:58,20:20,22:15
+29-04-2026,12-11-1447,United Kingdom,Birmingham,Europe/London,Islamic Society of North America (ISNA),03:42,05:40,13:05,17:06,20:30,22:30
+29-04-2026,12-11-1447,United Kingdom,Manchester,Europe/London,Islamic Society of North America (ISNA),03:35,05:38,13:06,17:08,20:35,22:39
+29-04-2026,12-11-1447,United Kingdom,Glasgow,Europe/London,Islamic Society of North America (ISNA),03:27,05:38,13:14,17:18,20:52,23:03
+29-04-2026,12-11-1447,United States,New York,America/New_York,Islamic Society of North America (ISNA),04:33,05:57,12:53,16:43,19:50,21:15
+29-04-2026,12-11-1447,United States,Los Angeles,America/Los_Angeles,Islamic Society of North America (ISNA),04:51,06:06,12:50,16:32,19:36,20:51
+29-04-2026,12-11-1447,United States,Chicago,America/Chicago,Islamic Society of North America (ISNA),04:23,05:49,12:48,16:39,19:47,21:14
+29-04-2026,12-11-1447,United States,Houston,America/Chicago,Islamic Society of North America (ISNA),05:30,06:41,13:19,16:54,19:57,21:08
+29-04-2026,12-11-1447,United States,Washington,America/New_York,Islamic Society of North America (ISNA),04:51,06:13,13:05,16:53,19:59,21:20
