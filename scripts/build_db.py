@@ -7,8 +7,9 @@ import sqlite3
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "data", "source")
-IDX_DIR = os.path.join(ROOT, "data", "index")
-DB = os.path.join(IDX_DIR, "library.db")
+DEFAULT_DB = os.path.join(ROOT, "data", "index", "library.db")
+DB = os.getenv("ANJAL_DB_PATH", DEFAULT_DB)
+IDX_DIR = os.path.dirname(DB)
 
 
 def clean_text(value: str) -> str:
