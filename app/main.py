@@ -106,20 +106,121 @@ async def v1_auth_and_rate_limit(request: Request, call_next):
     return await call_next(request)
 
 
+@app.middleware("http")
+async def enforce_utf8_content_type(request: Request, call_next):
+    response = await call_next(request)
+    content_type = response.headers.get("content-type", "")
+    if content_type.startswith("application/json") and "charset=" not in content_type.lower():
+        response.headers["content-type"] = "application/json; charset=utf-8"
+    if content_type.startswith("text/html") and "charset=" not in content_type.lower():
+        response.headers["content-type"] = "text/html; charset=utf-8"
+    return response
+
+
 @app.get("/", response_class=HTMLResponse, tags=["home"])
 def home(request: Request) -> str:
     lang = detect_lang(request)
-    dir_attr = "rtl" if lang == "ar" else "ltr"
-    title = tr("home_title", lang) if lang == "ar" else "Anjal Islamic Library API"
-    subtitle = (
-        tr("home_subtitle", lang)
-        if lang == "ar"
-        else "Versioned Islamic data infrastructure for building reliable year-round products: Quran, Hadith, Hijri, and Prayer Times."
+    is_ar = lang == "ar"
+    dir_attr = "rtl" if is_ar else "ltr"
+    switch_lang = "en" if is_ar else "ar"
+
+    title = tr("home_title", lang) if is_ar else "Anjal Islamic Library API"
+    subtitle = tr("home_subtitle", lang) if is_ar else "Versioned Islamic data infrastructure for building reliable year-round products: Quran, Hadith, Hijri, and Prayer Times."
+    docs_label = tr("docs", lang) if is_ar else "Docs"
+    meta_label = tr("meta", lang) if is_ar else "Meta"
+    language_switch = tr("english", lang) if is_ar else tr("arabic", lang)
+
+    project_heading = "Islamic Library Platform and API" if not is_ar else "منصة ومكتبة إسلامية مع واجهة برمجية"
+    project_intro = (
+        "An Islamic Library Platform and API designed to support students, researchers, and developers in accessing authentic Islamic knowledge in a structured and reliable way."
+        if not is_ar
+        else "منصة ومكتبة إسلامية مع واجهة برمجية صممت لدعم الطلاب والباحثين والمطورين للوصول إلى المعرفة الإسلامية الموثوقة بطريقة منظمة وموثوقة."
     )
-    docs_label = tr("docs", lang) if lang == "ar" else "Docs"
-    meta_label = tr("meta", lang) if lang == "ar" else "Meta"
-    language_switch = tr("english", lang) if lang == "ar" else tr("arabic", lang)
-    switch_lang = "en" if lang == "ar" else "ar"
+    project_scope = "This project aims to provide a comprehensive data infrastructure that includes:" if not is_ar else "يهدف هذا المشروع إلى توفير بنية بيانات شاملة تتضمن:"
+    project_items = [
+        "The complete Quran (114 Surahs, 6,236 Ayahs) with Arabic and English support.",
+        "Extensive 10 Hadith collections covering Kutub al-Sitta such as Bukhari, Muslim, Abu Dawud, Tirmidhi, Nasai, Ibn Majah, and also Malik, Nawawi, and more.",
+        "Hijri date conversion based on Umm al-Qura calendar standards.",
+        "Prayer time datasets with regional and global coverage.",
+        "Standardized search, referencing, and data access for research and application development.",
+    ] if not is_ar else [
+        "القرآن الكريم كاملًا (114 سورة، 6,236 آية) مع دعم العربية والإنجليزية.",
+        "10 مجموعات حديث موسعة تشمل الكتب الستة مثل البخاري ومسلم وأبو داود والترمذي والنسائي وابن ماجه، إضافة إلى مالك والنووي وغيرهما.",
+        "تحويل التاريخ الهجري وفق معايير تقويم أم القرى.",
+        "بيانات مواقيت الصلاة بتغطية إقليمية وعالمية.",
+        "بحث وإسناد ووصول موحد للبيانات لدعم البحث والتطبيقات.",
+    ]
+    project_goal = (
+        "The goal is to make Islamic knowledge more accessible, reusable, and reliable for modern digital applications, academic research, and educational tools."
+        if not is_ar
+        else "الهدف هو جعل المعرفة الإسلامية أكثر إتاحة وقابلية لإعادة الاستخدام وموثوقية للتطبيقات الرقمية الحديثة والبحث الأكاديمي والأدوات التعليمية."
+    )
+
+    about_title = "About" if not is_ar else "عن المنصة"
+    about_text = (
+        "This API is a reusable backend for Islamic applications and research tools. It standardizes references, search, and date/prayer lookup."
+        if not is_ar
+        else "هذه الواجهة البرمجية تمثل خلفية قابلة لإعادة الاستخدام للتطبيقات الإسلامية وأدوات البحث، وتوحد الإسناد والبحث والتحويلات الزمنية."
+    )
+    coverage_title = "Coverage Summary" if not is_ar else "ملخص التغطية"
+    quick_start_title = "Quick Start" if not is_ar else "البدء السريع"
+    endpoint_title = "Endpoint Matrix" if not is_ar else "مصفوفة المسارات"
+    sample_title = "Request and Response Samples" if not is_ar else "أمثلة الطلب والاستجابة"
+    governance_title = "Governance, Licensing, and Usage" if not is_ar else "الحوكمة والترخيص والاستخدام"
+    resources_title = "Developer Resources" if not is_ar else "موارد المطور"
+    footer_line_2 = (
+        "Built by Abdallah Nangere for Ramadanbot and broader Islamic software ecosystem use."
+        if not is_ar
+        else "تم بناؤه بواسطة عبدالله نانجيري لخدمة رمضان بوت ومنظومة البرمجيات الإسلامية بشكل أوسع."
+    )
+
+    about_list = [
+        "Quran (Uthmani + English)",
+        "Hadith (10 collections)",
+        "Umm al-Qura Hijri conversion",
+        "Nigeria-complete prayer times",
+    ] if not is_ar else [
+        "القرآن (رسم عثماني + ترجمة إنجليزية)",
+        "الحديث (10 مجموعات)",
+        "تحويل هجري أم القرى",
+        "مواقيت صلاة كاملة لنيجيريا",
+    ]
+
+    governance_list = [
+        "License: see LICENSE in repository.",
+        "Attribution is recommended when redistributing transformed data.",
+        "For production clients, enforce API keys and rate limiting at gateway level.",
+        "Versioning policy: breaking changes move to next major path (for example /v2).",
+        "Support contact: founder@ramadanbot.app",
+    ] if not is_ar else [
+        "الترخيص: راجع ملف LICENSE داخل المستودع.",
+        "ينصح بإضافة الإسناد عند إعادة توزيع البيانات بعد معالجتها.",
+        "للاستخدام الإنتاجي: يفضل فرض مفاتيح API وتحديد المعدل على مستوى البوابة.",
+        "سياسة الإصدارات: التغييرات الكاسرة تنتقل إلى مسار رئيسي جديد (مثل /v2).",
+        "الدعم: founder@ramadanbot.app",
+    ]
+
+    dataset_head = "Dataset" if not is_ar else "البيانات"
+    coverage_head = "Coverage" if not is_ar else "التغطية"
+    rows_head = "Rows" if not is_ar else "عدد السجلات"
+    source_head = "Primary Source" if not is_ar else "المصدر الرئيسي"
+    domain_head = "Domain" if not is_ar else "المجال"
+    endpoint_head = "Endpoint" if not is_ar else "المسار"
+    purpose_head = "Purpose" if not is_ar else "الغرض"
+    maintainer_label = "Maintainer" if not is_ar else "المشرف"
+    production_label = "Production endpoint" if not is_ar else "نقطة الإنتاج"
+    http_note = "(HTTPS-only; HTTP returns 308 redirect)." if not is_ar else "(يدعم HTTPS فقط، وHTTP يرجع تحويل 308)."
+    base_url_label = "Base URL" if not is_ar else "المسار الأساسي"
+    api_version_label = "API Version: v1" if not is_ar else "إصدار الواجهة: v1"
+    public_reuse_label = "Public Reuse Friendly" if not is_ar else "مناسب لإعادة الاستخدام العام"
+    github_label = "GitHub Repository" if not is_ar else "مستودع GitHub"
+    swagger_label = "Swagger Docs" if not is_ar else "توثيق Swagger"
+    metadata_label = "Dataset Metadata" if not is_ar else "بيانات تعريف المجموعات"
+
+    project_items_html = "".join([f"<li>{item}</li>" for item in project_items])
+    about_items_html = "".join([f"<li>{item}</li>" for item in about_list])
+    governance_items_html = "".join([f"<li>{item}</li>" for item in governance_list])
+
     return f"""
     <!doctype html>
     <html lang="{lang}" dir="{dir_attr}">
@@ -137,6 +238,7 @@ def home(request: Request) -> str:
           .brand {{ font-weight:700; }}
           .nav a {{ margin-inline-start:12px; font-size:14px; }}
           .hero {{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px; }}
+          .mission {{ margin-top:16px; border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:18px; }}
           h1 {{ margin:0 0 8px; font-size:34px; }}
           .subtitle,.meta,p,li {{ color:var(--muted); }}
           .meta {{ font-size:14px; }}
@@ -172,31 +274,33 @@ def home(request: Request) -> str:
           <section class="hero">
             <h1>{title}</h1>
             <p class="subtitle">{subtitle}</p>
-            <p class="meta">Maintainer: <strong>Abdallah Nangere</strong> · <a href="mailto:founder@ramadanbot.app">founder@ramadanbot.app</a> · <a href="tel:+2348164135836">+2348164135836</a></p>
-            <p class="meta">Production endpoint: <a href="https://islamiclibrary.anjalventures.com">https://islamiclibrary.anjalventures.com</a> (HTTPS-only; HTTP returns 308 redirect).</p>
+            <p class="meta">{maintainer_label}: <strong>Abdallah Nangere</strong> | <a href="mailto:founder@ramadanbot.app">founder@ramadanbot.app</a> | <a href="tel:+2348164135836">+2348164135836</a></p>
+            <p class="meta">{production_label}: <a href="https://islamiclibrary.anjalventures.com">https://islamiclibrary.anjalventures.com</a> {http_note}</p>
             <div>
-              <span class="pill">API Version: v1</span>
+              <span class="pill">{api_version_label}</span>
               <span class="pill">FastAPI</span>
               <span class="pill">SQLite + FTS5</span>
               <span class="pill">Arabic + English</span>
-              <span class="pill">Public Reuse Friendly</span>
+              <span class="pill">{public_reuse_label}</span>
             </div>
+          </section>
+          <section class="mission">
+            <h2>{project_heading}</h2>
+            <p>{project_intro}</p>
+            <p><strong>{project_scope}</strong></p>
+            <ul>{project_items_html}</ul>
+            <p>{project_goal}</p>
           </section>
           <section class="grid">
             <article class="card c4">
-              <h2>About</h2>
-              <p>This API is a reusable backend for Islamic applications and research tools. It standardizes references, search, and date/prayer lookup.</p>
-              <ul>
-                <li>Quran (Uthmani + English)</li>
-                <li>Hadith (10 collections)</li>
-                <li>Umm al-Qura Hijri conversion</li>
-                <li>Nigeria-complete prayer times</li>
-              </ul>
+              <h2>{about_title}</h2>
+              <p>{about_text}</p>
+              <ul>{about_items_html}</ul>
             </article>
             <article class="card c8">
-              <h2>Coverage Summary</h2>
+              <h2>{coverage_title}</h2>
               <table>
-                <tr><th>Dataset</th><th>Coverage</th><th>Rows</th><th>Primary Source</th></tr>
+                <tr><th>{dataset_head}</th><th>{coverage_head}</th><th>{rows_head}</th><th>{source_head}</th></tr>
                 <tr><td>Quran</td><td>114 Surahs, 6,236 Ayahs</td><td>6,236</td><td>AlQuran Cloud editions</td></tr>
                 <tr><td>Hadith</td><td>Arabic+English merged collections</td><td>36,512</td><td>Hadith API open corpus</td></tr>
                 <tr><td>Hijri</td><td>1343-01-01 AH to 1500-12-30 AH</td><td>55,991</td><td>Umm al-Qura table</td></tr>
@@ -204,17 +308,17 @@ def home(request: Request) -> str:
               </table>
             </article>
             <article class="card c4">
-              <h2>Quick Start</h2>
+              <h2>{quick_start_title}</h2>
               <pre><code>pip install -r requirements.txt
 python scripts/build_db.py
 uvicorn app.main:app --host 127.0.0.1 --port 8000</code></pre>
-              <h3>Base URL</h3>
+              <h3>{base_url_label}</h3>
               <pre><code>/v1</code></pre>
             </article>
             <article class="card c8">
-              <h2>Endpoint Matrix</h2>
+              <h2>{endpoint_title}</h2>
               <table>
-                <tr><th>Domain</th><th>Endpoint</th><th>Purpose</th></tr>
+                <tr><th>{domain_head}</th><th>{endpoint_head}</th><th>{purpose_head}</th></tr>
                 <tr><td>Meta</td><td><code>GET /v1/health</code></td><td>Service health ping</td></tr>
                 <tr><td>Meta</td><td><code>GET /v1/meta</code></td><td>Counts and metadata</td></tr>
                 <tr><td>Quran</td><td><code>GET /v1/quran/ayah/{{surah}}/{{ayah}}</code></td><td>Direct ayah lookup</td></tr>
@@ -230,7 +334,7 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000</code></pre>
               </table>
             </article>
             <article class="card c6">
-              <h2>Request & Response Samples</h2>
+              <h2>{sample_title}</h2>
               <pre><code>GET /v1/quran/ayah/1/1
 {{"found":true,"data":{{"surah_number":1,"ayah_number_in_surah":1}}}}</code></pre>
               <pre><code>GET /v1/hijri/from-gregorian?date=2026-04-29
@@ -239,26 +343,20 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000</code></pre>
 {{"query":"Lagos","count":2,"results":[{{"city":"Lagos Island"}}]}}</code></pre>
             </article>
             <article class="card c6">
-              <h2>Governance, Licensing, and Usage</h2>
+              <h2>{governance_title}</h2>
+              <ul>{governance_items_html}</ul>
+              <h3>{resources_title}</h3>
               <ul>
-                <li>License: see <code>LICENSE</code> in repository.</li>
-                <li>Attribution is recommended when redistributing transformed data.</li>
-                <li>For production clients, enforce API keys and rate limiting at gateway level.</li>
-                <li>Versioning policy: breaking changes move to next major path (e.g., <code>/v2</code>).</li>
-                <li>Support contact: founder@ramadanbot.app</li>
-              </ul>
-              <h3>Developer Resources</h3>
-              <ul>
-                <li><a href="/docs?lang={lang}">Swagger Docs</a></li>
-                <li><a href="/v1/meta?lang={lang}">Dataset Metadata</a></li>
-                <li><a href="https://github.com/Abdallahnangere/Anjal-Islamic-Library">GitHub Repository</a></li>
+                <li><a href="/docs?lang={lang}">{swagger_label}</a></li>
+                <li><a href="/v1/meta?lang={lang}">{metadata_label}</a></li>
+                <li><a href="https://github.com/Abdallahnangere/Anjal-Islamic-Library">{github_label}</a></li>
               </ul>
             </article>
           </section>
           <section class="footer">
-            <div><strong>Anjal Islamic Library API</strong> © 2026 Anjal Ventures. All rights reserved.</div>
-            <div>Built by Abdallah Nangere for Ramadanbot and broader Islamic software ecosystem use.</div>
-            <div>Primary contact: <a href="mailto:founder@ramadanbot.app">founder@ramadanbot.app</a> · <a href="tel:+2348164135836">+2348164135836</a></div>
+            <div><strong>Anjal Islamic Library API</strong> (c) 2026 Anjal Ventures. All rights reserved.</div>
+            <div>{footer_line_2}</div>
+            <div>Primary contact: <a href="mailto:founder@ramadanbot.app">founder@ramadanbot.app</a> | <a href="tel:+2348164135836">+2348164135836</a></div>
           </section>
         </div>
       </body>
