@@ -1,15 +1,19 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Query
+from fastapi import Request
 
 from app.db import get_conn
+from app.i18n import detect_lang
+from app.i18n import tr
 
 
 router = APIRouter(prefix="/v1/hadith", tags=["hadith"])
 
 
 @router.get("/{collection}/{hadith_number}")
-def get_hadith(collection: str, hadith_number: int) -> dict:
+def get_hadith(request: Request, collection: str, hadith_number: int) -> dict:
+    lang = detect_lang(request)
     conn = get_conn()
     row = conn.execute(
         """
@@ -20,18 +24,20 @@ def get_hadith(collection: str, hadith_number: int) -> dict:
     ).fetchone()
     conn.close()
     if not row:
-        return {"found": False}
-    return {"found": True, "data": dict(row)}
+        return {"found": False, "lang": lang, "message": tr("not_found", lang)}
+    return {"found": True, "lang": lang, "data": dict(row)}
 
 
 @router.get("/search")
 def search_hadith(
+    request: Request,
     q: str = Query(..., min_length=1),
     collection: str | None = None,
     book_number: int | None = None,
     limit: int = Query(20, ge=1, le=100),
     offset: int = Query(0, ge=0),
 ) -> dict:
+    lang = detect_lang(request)
     conn = get_conn()
     clauses = ["hadith_fts MATCH ?"]
     params: list[object] = [q]
@@ -55,6 +61,7 @@ def search_hadith(
     ).fetchall()
     conn.close()
     return {
+        "lang": lang,
         "query": q,
         "collection": collection,
         "book_number": book_number,

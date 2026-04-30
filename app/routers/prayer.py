@@ -1,28 +1,34 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Query
+from fastapi import Request
 
 from app.db import get_conn
+from app.i18n import detect_lang
+from app.i18n import tr
 
 
 router = APIRouter(prefix="/v1/prayer", tags=["prayer"])
 
 
 @router.get("/countries")
-def countries() -> dict:
+def countries(request: Request) -> dict:
+    lang = detect_lang(request)
     conn = get_conn()
     rows = conn.execute("SELECT DISTINCT country FROM prayer_times ORDER BY country").fetchall()
     conn.close()
-    return {"count": len(rows), "countries": [r["country"] for r in rows]}
+    return {"lang": lang, "count": len(rows), "countries": [r["country"] for r in rows]}
 
 
 @router.get("/cities")
 def cities(
+    request: Request,
     country: str,
     q: str | None = None,
     limit: int = Query(50, ge=1, le=200),
     offset: int = Query(0, ge=0),
 ) -> dict:
+    lang = detect_lang(request)
     conn = get_conn()
     if q:
         rows = conn.execute(
@@ -46,6 +52,7 @@ def cities(
         ).fetchall()
     conn.close()
     return {
+        "lang": lang,
         "country": country,
         "query": q,
         "offset": offset,
@@ -55,7 +62,8 @@ def cities(
 
 
 @router.get("/times")
-def times(country: str, city: str, date_gregorian: str | None = None) -> dict:
+def times(request: Request, country: str, city: str, date_gregorian: str | None = None) -> dict:
+    lang = detect_lang(request)
     conn = get_conn()
     requested_date = date_gregorian
     if date_gregorian:
@@ -79,10 +87,17 @@ def times(country: str, city: str, date_gregorian: str | None = None) -> dict:
         ).fetchone()
     conn.close()
     if not row:
-        return {"found": False, "requested_date_gregorian": requested_date, "effective_date_gregorian": None}
+        return {
+            "found": False,
+            "lang": lang,
+            "message": tr("not_found", lang),
+            "requested_date_gregorian": requested_date,
+            "effective_date_gregorian": None,
+        }
     row_data = dict(row)
     return {
         "found": True,
+        "lang": lang,
         "requested_date_gregorian": requested_date,
         "effective_date_gregorian": row_data.get("date_gregorian"),
         "data": row_data,
@@ -91,11 +106,13 @@ def times(country: str, city: str, date_gregorian: str | None = None) -> dict:
 
 @router.get("/search-city")
 def search_city(
+    request: Request,
     q: str = Query(..., min_length=1),
     country: str | None = None,
     limit: int = Query(50, ge=1, le=200),
     offset: int = Query(0, ge=0),
 ) -> dict:
+    lang = detect_lang(request)
     conn = get_conn()
     if country:
         rows = conn.execute(
@@ -121,6 +138,7 @@ def search_city(
         ).fetchall()
     conn.close()
     return {
+        "lang": lang,
         "query": q,
         "country": country,
         "offset": offset,

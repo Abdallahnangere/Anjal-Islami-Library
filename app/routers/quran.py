@@ -1,15 +1,19 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Query
+from fastapi import Request
 
 from app.db import get_conn
+from app.i18n import detect_lang
+from app.i18n import tr
 
 
 router = APIRouter(prefix="/v1/quran", tags=["quran"])
 
 
 @router.get("/ayah/{surah}/{ayah}")
-def get_ayah(surah: int, ayah: int) -> dict:
+def get_ayah(request: Request, surah: int, ayah: int) -> dict:
+    lang = detect_lang(request)
     conn = get_conn()
     row = conn.execute(
         """SELECT * FROM quran_ayahs WHERE surah_number = ? AND ayah_number_in_surah = ?""",
@@ -17,18 +21,20 @@ def get_ayah(surah: int, ayah: int) -> dict:
     ).fetchone()
     conn.close()
     if not row:
-        return {"found": False}
-    return {"found": True, "data": dict(row)}
+        return {"found": False, "lang": lang, "message": tr("not_found", lang)}
+    return {"found": True, "lang": lang, "data": dict(row)}
 
 
 @router.get("/search")
 def search_quran(
+    request: Request,
     q: str = Query(..., min_length=1),
     surah: int | None = None,
     juz: int | None = None,
     limit: int = Query(20, ge=1, le=100),
     offset: int = Query(0, ge=0),
 ) -> dict:
+    lang = detect_lang(request)
     conn = get_conn()
     clauses = ["quran_fts MATCH ?"]
     params: list[object] = [q]
@@ -52,6 +58,7 @@ def search_quran(
     ).fetchall()
     conn.close()
     return {
+        "lang": lang,
         "query": q,
         "surah": surah,
         "juz": juz,
