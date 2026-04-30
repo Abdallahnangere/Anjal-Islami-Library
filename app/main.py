@@ -264,6 +264,7 @@ def home(request: Request) -> str:
             <div class="brand">Anjal Islamic Library API</div>
             <nav class="nav">
               <a href="/docs?lang={lang}">{docs_label}</a>
+              <a href="/developers?lang={lang}">Developers</a>
               <a href="/v1/meta?lang={lang}">{meta_label}</a>
               <a href="https://github.com/Abdallahnangere/Anjal-Islamic-Library">GitHub</a>
               <a href="/?lang={switch_lang}">{language_switch}</a>
@@ -357,6 +358,151 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000</code></pre>
             <div><strong>Anjal Islamic Library API</strong> (c) 2026 Anjal Ventures. All rights reserved.</div>
             <div>{footer_line_2}</div>
             <div>Primary contact: <a href="mailto:founder@ramadanbot.app">founder@ramadanbot.app</a> | <a href="tel:+2348164135836">+2348164135836</a></div>
+          </section>
+        </div>
+      </body>
+    </html>
+    """
+
+
+@app.get("/developers", response_class=HTMLResponse, include_in_schema=False)
+def developers_page(request: Request) -> str:
+    lang = detect_lang(request)
+    is_ar = lang == "ar"
+    dir_attr = "rtl" if is_ar else "ltr"
+    switch_lang = "en" if is_ar else "ar"
+    switch_label = "English" if is_ar else "العربية"
+    title = "Developer Guide" if not is_ar else "دليل المطور"
+    intro = (
+        "Full setup and integration guide for Anjal Islamic Library API."
+        if not is_ar
+        else "دليل كامل للإعداد والتكامل مع واجهة مكتبة أنجل الإسلامية."
+    )
+    return f"""
+    <!doctype html>
+    <html lang="{lang}" dir="{dir_attr}">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title} | Anjal Islamic Library API</title>
+        <style>
+          :root {{ --bg:#f7f9fc; --panel:#ffffff; --muted:#4e5b76; --text:#0f1728; --line:#d8e0ef; --accent:#1f5eff; }}
+          * {{ box-sizing: border-box; }}
+          body {{ margin:0; font-family: Inter, Segoe UI, Arial, sans-serif; line-height:1.55; background:var(--bg); color:var(--text); }}
+          .wrap {{ max-width:1120px; margin:0 auto; padding:24px 18px 56px; }}
+          .top {{ background:var(--panel); border-bottom:1px solid var(--line); }}
+          .topin {{ max-width:1120px; margin:0 auto; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; }}
+          .brand {{ font-weight:700; }}
+          .nav a {{ margin-inline-start:12px; font-size:14px; color:var(--accent); text-decoration:none; }}
+          .card {{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px; margin-top:14px; }}
+          h1 {{ margin:0 0 8px; font-size:30px; }}
+          h2 {{ margin:0 0 10px; font-size:20px; }}
+          pre {{ margin:8px 0 0; padding:10px; background:#f5f8ff; border:1px solid var(--line); border-radius:8px; overflow:auto; font-size:12px; }}
+          code {{ font-family:Consolas, Menlo, monospace; }}
+          ul {{ margin:0; padding-left:18px; color:var(--muted); }}
+          p {{ color:var(--muted); }}
+          a {{ color:var(--accent); }}
+          table {{ width:100%; border-collapse:collapse; font-size:14px; }}
+          th,td {{ border:1px solid var(--line); padding:8px; text-align:left; vertical-align:top; }}
+          th {{ background:#f1f5ff; color:#233156; }}
+        </style>
+      </head>
+      <body>
+        <header class="top">
+          <div class="topin">
+            <div class="brand">Anjal Islamic Library API</div>
+            <nav class="nav">
+              <a href="/?lang={lang}">Home</a>
+              <a href="/docs?lang={lang}">Docs</a>
+              <a href="/v1/meta?lang={lang}">Meta</a>
+              <a href="/developers?lang={switch_lang}">{switch_label}</a>
+            </nav>
+          </div>
+        </header>
+        <div class="wrap">
+          <section class="card">
+            <h1>{title}</h1>
+            <p>{intro}</p>
+            <p>Base URL: <code>https://islamiclibrary.anjalventures.com/v1</code></p>
+            <p>Interactive API docs: <a href="/docs?lang={lang}">/docs</a></p>
+          </section>
+
+          <section class="card">
+            <h2>1) Local Install</h2>
+            <pre><code>python -m venv .venv
+.venv\\Scripts\\activate
+pip install -r requirements.txt
+python scripts/build_db.py
+uvicorn app.main:app --host 127.0.0.1 --port 8000</code></pre>
+          </section>
+
+          <section class="card">
+            <h2>2) Authentication</h2>
+            <p>Some deployments may require API keys. Send either <code>X-API-Key</code> or <code>Authorization: Bearer ...</code>.</p>
+            <pre><code>curl -H "X-API-Key: YOUR_API_KEY" "https://islamiclibrary.anjalventures.com/v1/meta"</code></pre>
+          </section>
+
+          <section class="card">
+            <h2>3) Windows PowerShell UTF-8 Note</h2>
+            <p>Before API calls, force UTF-8 output to avoid garbled Arabic text.</p>
+            <pre><code>chcp 65001
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
+$OutputEncoding = [System.Text.UTF8Encoding]::new()
+
+$hadith = Invoke-RestMethod -Uri "https://islamiclibrary.anjalventures.com/v1/hadith/nawawi/30"
+$hadith.data.text_arabic
+$hadith.data.text_english</code></pre>
+          </section>
+
+          <section class="card">
+            <h2>4) cURL Examples</h2>
+            <pre><code>curl "https://islamiclibrary.anjalventures.com/v1/quran/ayah/1/1"
+curl "https://islamiclibrary.anjalventures.com/v1/hadith/bukhari/15"
+curl "https://islamiclibrary.anjalventures.com/v1/hijri/from-gregorian?date=2026-04-29"
+curl "https://islamiclibrary.anjalventures.com/v1/prayer/times?country=Nigeria&city=Lagos%20Island"</code></pre>
+          </section>
+
+          <section class="card">
+            <h2>5) Python (requests)</h2>
+            <pre><code>import requests
+
+base = "https://islamiclibrary.anjalventures.com/v1"
+r = requests.get(f"{{base}}/quran/search", params={{"q": "mercy", "limit": 5}}, timeout=30)
+print(r.json())</code></pre>
+          </section>
+
+          <section class="card">
+            <h2>6) Node.js (fetch)</h2>
+            <pre><code>const base = "https://islamiclibrary.anjalventures.com/v1";
+const res = await fetch(`${{base}}/hadith/search?q=prayer&collection=bukhari&limit=5`);
+const data = await res.json();
+console.log(data);</code></pre>
+          </section>
+
+          <section class="card">
+            <h2>7) Language Support</h2>
+            <p>Responses include a <code>lang</code> field. You can request language via query param or header.</p>
+            <pre><code>GET /v1/meta?lang=ar
+Accept-Language: ar</code></pre>
+          </section>
+
+          <section class="card">
+            <h2>8) Core Endpoints</h2>
+            <table>
+              <tr><th>Domain</th><th>Endpoint</th><th>Purpose</th></tr>
+              <tr><td>Meta</td><td><code>GET /v1/health</code></td><td>Health status</td></tr>
+              <tr><td>Meta</td><td><code>GET /v1/meta</code></td><td>Metadata and counts</td></tr>
+              <tr><td>Quran</td><td><code>GET /v1/quran/ayah/{'{surah}'}/{'{ayah}'}</code></td><td>Ayah lookup</td></tr>
+              <tr><td>Quran</td><td><code>GET /v1/quran/search?q=...</code></td><td>FTS search</td></tr>
+              <tr><td>Hadith</td><td><code>GET /v1/hadith/{'{collection}'}/{'{hadith_number}'}</code></td><td>Hadith lookup</td></tr>
+              <tr><td>Hadith</td><td><code>GET /v1/hadith/search?q=...</code></td><td>FTS search</td></tr>
+              <tr><td>Hijri</td><td><code>GET /v1/hijri/to-gregorian</code></td><td>Hijri to Gregorian</td></tr>
+              <tr><td>Hijri</td><td><code>GET /v1/hijri/from-gregorian</code></td><td>Gregorian to Hijri</td></tr>
+              <tr><td>Prayer</td><td><code>GET /v1/prayer/countries</code></td><td>Country list</td></tr>
+              <tr><td>Prayer</td><td><code>GET /v1/prayer/cities?country=...</code></td><td>Cities by country</td></tr>
+              <tr><td>Prayer</td><td><code>GET /v1/prayer/times?country=...&city=...</code></td><td>Prayer times</td></tr>
+              <tr><td>Prayer</td><td><code>GET /v1/prayer/search-city?q=...</code></td><td>City search</td></tr>
+            </table>
           </section>
         </div>
       </body>

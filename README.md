@@ -33,12 +33,32 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000
 
 Swagger docs:
 - `http://127.0.0.1:8000/docs`
+- `http://127.0.0.1:8000/developers` (full developer guide)
 
 ## Public Usage
 
 - Live API root: `https://islamiclibrary.anjalventures.com`
 - Docs: `https://islamiclibrary.anjalventures.com/docs`
+- Developer Guide: `https://islamiclibrary.anjalventures.com/developers`
 - Health: `https://islamiclibrary.anjalventures.com/v1/health`
+
+## Windows PowerShell UTF-8 Note
+
+If Arabic text appears garbled in PowerShell, set UTF-8 before requests:
+
+```powershell
+chcp 65001
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
+$OutputEncoding = [System.Text.UTF8Encoding]::new()
+```
+
+Then call:
+
+```powershell
+$hadith = Invoke-RestMethod -Uri "https://islamiclibrary.anjalventures.com/v1/hadith/nawawi/30"
+$hadith.data.text_arabic
+$hadith.data.text_english
+```
 
 ## v1.1 Highlights
 
