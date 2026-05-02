@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import os
 import threading
 import time
@@ -121,7 +122,18 @@ async def enforce_utf8_content_type(request: Request, call_next):
 
 @app.get("/", response_class=HTMLResponse, tags=["home"])
 def home() -> str:
-    return """
+    gallery_dir = os.path.join(os.path.dirname(__file__), "static", "gallery")
+    gallery_images: list[str] = []
+    if os.path.isdir(gallery_dir):
+        for name in sorted(os.listdir(gallery_dir)):
+            lower = name.lower()
+            if lower.endswith((".jpg", ".jpeg", ".png", ".webp")):
+                gallery_images.append(f"/static/gallery/{name}")
+    if not gallery_images:
+        gallery_images = ["/static/hero-1.png", "/static/hero-2.png", "/static/hero-3.png"]
+    gallery_json = json.dumps(gallery_images)
+
+    html = """
     <!doctype html>
     <html lang="en">
       <head>
@@ -339,13 +351,16 @@ def home() -> str:
             min-height:430px;
             overflow:hidden;
           }
-          .slides,.hero-media video{
+          .gallery-frame{
             position:absolute;
             inset:0;
-            width:100%;
-            height:100%;
+            overflow:hidden;
           }
-          .slides img,.hero-media video{
+          .slides{
+            position:absolute;
+            inset:0;
+          }
+          .slides img{
             width:100%;
             height:100%;
             object-fit:cover;
@@ -361,15 +376,107 @@ def home() -> str:
             opacity:1;
             transform:scale(1);
           }
+          .gallery-strip{
+            position:absolute;
+            inset:auto 14px 46px 14px;
+            display:flex;
+            gap:8px;
+            overflow-x:auto;
+            padding-bottom:4px;
+            scrollbar-width:none;
+          }
+          .gallery-strip::-webkit-scrollbar{display:none}
+          .gallery-thumb{
+            flex:0 0 auto;
+            width:74px;
+            height:50px;
+            object-fit:cover;
+            border-radius:8px;
+            border:2px solid rgba(255,255,255,.45);
+            opacity:.75;
+            cursor:pointer;
+            transition:all .22s ease;
+          }
+          .gallery-thumb.active{
+            opacity:1;
+            border-color:#fff;
+            transform:translateY(-2px);
+            box-shadow:0 8px 14px rgba(0,0,0,.22);
+          }
+          .gallery-progress{
+            position:absolute;
+            left:14px;
+            right:14px;
+            bottom:14px;
+            height:5px;
+            border-radius:999px;
+            overflow:hidden;
+            background:rgba(255,255,255,.35);
+          }
+          .gallery-progress span{
+            display:block;
+            height:100%;
+            width:0%;
+            background:linear-gradient(90deg,#f7f1de,#b88c4a,#f0f7f2);
+            transition:width .4s ease;
+          }
           .hero-overlay{
             position:absolute;
-            inset:auto 12px 12px 12px;
+            inset:auto 12px auto 12px;
+            bottom:62px;
             background:linear-gradient(135deg, rgba(20,35,29,.88), rgba(30,59,47,.74));
             color:#fff;
             border-radius:12px;
             padding:12px;
             font-size:13px;
             backdrop-filter:blur(2px);
+          }
+          .hero-prayer{
+            margin-top:16px;
+            border:1px solid #d6e1da;
+            border-radius:14px;
+            background:#f9fcfa;
+            padding:12px;
+          }
+          .hero-prayer-head{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:8px;
+            font-size:13px;
+            font-weight:800;
+            color:#28473b;
+          }
+          .hero-prayer-sub{
+            margin-top:6px;
+            font-size:13px;
+            color:#4a6156;
+          }
+          .prayer-tree{
+            margin-top:9px;
+            display:grid;
+            grid-template-columns:repeat(5,minmax(0,1fr));
+            gap:7px;
+          }
+          .prayer-node{
+            border:1px solid #d5e0d9;
+            border-radius:10px;
+            padding:8px 6px;
+            text-align:center;
+            background:#fff;
+            color:#4f665a;
+            font-size:11px;
+            font-weight:700;
+          }
+          .prayer-node.done{
+            border-color:#8cc2a3;
+            background:#e9f7ef;
+            color:#245440;
+          }
+          .prayer-node.next{
+            border-color:#c49d5b;
+            background:#fbf5e7;
+            color:#6b4d23;
           }
           .insight-strip{
             margin-top:14px;
@@ -684,6 +791,22 @@ def home() -> str:
             font-weight:700;
             cursor:pointer;
           }
+          .download-card-btn{
+            border:1px solid #cad8d1;
+            background:#f4faf7;
+            color:#285142;
+            padding:8px 10px;
+            border-radius:9px;
+            font-size:12px;
+            font-weight:800;
+            cursor:pointer;
+            transition:all .2s ease;
+          }
+          .download-card-btn:hover{
+            transform:translateY(-1px);
+            border-color:#98c2a8;
+            background:#e9f6ee;
+          }
           .out-body{
             padding:12px;
             color:#2d4238;
@@ -801,11 +924,17 @@ def home() -> str:
             .field.third{grid-column:span 2}
             .metric strong{font-size:24px}
             .hero-media{min-height:300px}
+            .gallery-strip{inset:auto 10px 42px 10px}
+            .gallery-thumb{width:64px;height:44px}
+            .hero-overlay{bottom:56px}
+            .prayer-tree{grid-template-columns:repeat(3,minmax(0,1fr))}
           }
           @media (max-width:580px){
             .insight-strip{grid-template-columns:1fr}
             .field.third{grid-column:span 6}
             .nav a{padding:7px 9px;font-size:12px}
+            .hero-media{min-height:270px}
+            .prayer-tree{grid-template-columns:repeat(2,minmax(0,1fr))}
           }
         </style>
       </head>
@@ -846,17 +975,25 @@ def home() -> str:
                 <span>Prayer Snapshot Intelligence</span>
                 <span>Arabic + English</span>
               </div>
+              <section class="hero-prayer">
+                <div class="hero-prayer-head">
+                  <span>Damaturu Daily Prayer Progress</span>
+                  <span id="damClock">--:--:--</span>
+                </div>
+                <div class="hero-prayer-sub" id="damNext">Loading Damaturu prayer countdown...</div>
+                <div class="prayer-tree" id="damTree"></div>
+              </section>
             </article>
             <article class="card hero-media">
-              <div class="slides">
-                <img src="/static/hero-1.png" class="active" alt="Hero 1">
-                <img src="/static/hero-2.png" alt="Hero 2">
-                <img src="/static/hero-3.png" alt="Hero 3">
+              <div class="gallery-frame">
+                <div class="slides" id="heroSlides"></div>
               </div>
-              <video id="heroVideo" controls style="display:none" poster="/static/hero-1.png" preload="metadata">
-                <source src="/static/hero.mp4" type="video/mp4">
-              </video>
-              <div class="hero-overlay">Featured session media from At-Tibyan Centre. Studio interactions below are powered directly by your live API endpoints.</div>
+              <div class="gallery-strip" id="heroThumbs"></div>
+              <div class="gallery-progress"><span id="heroProgress"></span></div>
+              <div class="hero-overlay">
+                Featured moments from At-Tibyan Centre gallery.
+                <strong id="heroSlideIndex" style="display:block;margin-top:4px">1 / 1</strong>
+              </div>
             </article>
           </section>
 
@@ -1120,6 +1257,7 @@ def home() -> str:
 
         <script>
           const API_BASE = "/v1";
+          const galleryImages = __GALLERY_IMAGES__;
           const STORE_KEYS = {
             recent: "attibyan_recent_v3",
             notes: "attibyan_notes_v3"
@@ -1129,7 +1267,10 @@ def home() -> str:
             surahMap: new Map(),
             collections: [],
             recent: [],
-            notes: []
+            notes: [],
+            latestExport: { quran: null, hadith: null },
+            logoImage: null,
+            damaturu: { schedule: null, timer: null }
           };
 
           function loadStore(key, fallback) {
@@ -1154,6 +1295,136 @@ def home() -> str:
               .replaceAll("&", "&amp;")
               .replaceAll("<", "&lt;")
               .replaceAll(">", "&gt;");
+          }
+
+          function toSafeFilename(value) {
+            return String(value || "study-card")
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/^-+|-+$/g, "")
+              .slice(0, 64) || "study-card";
+          }
+
+          function wrapCanvasText(ctx, text, maxWidth) {
+            const words = String(text || "").split(/\\s+/).filter(Boolean);
+            if (!words.length) return [];
+            const lines = [];
+            let line = words[0];
+            for (let i = 1; i < words.length; i += 1) {
+              const test = `${line} ${words[i]}`;
+              if (ctx.measureText(test).width <= maxWidth) {
+                line = test;
+              } else {
+                lines.push(line);
+                line = words[i];
+              }
+            }
+            lines.push(line);
+            return lines;
+          }
+
+          async function getLogoImage() {
+            if (state.logoImage) return state.logoImage;
+            const logo = await new Promise((resolve) => {
+              const img = new Image();
+              img.onload = () => resolve(img);
+              img.onerror = () => resolve(null);
+              img.src = "/static/attibyan-logo.png";
+            });
+            state.logoImage = logo;
+            return logo;
+          }
+
+          async function downloadStudyCard(kind) {
+            const data = state.latestExport[kind];
+            if (!data) return;
+
+            const canvas = document.createElement("canvas");
+            canvas.width = 1400;
+            canvas.height = 1800;
+            const ctx = canvas.getContext("2d");
+            if (!ctx) return;
+
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, "#f8fcfa");
+            gradient.addColorStop(0.5, "#eef7f1");
+            gradient.addColorStop(1, "#f4efe4");
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.strokeStyle = "rgba(47,110,86,0.22)";
+            ctx.lineWidth = 3;
+            ctx.strokeRect(36, 36, canvas.width - 72, canvas.height - 72);
+
+            const logo = await getLogoImage();
+            if (logo) {
+              const size = 98;
+              ctx.save();
+              ctx.beginPath();
+              ctx.arc(110, 110, size / 2, 0, Math.PI * 2);
+              ctx.closePath();
+              ctx.clip();
+              ctx.drawImage(logo, 61, 61, size, size);
+              ctx.restore();
+            }
+
+            ctx.fillStyle = "#1f4a3a";
+            ctx.font = "700 34px Fraunces, Georgia, serif";
+            ctx.fillText("AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES", 190, 96);
+            ctx.fillStyle = "#4d655a";
+            ctx.font = "600 24px Manrope, sans-serif";
+            ctx.fillText(data.subtitle || "Islamic Knowledge Study Card", 190, 134);
+
+            ctx.fillStyle = "#2f6e56";
+            ctx.font = "700 32px Fraunces, Georgia, serif";
+            ctx.fillText(data.title || "Study Reflection", 80, 228);
+
+            const textWidth = canvas.width - 160;
+
+            if (data.arabic) {
+              ctx.fillStyle = "#203d31";
+              ctx.font = "600 46px 'Noto Naskh Arabic', serif";
+              ctx.textAlign = "right";
+              ctx.direction = "rtl";
+              const arabicLines = wrapCanvasText(ctx, data.arabic, textWidth);
+              let y = 330;
+              arabicLines.slice(0, 10).forEach((line) => {
+                ctx.fillText(line, canvas.width - 80, y);
+                y += 66;
+              });
+              ctx.direction = "ltr";
+              ctx.textAlign = "left";
+            }
+
+            ctx.fillStyle = "#264538";
+            ctx.font = "500 34px Manrope, sans-serif";
+            const enLines = wrapCanvasText(ctx, data.english || "", textWidth);
+            let enStart = data.arabic ? 1020 : 390;
+            enLines.slice(0, 12).forEach((line) => {
+              ctx.fillText(line, 80, enStart);
+              enStart += 48;
+            });
+
+            ctx.fillStyle = "#3d5b4f";
+            ctx.font = "600 24px Manrope, sans-serif";
+            if (data.meta) {
+              ctx.fillText(data.meta, 80, canvas.height - 170);
+            }
+
+            ctx.fillStyle = "#1f4a3a";
+            ctx.font = "700 28px Manrope, sans-serif";
+            ctx.fillText("Get yours at attibyancenter.com", 80, canvas.height - 108);
+
+            ctx.fillStyle = "#5a6f64";
+            ctx.font = "500 20px Manrope, sans-serif";
+            ctx.fillText(`Generated ${new Date().toLocaleString()}`, 80, canvas.height - 70);
+
+            const link = document.createElement("a");
+            link.download = `${toSafeFilename(kind)}-${Date.now()}.png`;
+            link.href = canvas.toDataURL("image/png");
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
           }
 
           function showOutput(targetId, title, bodyHtml) {
@@ -1396,6 +1667,13 @@ def home() -> str:
               }
               const d = data.data;
               const surahInfo = state.surahMap.get(Number(d.surah_number));
+              state.latestExport.quran = {
+                title: `Surah ${d.surah_number} - Ayah ${d.ayah_number_in_surah}`,
+                subtitle: "Qur'an Reflection Card",
+                arabic: d.text_arabic_uthmani || "",
+                english: d.text_english_sahih || "",
+                meta: `Juz ${d.juz || "-"} | Page ${d.page || "-"} | ${surahInfo ? surahInfo.name_english : "Qur'an"}`
+              };
               showOutput("quranOutput", `Surah ${d.surah_number} · Ayah ${d.ayah_number_in_surah}`, `
                 <div class="chips">
                   <span>${escapeHtml(sourceLabel)}</span>
@@ -1405,6 +1683,7 @@ def home() -> str:
                 </div>
                 <div class="out-ar">${escapeHtml(d.text_arabic_uthmani || "")}</div>
                 <div class="out-en">${escapeHtml(d.text_english_sahih || "")}</div>
+                <div><button type="button" class="download-card-btn" onclick="downloadStudyCard('quran')">Download Image</button></div>
               `);
               addRecent("Qur'an", `Surah ${surah}, Ayah ${ayah}`);
             } catch {
@@ -1477,6 +1756,13 @@ def home() -> str:
                 return;
               }
               const d = data.data;
+              state.latestExport.hadith = {
+                title: `${d.collection_name || d.collection_key || "Hadith"} - Hadith ${d.hadith_number}`,
+                subtitle: "Hadith Reflection Card",
+                arabic: d.text_arabic || "",
+                english: d.text_english || "",
+                meta: `Collection ${d.collection_key || "-"} | Book ${d.book_number || "-"} | Ref ${d.hadith_ref_number || "-"}`
+              };
               showOutput("hadithOutput", `${escapeHtml(d.collection_name)} · Hadith ${escapeHtml(d.hadith_number)}`, `
                 <div class="chips">
                   <span>Collection: ${escapeHtml(d.collection_key)}</span>
@@ -1485,6 +1771,7 @@ def home() -> str:
                 </div>
                 <div class="out-ar">${escapeHtml(d.text_arabic || "")}</div>
                 <div class="out-en">${escapeHtml(d.text_english || "")}</div>
+                <div><button type="button" class="download-card-btn" onclick="downloadStudyCard('hadith')">Download Image</button></div>
               `);
               addRecent("Hadith", `${collection} #${number}`);
             } catch {
@@ -1593,6 +1880,22 @@ def home() -> str:
             return (Number(m[1]) * 60) + Number(m[2]);
           }
 
+          function nowMinutesInTimezone(timeZone) {
+            try {
+              const parts = new Intl.DateTimeFormat("en-GB", {
+                timeZone: timeZone || "Africa/Lagos",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false
+              }).formatToParts(new Date());
+              const map = Object.fromEntries(parts.filter((p) => p.type !== "literal").map((p) => [p.type, p.value]));
+              return (Number(map.hour) * 60) + Number(map.minute);
+            } catch {
+              const n = new Date();
+              return (n.getHours() * 60) + n.getMinutes();
+            }
+          }
+
           async function loadPrayerSchedule() {
             const country = document.getElementById("prayerCountryInput").value.trim();
             const city = document.getElementById("prayerCityInput").value.trim();
@@ -1603,23 +1906,38 @@ def home() -> str:
             }
             loadingOutput("prayerOutput", "Prayer Schedule");
             try {
-              const params = new URLSearchParams({
-                country,
-                city,
-                lang: "en"
-              });
               const normalizedDate = toPrayerApiDate(dateIso);
-              if (normalizedDate) params.set("date_gregorian", normalizedDate);
-              const res = await fetch(`${API_BASE}/prayer/times?${params.toString()}`);
-              const data = await res.json();
-              if (!data.found || !data.data) {
+              let usedFallback = false;
+              let data = null;
+
+              if (normalizedDate) {
+                const datedParams = new URLSearchParams({ country, city, lang: "en", date_gregorian: normalizedDate });
+                const datedRes = await fetch(`${API_BASE}/prayer/times?${datedParams.toString()}`);
+                const datedData = await datedRes.json();
+                if (datedData.found && datedData.data) {
+                  data = datedData;
+                } else {
+                  usedFallback = true;
+                }
+              }
+
+              if (!data) {
+                const latestParams = new URLSearchParams({ country, city, lang: "en" });
+                const latestRes = await fetch(`${API_BASE}/prayer/times?${latestParams.toString()}`);
+                const latestData = await latestRes.json();
+                if (latestData.found && latestData.data) {
+                  data = latestData;
+                }
+              }
+
+              if (!data || !data.found || !data.data) {
                 showOutput("prayerOutput", "Prayer Schedule", "<div class='out-muted'>No schedule found for this request.</div>");
                 return;
               }
+
               const d = data.data;
               let nextPrayerLine = "Next prayer estimate unavailable for this snapshot.";
-              const current = new Date();
-              const nowMin = (current.getHours() * 60) + current.getMinutes();
+              const nowMin = nowMinutesInTimezone(d.timezone || "Africa/Lagos");
               const order = [["Fajr", d.fajr], ["Dhuhr", d.dhuhr], ["Asr", d.asr], ["Maghrib", d.maghrib], ["Isha", d.isha]];
               const mins = order.map(([name, time]) => [name, minutesFromTime(time)]);
               let next = mins.find(([, t]) => t !== null && t > nowMin);
@@ -1629,8 +1947,11 @@ def home() -> str:
                 if (diff < 0) diff += 24 * 60;
                 const h = Math.floor(diff / 60);
                 const m = diff % 60;
-                nextPrayerLine = `Next prayer: ${next[0]} in ${h}h ${m}m (local time).`;
+                nextPrayerLine = `Next prayer: ${next[0]} in ${h}h ${m}m (${d.timezone || "local time"}).`;
               }
+              const fallbackLine = usedFallback
+                ? `<div class="out-muted">Requested date was unavailable. Showing latest available schedule for this city.</div>`
+                : "";
               showOutput("prayerOutput", `${escapeHtml(d.city)}, ${escapeHtml(d.country)}`, `
                 <div class="chips">
                   <span>Date: ${escapeHtml(d.date_gregorian)}</span>
@@ -1640,6 +1961,7 @@ def home() -> str:
                 <div class="out-en"><strong>Fajr:</strong> ${escapeHtml(d.fajr)} | <strong>Dhuhr:</strong> ${escapeHtml(d.dhuhr)} | <strong>Asr:</strong> ${escapeHtml(d.asr)}</div>
                 <div class="out-en"><strong>Maghrib:</strong> ${escapeHtml(d.maghrib)} | <strong>Isha:</strong> ${escapeHtml(d.isha)}</div>
                 <div class="out-muted">${escapeHtml(nextPrayerLine)}</div>
+                ${fallbackLine}
               `);
               addRecent("Prayer", `${country} - ${city}`);
             } catch {
@@ -1684,6 +2006,87 @@ def home() -> str:
               addRecent("City Search", q + (country ? ` (${country})` : ""));
             } catch {
               host.innerHTML = "<div class='out-muted'>City search failed.</div>";
+            }
+          }
+
+          function getTimePartsInTimezone(timeZone) {
+            const parts = new Intl.DateTimeFormat("en-GB", {
+              timeZone: timeZone || "Africa/Lagos",
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit",
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+              hour12: false
+            }).formatToParts(new Date());
+            const map = Object.fromEntries(parts.filter((p) => p.type !== "literal").map((p) => [p.type, p.value]));
+            return {
+              day: map.day,
+              month: map.month,
+              year: map.year,
+              hour: Number(map.hour),
+              minute: Number(map.minute),
+              second: Number(map.second)
+            };
+          }
+
+          function renderDamaturuTree() {
+            const schedule = state.damaturu.schedule;
+            if (!schedule) return;
+            const tz = schedule.timezone || "Africa/Lagos";
+            const now = getTimePartsInTimezone(tz);
+            const nowMin = (now.hour * 60) + now.minute;
+            document.getElementById("damClock").textContent = `${String(now.hour).padStart(2, "0")}:${String(now.minute).padStart(2, "0")}:${String(now.second).padStart(2, "0")}`;
+
+            const prayers = [
+              ["Fajr", schedule.fajr],
+              ["Dhuhr", schedule.dhuhr],
+              ["Asr", schedule.asr],
+              ["Maghrib", schedule.maghrib],
+              ["Isha", schedule.isha]
+            ];
+            const mins = prayers.map(([name, value]) => [name, minutesFromTime(value)]);
+
+            let nextIdx = mins.findIndex(([, t]) => t !== null && t > nowMin);
+            if (nextIdx === -1) nextIdx = 0;
+
+            let diff = 0;
+            if (mins[nextIdx] && mins[nextIdx][1] !== null) {
+              diff = mins[nextIdx][1] - nowMin;
+              if (diff < 0) diff += (24 * 60);
+            }
+            const hh = Math.floor(diff / 60);
+            const mm = diff % 60;
+            document.getElementById("damNext").textContent =
+              `Next prayer in Damaturu: ${mins[nextIdx] ? mins[nextIdx][0] : "N/A"} in ${hh}h ${mm}m`;
+
+            const tree = document.getElementById("damTree");
+            tree.innerHTML = prayers.map(([name, time], idx) => {
+              const tMin = minutesFromTime(time);
+              const isDone = tMin !== null && tMin <= nowMin;
+              const isNext = idx === nextIdx;
+              const badge = isDone ? "✓" : isNext ? "⏳" : "•";
+              const cls = `prayer-node${isDone ? " done" : ""}${isNext ? " next" : ""}`;
+              return `<div class="${cls}">${name}<br>${escapeHtml(time || "--")}<br>${badge}</div>`;
+            }).join("");
+          }
+
+          async function initDamaturuPrayer() {
+            try {
+              const params = new URLSearchParams({ country: "Nigeria", city: "Damaturu", lang: "en" });
+              const res = await fetch(`${API_BASE}/prayer/times?${params.toString()}`);
+              const data = await res.json();
+              if (data.found && data.data) {
+                state.damaturu.schedule = data.data;
+                renderDamaturuTree();
+                if (state.damaturu.timer) clearInterval(state.damaturu.timer);
+                state.damaturu.timer = setInterval(renderDamaturuTree, 1000);
+              } else {
+                document.getElementById("damNext").textContent = "Damaturu prayer schedule unavailable.";
+              }
+            } catch {
+              document.getElementById("damNext").textContent = "Unable to load Damaturu prayer schedule.";
             }
           }
 
@@ -1733,23 +2136,54 @@ def home() -> str:
             };
           }
 
-          function initHeroMedia() {
-            const slides = [...document.querySelectorAll(".slides img")];
-            const video = document.getElementById("heroVideo");
-            let idx = 0;
-            setInterval(() => {
-              if (video.style.display === "block") return;
-              slides[idx].classList.remove("active");
-              idx = (idx + 1) % slides.length;
-              slides[idx].classList.add("active");
-            }, 3000);
-            fetch("/static/hero.mp4", { method: "HEAD" })
-              .then((r) => {
-                if (!r.ok) return;
-                document.querySelector(".slides").style.display = "none";
-                video.style.display = "block";
-              })
-              .catch(() => {});
+          function initHeroGallery() {
+            const slidesHost = document.getElementById("heroSlides");
+            const thumbsHost = document.getElementById("heroThumbs");
+            const progress = document.getElementById("heroProgress");
+            const counter = document.getElementById("heroSlideIndex");
+            const images = Array.isArray(galleryImages) && galleryImages.length ? galleryImages : ["/static/hero-1.png"];
+
+            slidesHost.innerHTML = "";
+            thumbsHost.innerHTML = "";
+
+            images.forEach((src, idx) => {
+              const img = document.createElement("img");
+              img.src = src;
+              img.alt = `Gallery ${idx + 1}`;
+              if (idx === 0) img.classList.add("active");
+              slidesHost.appendChild(img);
+
+              const thumb = document.createElement("img");
+              thumb.src = src;
+              thumb.alt = `Thumb ${idx + 1}`;
+              thumb.className = "gallery-thumb" + (idx === 0 ? " active" : "");
+              thumb.onclick = () => setSlide(idx);
+              thumbsHost.appendChild(thumb);
+            });
+
+            const slideEls = [...slidesHost.querySelectorAll("img")];
+            const thumbEls = [...thumbsHost.querySelectorAll(".gallery-thumb")];
+            let index = 0;
+            let timer = null;
+
+            function setSlide(next) {
+              index = (next + slideEls.length) % slideEls.length;
+              slideEls.forEach((el, i) => el.classList.toggle("active", i === index));
+              thumbEls.forEach((el, i) => el.classList.toggle("active", i === index));
+              const pct = ((index + 1) / slideEls.length) * 100;
+              progress.style.width = `${pct}%`;
+              counter.textContent = `${index + 1} / ${slideEls.length}`;
+              const activeThumb = thumbEls[index];
+              if (activeThumb) activeThumb.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+            }
+
+            function startAutoplay() {
+              if (timer) clearInterval(timer);
+              timer = setInterval(() => setSlide(index + 1), 4500);
+            }
+
+            setSlide(0);
+            startAutoplay();
           }
 
           function initReveal() {
@@ -1765,7 +2199,8 @@ def home() -> str:
           }
 
           async function init() {
-            initHeroMedia();
+            initHeroGallery();
+            initDamaturuPrayer();
             initReveal();
 
             state.recent = loadStore(STORE_KEYS.recent, []);
@@ -1775,7 +2210,7 @@ def home() -> str:
 
             const todayIso = new Date().toISOString().slice(0, 10);
             document.getElementById("gregorianInput").value = todayIso;
-            document.getElementById("prayerDateInput").value = todayIso;
+            document.getElementById("prayerDateInput").value = "";
 
             bindInteractions();
             showOutput("quranOutput", "Qur'an Result", "<div class='out-muted'>Choose lookup mode, then load an ayah.</div>");
@@ -1796,6 +2231,7 @@ def home() -> str:
       </body>
     </html>
     """
+    return html.replace("__GALLERY_IMAGES__", gallery_json)
 
 
 @app.get("/developers", response_class=HTMLResponse, include_in_schema=False)
