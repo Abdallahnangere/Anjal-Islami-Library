@@ -420,16 +420,18 @@ def home() -> str:
             background:linear-gradient(90deg,#f7f1de,#b88c4a,#f0f7f2);
             transition:width .4s ease;
           }
-          .hero-overlay{
+          .hero-counter{
             position:absolute;
-            inset:auto 12px auto 12px;
-            bottom:62px;
-            background:linear-gradient(135deg, rgba(20,35,29,.88), rgba(30,59,47,.74));
-            color:#fff;
-            border-radius:12px;
-            padding:12px;
-            font-size:13px;
-            backdrop-filter:blur(2px);
+            top:12px;
+            right:12px;
+            background:rgba(255,255,255,.86);
+            color:#234235;
+            border:1px solid rgba(35,66,53,.15);
+            border-radius:999px;
+            padding:6px 11px;
+            font-size:12px;
+            font-weight:800;
+            backdrop-filter:blur(3px);
           }
           .hero-prayer{
             margin-top:16px;
@@ -898,6 +900,72 @@ def home() -> str:
             color:#536a5f;
             font-size:13px;
           }
+          .site-footer{
+            margin-top:18px;
+            border:1px solid #d2e0d7;
+            border-radius:16px;
+            background:#f7fbf8;
+            box-shadow:var(--shadow);
+            overflow:hidden;
+          }
+          .site-footer-main{
+            padding:18px;
+            display:grid;
+            grid-template-columns:1.2fr 1fr 1fr;
+            gap:14px;
+          }
+          .site-footer-brand{
+            display:flex;
+            gap:10px;
+            align-items:flex-start;
+          }
+          .site-footer-brand img{
+            width:50px;
+            height:50px;
+            border-radius:999px;
+            object-fit:cover;
+            border:2px solid rgba(47,110,86,.22);
+          }
+          .site-footer-brand strong{
+            display:block;
+            color:#1d4435;
+            font-size:14px;
+            line-height:1.4;
+          }
+          .site-footer-brand p{
+            margin:4px 0 0;
+            color:#5f7469;
+            font-size:12px;
+          }
+          .site-footer h4{
+            margin:0 0 8px;
+            font-size:13px;
+            color:#28493d;
+            text-transform:uppercase;
+            letter-spacing:.05em;
+          }
+          .site-footer-links{
+            display:grid;
+            gap:7px;
+          }
+          .site-footer-links a{
+            text-decoration:none;
+            color:#38584a;
+            font-size:13px;
+            font-weight:700;
+          }
+          .site-footer-links a:hover{color:#1d4b3b}
+          .site-footer-copy{
+            border-top:1px solid #d7e3db;
+            padding:11px 18px;
+            display:flex;
+            justify-content:space-between;
+            gap:10px;
+            flex-wrap:wrap;
+            color:#5d7468;
+            font-size:12px;
+            background:#f3f9f5;
+          }
           .reveal{
             opacity:0;
             transform:translateY(18px);
@@ -926,8 +994,8 @@ def home() -> str:
             .hero-media{min-height:300px}
             .gallery-strip{inset:auto 10px 42px 10px}
             .gallery-thumb{width:64px;height:44px}
-            .hero-overlay{bottom:56px}
             .prayer-tree{grid-template-columns:repeat(3,minmax(0,1fr))}
+            .site-footer-main{grid-template-columns:1fr 1fr}
           }
           @media (max-width:580px){
             .insight-strip{grid-template-columns:1fr}
@@ -935,6 +1003,7 @@ def home() -> str:
             .nav a{padding:7px 9px;font-size:12px}
             .hero-media{min-height:270px}
             .prayer-tree{grid-template-columns:repeat(2,minmax(0,1fr))}
+            .site-footer-main{grid-template-columns:1fr}
           }
         </style>
       </head>
@@ -988,12 +1057,9 @@ def home() -> str:
               <div class="gallery-frame">
                 <div class="slides" id="heroSlides"></div>
               </div>
+              <span class="hero-counter" id="heroSlideIndex">1 / 1</span>
               <div class="gallery-strip" id="heroThumbs"></div>
               <div class="gallery-progress"><span id="heroProgress"></span></div>
-              <div class="hero-overlay">
-                Featured moments from At-Tibyan Centre gallery.
-                <strong id="heroSlideIndex" style="display:block;margin-top:4px">1 / 1</strong>
-              </div>
             </article>
           </section>
 
@@ -1249,10 +1315,39 @@ def home() -> str:
             </a>
           </section>
 
-          <section class="footer reveal">
-            <div><strong>AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES</strong></div>
-            <div>Purpose-built for reliable Islamic learning, calm study flow, and trustworthy digital references across Qur'an, Hadith, Hijri, and Prayer data.</div>
-          </section>
+          <footer class="site-footer reveal">
+            <div class="site-footer-main">
+              <div class="site-footer-brand">
+                <img src="/static/attibyan-logo.png" alt="At-Tibyan Logo">
+                <div>
+                  <strong>AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES</strong>
+                  <p>Purpose-built for reliable Islamic learning, calm study flow, and trustworthy digital references across Qur'an, Hadith, Hijri, and Prayer data.</p>
+                </div>
+              </div>
+              <div>
+                <h4>Navigate</h4>
+                <nav class="site-footer-links">
+                  <a href="#studio">Learning Studio</a>
+                  <a href="#coverage">Coverage Snapshot</a>
+                  <a href="/docs">API Documentation</a>
+                  <a href="/developers">Developers Guide</a>
+                </nav>
+              </div>
+              <div>
+                <h4>Study Tabs</h4>
+                <nav class="site-footer-links">
+                  <a href="#studio" onclick="activatePanel('quran')">Qur'an Studio</a>
+                  <a href="#studio" onclick="activatePanel('hadith')">Hadith Studio</a>
+                  <a href="#studio" onclick="activatePanel('hijri')">Date Conversion Lab</a>
+                  <a href="#studio" onclick="activatePanel('prayer')">Prayer Planner</a>
+                </nav>
+              </div>
+            </div>
+            <div class="site-footer-copy">
+              <span id="copyrightText">Copyright © At-Tibyan Centre. All rights reserved.</span>
+              <span>Official site: <strong>attibyancenter.com</strong></span>
+            </div>
+          </footer>
         </div>
 
         <script>
@@ -1340,10 +1435,29 @@ def home() -> str:
             if (!data) return;
 
             const canvas = document.createElement("canvas");
-            canvas.width = 1400;
-            canvas.height = 1800;
+            canvas.width = 1080;
+            canvas.height = 1080;
             const ctx = canvas.getContext("2d");
             if (!ctx) return;
+
+            const W = canvas.width;
+            const H = canvas.height;
+            const pad = 48;
+            const contentWidth = W - (pad * 2);
+
+            function roundedRect(x, y, w, h, r) {
+              ctx.beginPath();
+              ctx.moveTo(x + r, y);
+              ctx.lineTo(x + w - r, y);
+              ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+              ctx.lineTo(x + w, y + h - r);
+              ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+              ctx.lineTo(x + r, y + h);
+              ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+              ctx.lineTo(x, y + r);
+              ctx.quadraticCurveTo(x, y, x + r, y);
+              ctx.closePath();
+            }
 
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
             gradient.addColorStop(0, "#f8fcfa");
@@ -1352,72 +1466,120 @@ def home() -> str:
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+            // Geometric background motifs
+            ctx.save();
+            for (let i = 0; i < 18; i += 1) {
+              const x = ((i * 173) % W);
+              const y = ((i * 241) % H);
+              const radius = 14 + ((i % 6) * 6);
+              ctx.fillStyle = `rgba(47,110,86,${0.04 + ((i % 4) * 0.018)})`;
+              ctx.beginPath();
+              ctx.arc(x, y, radius, 0, Math.PI * 2);
+              ctx.fill();
+            }
+            ctx.strokeStyle = "rgba(184,140,74,.16)";
+            ctx.lineWidth = 1.5;
+            for (let i = 0; i < 8; i += 1) {
+              const x = 80 + (i * 122);
+              ctx.beginPath();
+              ctx.moveTo(x, 0);
+              ctx.lineTo(x - 130, H);
+              ctx.stroke();
+            }
+            for (let i = 0; i < 6; i += 1) {
+              const size = 42 + (i * 7);
+              const cx = 120 + (i * 160);
+              const cy = 160 + ((i % 2) * 760);
+              ctx.save();
+              ctx.translate(cx, cy);
+              ctx.rotate((Math.PI / 180) * (18 + (i * 9)));
+              ctx.strokeStyle = "rgba(31,74,58,.12)";
+              ctx.lineWidth = 2;
+              ctx.strokeRect(-size / 2, -size / 2, size, size);
+              ctx.restore();
+            }
+            ctx.restore();
+
             ctx.strokeStyle = "rgba(47,110,86,0.22)";
             ctx.lineWidth = 3;
-            ctx.strokeRect(36, 36, canvas.width - 72, canvas.height - 72);
+            roundedRect(30, 30, W - 60, H - 60, 24);
+            ctx.stroke();
 
             const logo = await getLogoImage();
             if (logo) {
-              const size = 98;
+              const size = 86;
               ctx.save();
               ctx.beginPath();
-              ctx.arc(110, 110, size / 2, 0, Math.PI * 2);
+              ctx.arc(pad + (size / 2), pad + (size / 2), size / 2, 0, Math.PI * 2);
               ctx.closePath();
               ctx.clip();
-              ctx.drawImage(logo, 61, 61, size, size);
+              ctx.drawImage(logo, pad, pad, size, size);
               ctx.restore();
             }
 
             ctx.fillStyle = "#1f4a3a";
-            ctx.font = "700 34px Fraunces, Georgia, serif";
-            ctx.fillText("AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES", 190, 96);
+            ctx.font = "700 22px Fraunces, Georgia, serif";
+            ctx.fillText("AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES", pad + 104, pad + 36);
             ctx.fillStyle = "#4d655a";
-            ctx.font = "600 24px Manrope, sans-serif";
-            ctx.fillText(data.subtitle || "Islamic Knowledge Study Card", 190, 134);
+            ctx.font = "600 16px Manrope, sans-serif";
+            ctx.fillText(data.subtitle || "Islamic Knowledge Study Card", pad + 104, pad + 62);
+            ctx.fillStyle = "#36554a";
+            ctx.font = "700 14px Manrope, sans-serif";
+            const nowStamp = new Date().toLocaleString();
+            ctx.fillText(nowStamp, W - 280, pad + 34);
+            ctx.fillText("attibyancenter.com", W - 280, pad + 58);
 
             ctx.fillStyle = "#2f6e56";
-            ctx.font = "700 32px Fraunces, Georgia, serif";
-            ctx.fillText(data.title || "Study Reflection", 80, 228);
+            ctx.font = "700 29px Fraunces, Georgia, serif";
+            ctx.fillText(data.title || "Study Reflection", pad, 192);
 
-            const textWidth = canvas.width - 160;
+            roundedRect(pad, 220, contentWidth, 690, 24);
+            ctx.fillStyle = "rgba(255,255,255,.84)";
+            ctx.fill();
+            ctx.strokeStyle = "rgba(47,110,86,.18)";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            const textWidth = contentWidth - 60;
+            let cursorY = 280;
 
             if (data.arabic) {
               ctx.fillStyle = "#203d31";
-              ctx.font = "600 46px 'Noto Naskh Arabic', serif";
+              ctx.font = "600 39px 'Noto Naskh Arabic', serif";
               ctx.textAlign = "right";
               ctx.direction = "rtl";
               const arabicLines = wrapCanvasText(ctx, data.arabic, textWidth);
-              let y = 330;
-              arabicLines.slice(0, 10).forEach((line) => {
-                ctx.fillText(line, canvas.width - 80, y);
-                y += 66;
+              arabicLines.slice(0, 6).forEach((line) => {
+                ctx.fillText(line, W - pad - 30, cursorY);
+                cursorY += 54;
               });
               ctx.direction = "ltr";
               ctx.textAlign = "left";
+              cursorY += 18;
             }
 
             ctx.fillStyle = "#264538";
-            ctx.font = "500 34px Manrope, sans-serif";
+            ctx.font = "500 30px Manrope, sans-serif";
             const enLines = wrapCanvasText(ctx, data.english || "", textWidth);
-            let enStart = data.arabic ? 1020 : 390;
-            enLines.slice(0, 12).forEach((line) => {
-              ctx.fillText(line, 80, enStart);
-              enStart += 48;
+            enLines.slice(0, data.arabic ? 7 : 11).forEach((line) => {
+              ctx.fillText(line, pad + 30, cursorY);
+              cursorY += 41;
             });
 
             ctx.fillStyle = "#3d5b4f";
-            ctx.font = "600 24px Manrope, sans-serif";
+            ctx.font = "600 17px Manrope, sans-serif";
             if (data.meta) {
-              ctx.fillText(data.meta, 80, canvas.height - 170);
+              ctx.fillText(data.meta, pad + 30, 846);
             }
 
             ctx.fillStyle = "#1f4a3a";
-            ctx.font = "700 28px Manrope, sans-serif";
-            ctx.fillText("Get yours at attibyancenter.com", 80, canvas.height - 108);
+            ctx.font = "700 22px Manrope, sans-serif";
+            ctx.fillText("Get yours at attibyancenter.com", pad + 30, 890);
 
             ctx.fillStyle = "#5a6f64";
-            ctx.font = "500 20px Manrope, sans-serif";
-            ctx.fillText(`Generated ${new Date().toLocaleString()}`, 80, canvas.height - 70);
+            ctx.font = "500 15px Manrope, sans-serif";
+            ctx.fillText(`Generated ${nowStamp}`, pad + 30, 922);
+            ctx.fillText("Copyright © At-Tibyan Centre. All rights reserved.", pad + 30, 950);
 
             const link = document.createElement("a");
             link.download = `${toSafeFilename(kind)}-${Date.now()}.png`;
@@ -2174,7 +2336,10 @@ def home() -> str:
               progress.style.width = `${pct}%`;
               counter.textContent = `${index + 1} / ${slideEls.length}`;
               const activeThumb = thumbEls[index];
-              if (activeThumb) activeThumb.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+              if (activeThumb) {
+                const targetLeft = activeThumb.offsetLeft - (thumbsHost.clientWidth / 2) + (activeThumb.clientWidth / 2);
+                thumbsHost.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+              }
             }
 
             function startAutoplay() {
@@ -2211,6 +2376,8 @@ def home() -> str:
             const todayIso = new Date().toISOString().slice(0, 10);
             document.getElementById("gregorianInput").value = todayIso;
             document.getElementById("prayerDateInput").value = "";
+            document.getElementById("copyrightText").textContent =
+              `Copyright © ${new Date().getFullYear()} At-Tibyan Centre. All rights reserved.`;
 
             bindInteractions();
             showOutput("quranOutput", "Qur'an Result", "<div class='out-muted'>Choose lookup mode, then load an ayah.</div>");
