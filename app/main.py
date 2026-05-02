@@ -1440,146 +1440,87 @@ def home() -> str:
             const ctx = canvas.getContext("2d");
             if (!ctx) return;
 
-            const W = canvas.width;
-            const H = canvas.height;
-            const pad = 48;
-            const contentWidth = W - (pad * 2);
-
-            function roundedRect(x, y, w, h, r) {
-              ctx.beginPath();
-              ctx.moveTo(x + r, y);
-              ctx.lineTo(x + w - r, y);
-              ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-              ctx.lineTo(x + w, y + h - r);
-              ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-              ctx.lineTo(x + r, y + h);
-              ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-              ctx.lineTo(x, y + r);
-              ctx.quadraticCurveTo(x, y, x + r, y);
-              ctx.closePath();
-            }
-
+            const W = 1080;
+            const H = 1080;
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, "#f8fcfa");
-            gradient.addColorStop(0.5, "#eef7f1");
-            gradient.addColorStop(1, "#f4efe4");
+            gradient.addColorStop(0, "#edf3ef");
+            gradient.addColorStop(1, "#e7eee9");
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Geometric background motifs
-            ctx.save();
-            for (let i = 0; i < 18; i += 1) {
-              const x = ((i * 173) % W);
-              const y = ((i * 241) % H);
-              const radius = 14 + ((i % 6) * 6);
-              ctx.fillStyle = `rgba(47,110,86,${0.04 + ((i % 4) * 0.018)})`;
-              ctx.beginPath();
-              ctx.arc(x, y, radius, 0, Math.PI * 2);
-              ctx.fill();
-            }
-            ctx.strokeStyle = "rgba(184,140,74,.16)";
-            ctx.lineWidth = 1.5;
-            for (let i = 0; i < 8; i += 1) {
-              const x = 80 + (i * 122);
-              ctx.beginPath();
-              ctx.moveTo(x, 0);
-              ctx.lineTo(x - 130, H);
-              ctx.stroke();
-            }
-            for (let i = 0; i < 6; i += 1) {
-              const size = 42 + (i * 7);
-              const cx = 120 + (i * 160);
-              const cy = 160 + ((i % 2) * 760);
-              ctx.save();
-              ctx.translate(cx, cy);
-              ctx.rotate((Math.PI / 180) * (18 + (i * 9)));
-              ctx.strokeStyle = "rgba(31,74,58,.12)";
-              ctx.lineWidth = 2;
-              ctx.strokeRect(-size / 2, -size / 2, size, size);
-              ctx.restore();
-            }
-            ctx.restore();
-
-            ctx.strokeStyle = "rgba(47,110,86,0.22)";
+            ctx.strokeStyle = "rgba(47,110,86,.22)";
             ctx.lineWidth = 3;
-            roundedRect(30, 30, W - 60, H - 60, 24);
-            ctx.stroke();
+            ctx.strokeRect(30, 30, W - 60, H - 60);
 
             const logo = await getLogoImage();
             if (logo) {
-              const size = 86;
+              const size = 72;
               ctx.save();
               ctx.beginPath();
-              ctx.arc(pad + (size / 2), pad + (size / 2), size / 2, 0, Math.PI * 2);
+              ctx.arc(72 + (size / 2), 72 + (size / 2), size / 2, 0, Math.PI * 2);
               ctx.closePath();
               ctx.clip();
-              ctx.drawImage(logo, pad, pad, size, size);
+              ctx.drawImage(logo, 72, 72, size, size);
               ctx.restore();
             }
 
-            ctx.fillStyle = "#1f4a3a";
-            ctx.font = "700 22px Fraunces, Georgia, serif";
-            ctx.fillText("AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES", pad + 104, pad + 36);
-            ctx.fillStyle = "#4d655a";
-            ctx.font = "600 16px Manrope, sans-serif";
-            ctx.fillText(data.subtitle || "Islamic Knowledge Study Card", pad + 104, pad + 62);
-            ctx.fillStyle = "#36554a";
-            ctx.font = "700 14px Manrope, sans-serif";
             const nowStamp = new Date().toLocaleString();
-            ctx.fillText(nowStamp, W - 280, pad + 34);
-            ctx.fillText("attibyancenter.com", W - 280, pad + 58);
+            ctx.fillStyle = "#1f4a3a";
+            ctx.font = "700 20px Fraunces, Georgia, serif";
+            ctx.fillText("AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES", 166, 98);
+            ctx.fillStyle = "#4d655a";
+            ctx.font = "600 15px Manrope, sans-serif";
+            ctx.fillText(data.subtitle || "Islamic Knowledge Study Card", 166, 132);
+
+            ctx.fillStyle = "#36554a";
+            ctx.font = "700 13px Manrope, sans-serif";
+            ctx.fillText(nowStamp, W - 290, 98);
+            ctx.fillText("attibyancenter.com", W - 290, 128);
 
             ctx.fillStyle = "#2f6e56";
-            ctx.font = "700 29px Fraunces, Georgia, serif";
-            ctx.fillText(data.title || "Study Reflection", pad, 192);
+            ctx.font = "700 20px Fraunces, Georgia, serif";
+            ctx.fillText(data.title || "Study Reflection", 72, 194);
 
-            roundedRect(pad, 220, contentWidth, 690, 24);
-            ctx.fillStyle = "rgba(255,255,255,.84)";
-            ctx.fill();
-            ctx.strokeStyle = "rgba(47,110,86,.18)";
-            ctx.lineWidth = 2;
-            ctx.stroke();
-
-            const textWidth = contentWidth - 60;
-            let cursorY = 280;
+            const textWidth = W - 144;
+            let cursorY = 270;
 
             if (data.arabic) {
               ctx.fillStyle = "#203d31";
-              ctx.font = "600 39px 'Noto Naskh Arabic', serif";
+              ctx.font = "600 50px 'Noto Naskh Arabic', serif";
               ctx.textAlign = "right";
               ctx.direction = "rtl";
               const arabicLines = wrapCanvasText(ctx, data.arabic, textWidth);
-              arabicLines.slice(0, 6).forEach((line) => {
-                ctx.fillText(line, W - pad - 30, cursorY);
-                cursorY += 54;
+              arabicLines.slice(0, 4).forEach((line) => {
+                ctx.fillText(line, W - 72, cursorY);
+                cursorY += 66;
               });
               ctx.direction = "ltr";
               ctx.textAlign = "left";
-              cursorY += 18;
+              cursorY += 24;
             }
 
             ctx.fillStyle = "#264538";
-            ctx.font = "500 30px Manrope, sans-serif";
+            ctx.font = "500 22px Manrope, sans-serif";
             const enLines = wrapCanvasText(ctx, data.english || "", textWidth);
-            enLines.slice(0, data.arabic ? 7 : 11).forEach((line) => {
-              ctx.fillText(line, pad + 30, cursorY);
-              cursorY += 41;
+            enLines.slice(0, 8).forEach((line) => {
+              ctx.fillText(line, 72, cursorY);
+              cursorY += 38;
             });
 
             ctx.fillStyle = "#3d5b4f";
-            ctx.font = "600 17px Manrope, sans-serif";
+            ctx.font = "600 15px Manrope, sans-serif";
             if (data.meta) {
-              ctx.fillText(data.meta, pad + 30, 846);
+              ctx.fillText(data.meta, 72, H - 170);
             }
 
             ctx.fillStyle = "#1f4a3a";
-            ctx.font = "700 22px Manrope, sans-serif";
-            ctx.fillText("Get yours at attibyancenter.com", pad + 30, 890);
+            ctx.font = "700 19px Manrope, sans-serif";
+            ctx.fillText("Get yours at attibyancenter.com", 72, H - 124);
 
             ctx.fillStyle = "#5a6f64";
-            ctx.font = "500 15px Manrope, sans-serif";
-            ctx.fillText(`Generated ${nowStamp}`, pad + 30, 922);
-            ctx.fillText("Copyright © At-Tibyan Centre. All rights reserved.", pad + 30, 950);
+            ctx.font = "500 14px Manrope, sans-serif";
+            ctx.fillText(`Generated ${nowStamp}`, 72, H - 90);
+            ctx.fillText("Copyright © At-Tibyan Centre. All rights reserved.", 72, H - 58);
 
             const link = document.createElement("a");
             link.download = `${toSafeFilename(kind)}-${Date.now()}.png`;
