@@ -127,7 +127,7 @@ def home() -> str:
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>At-Tibyan Centre | Sunnah and Islamic Sciences</title>
+        <title>At-Tibyan Centre | Website and Islamic Knowledge Platform</title>
         <style>
           :root{
             --bg:#f8fbf9;
@@ -149,7 +149,7 @@ def home() -> str:
           .nav a{margin-left:14px;text-decoration:none;color:var(--deep);font-weight:600;font-size:14px}
           .hero{margin-top:16px;display:grid;grid-template-columns:1.1fr 1fr;gap:14px}
           .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
-          .headline h1{margin:0 0 8px;font-size:38px;line-height:1.15}
+          .headline h1{margin:0 0 8px;font-size:36px;line-height:1.15}
           .headline p{color:var(--muted);margin:8px 0}
           .badges span{display:inline-block;margin:6px 6px 0 0;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:#eef9f2;font-size:12px}
           .media{position:relative;min-height:380px;overflow:hidden}
@@ -175,7 +175,26 @@ def home() -> str:
           .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
           .field input,.field select{width:100%;padding:9px;border-radius:8px;border:1px solid var(--line);background:#fff}
           button.action{padding:10px 12px;border:0;border-radius:8px;background:var(--green);color:#fff;font-weight:700;cursor:pointer}
-          pre{white-space:pre-wrap;word-break:break-word;background:#f4f8f6;border:1px solid var(--line);padding:10px;border-radius:8px;max-height:320px;overflow:auto}
+          .output{
+            margin-top:10px;
+            min-height:420px;
+            background:#fbfefc;
+            border:1px solid var(--line);
+            border-radius:10px;
+            padding:14px;
+            box-shadow:inset 0 0 0 1px #f1f6f3;
+            display:flex;
+            flex-direction:column;
+            gap:8px;
+            max-width:760px;
+            aspect-ratio:1.414/1;
+          }
+          .output h4{margin:0;font-size:15px;color:var(--deep)}
+          .output .line{height:1px;background:#e4eee8}
+          .out-muted{color:var(--muted);font-size:14px}
+          .out-ar{font-size:22px;line-height:1.9;text-align:right;direction:rtl}
+          .out-en{font-size:16px;line-height:1.7}
+          .mono{font-family:Consolas,Monaco,monospace}
           .progress{height:10px;background:#ecf2ee;border-radius:999px;overflow:hidden}
           .bar{height:100%;background:linear-gradient(90deg,var(--green),var(--deep));width:0%}
           .tree{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
@@ -199,9 +218,9 @@ def home() -> str:
             </div>
             <nav class="nav">
               <a href="#about">About</a>
-              <a href="#api">Interactive API</a>
-              <a href="/docs">Docs</a>
-              <a href="/developers">Developers</a>
+              <a href="#platform">Platform</a>
+              <a href="#study-tools">Study Tools</a>
+              <a href="#timings">Timings</a>
             </nav>
           </div>
         </header>
@@ -210,11 +229,11 @@ def home() -> str:
           <section class="hero">
             <article class="card headline">
               <h1>At-Tibyan Centre Website and Islamic Knowledge Platform</h1>
-              <p id="about">An Islamic Library Platform and API designed to support students, researchers, and developers in accessing authentic Islamic knowledge in a structured and reliable way.</p>
-              <p class="muted">Maintainer: <strong>Abdallah Nangere</strong> | founder@ramadanbot.app | +2348164135836</p>
-              <p class="muted">Production endpoint: <a href="https://islamiclibrary.anjalventures.com">https://islamiclibrary.anjalventures.com</a></p>
+              <p id="about">At-Tibyan Centre is a structured digital learning and research platform focused on preserving, organizing, and presenting authentic Islamic knowledge in ways that are useful for students, teachers, institutions, and independent researchers.</p>
+              <p>Our vision is to make beneficial knowledge consistently available beyond seasonal usage by providing reliable access to Qur'an study, hadith study, date conversion references, and prayer-time guidance through a focused and well-curated experience.</p>
+              <p>The platform experience is intentionally designed for direct learning outcomes: search with precision, read with context, compare references, and quickly retrieve trusted content without technical complexity.</p>
               <div class="badges">
-                <span>Quran 6,236 Ayahs</span><span>10 Hadith Collections</span><span>Umm al-Qura Hijri</span><span>Prayer Time Datasets</span><span>Arabic + English</span>
+                <span>Quran 6,236 Ayahs</span><span>10 Hadith Collections</span><span>Umm al-Qura Hijri</span><span>Prayer Time Datasets</span><span>Arabic + English</span><span>Student and Research Focused</span>
               </div>
             </article>
             <article class="card media">
@@ -226,23 +245,24 @@ def home() -> str:
               <video id="heroVideo" controls style="display:none" poster="/static/hero-1.png">
                 <source src="/static/hero.mp4" type="video/mp4">
               </video>
-              <div class="overlay">Drop your video as <code>app/static/hero.mp4</code> and it will appear here automatically.</div>
+              <div class="overlay">Featured session media from At-Tibyan Centre.</div>
             </article>
           </section>
 
-          <section class="grid">
+          <section class="grid" id="platform">
             <article class="card c6">
-              <h2>Mission and Scope</h2>
-              <p class="muted">This project aims to provide a comprehensive data infrastructure that includes:</p>
+              <h2>Platform Vision and Learning Impact</h2>
+              <p class="muted">This website is built as a long-term Islamic knowledge platform that supports deep study, structured revision, teaching preparation, and everyday personal practice.</p>
+              <p class="muted">It unifies key knowledge domains in one coherent interface so users can move from reading to reflection to verification with minimal friction.</p>
               <ul>
                 <li>The complete Qur'an (114 Surahs, 6,236 Ayahs) with Arabic and English support.</li>
                 <li>10 Hadith collections including Bukhari, Muslim, Abu Dawud, Tirmidhi, Nasai, Ibn Majah, Malik, Nawawi, and more.</li>
                 <li>Hijri date conversion based on Umm al-Qura calendar standards.</li>
                 <li>Prayer time datasets with regional and global coverage.</li>
-                <li>Standardized search, referencing, and data access for research and app development.</li>
+                <li>Consistent search and reference access for study circles, classroom instruction, and academic projects.</li>
               </ul>
             </article>
-            <article class="card c6">
+            <article class="card c6" id="timings">
               <h2>Live Hijri / Gregorian + Prayer Progress</h2>
               <p><strong>Gregorian:</strong> <span id="gregNow">-</span></p>
               <p><strong>Hijri:</strong> <span id="hijriNow">-</span></p>
@@ -257,27 +277,28 @@ def home() -> str:
             </article>
           </section>
 
-          <section class="card" id="api">
-            <h2>Interactive API Explorer</h2>
+          <section class="card" id="study-tools">
+            <h2>Interactive Study Studio</h2>
+            <p class="muted">Use the tools below as a learner-facing study workspace. Results are rendered in a structured reading panel for concentration and review.</p>
             <div class="tabs">
-              <button class="tabbtn active" data-tab="quran">Quran</button>
-              <button class="tabbtn" data-tab="hadith">Hadith</button>
-              <button class="tabbtn" data-tab="hijri">Hijri</button>
-              <button class="tabbtn" data-tab="prayer">Prayer</button>
+              <button class="tabbtn active" data-tab="quran">Qur'an Study</button>
+              <button class="tabbtn" data-tab="hadith">Hadith Study</button>
+              <button class="tabbtn" data-tab="hijri">Date Conversion</button>
+              <button class="tabbtn" data-tab="prayer">Prayer Planner</button>
             </div>
 
             <div id="tab-quran" class="tab active">
-              <h3>Quran Lookup</h3>
+              <h3>Qur'an Reading Panel</h3>
               <div class="row">
                 <div class="field"><label>Surah</label><select id="surah"></select></div>
                 <div class="field"><label>Ayah</label><input id="ayah" type="number" min="1" value="1"></div>
               </div>
-              <div style="margin-top:8px"><button class="action" onclick="fetchQuran()">Fetch Ayah</button></div>
-              <pre id="quranOut">Awaiting request...</pre>
+              <div style="margin-top:8px"><button class="action" onclick="fetchQuran()">Load Ayah</button></div>
+              <div id="quranOut" class="output"><h4>Qur'an Output</h4><div class="line"></div><div class="out-muted">Select a Surah and Ayah to begin.</div></div>
             </div>
 
             <div id="tab-hadith" class="tab">
-              <h3>Hadith Lookup</h3>
+              <h3>Hadith Reading Panel</h3>
               <div class="row">
                 <div class="field">
                   <label>Collection</label>
@@ -288,12 +309,12 @@ def home() -> str:
                 </div>
                 <div class="field"><label>Hadith Number</label><input id="hadithNumber" type="number" min="1" value="15"></div>
               </div>
-              <div style="margin-top:8px"><button class="action" onclick="fetchHadith()">Fetch Hadith</button></div>
-              <pre id="hadithOut">Awaiting request...</pre>
+              <div style="margin-top:8px"><button class="action" onclick="fetchHadith()">Load Hadith</button></div>
+              <div id="hadithOut" class="output"><h4>Hadith Output</h4><div class="line"></div><div class="out-muted">Select a collection and hadith number to begin.</div></div>
             </div>
 
             <div id="tab-hijri" class="tab">
-              <h3>Hijri Conversion</h3>
+              <h3>Hijri / Gregorian Reference</h3>
               <div class="row">
                 <div class="field"><label>Gregorian (YYYY-MM-DD)</label><input id="gregDate" value=""></div>
                 <div class="field"><label>Hijri (Y-M-D)</label><input id="hijriDateParts" value="1447-11-12"></div>
@@ -302,17 +323,17 @@ def home() -> str:
                 <button class="action" onclick="fromGregorian()">Gregorian -> Hijri</button>
                 <button class="action" onclick="toGregorian()">Hijri -> Gregorian</button>
               </div>
-              <pre id="hijriOut">Awaiting request...</pre>
+              <div id="hijriOut" class="output"><h4>Date Output</h4><div class="line"></div><div class="out-muted">Choose direction and load conversion.</div></div>
             </div>
 
             <div id="tab-prayer" class="tab">
-              <h3>Prayer Times Lookup</h3>
+              <h3>Prayer Schedule Panel</h3>
               <div class="row">
                 <div class="field"><label>Country</label><input id="prCountry2" value="Nigeria"></div>
                 <div class="field"><label>City</label><input id="prCity2" value="Lagos Island"></div>
               </div>
-              <div style="margin-top:8px"><button class="action" onclick="fetchPrayer()">Fetch Prayer Times</button></div>
-              <pre id="prayerOut">Awaiting request...</pre>
+              <div style="margin-top:8px"><button class="action" onclick="fetchPrayer()">Load Prayer Schedule</button></div>
+              <div id="prayerOut" class="output"><h4>Prayer Output</h4><div class="line"></div><div class="out-muted">Enter location and load schedule.</div></div>
             </div>
           </section>
 
@@ -329,7 +350,7 @@ def home() -> str:
 
           <section class="footer">
             <div><strong>AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES</strong></div>
-            <div>Built as a robust Islamic knowledge platform and API infrastructure for modern learning and research use-cases.</div>
+            <div>Built as a robust website and Islamic knowledge platform for sustained learning, research, and guided spiritual practice.</div>
           </section>
         </div>
 
@@ -374,55 +395,95 @@ def home() -> str:
             surahSelect.appendChild(o);
           }
 
-          function fmt(obj) { return JSON.stringify(obj, null, 2); }
+          function escapeHtml(v) {
+            return String(v ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+          }
 
           async function fetchQuran() {
             const s = surahSelect.value;
             const a = document.getElementById("ayah").value || "1";
             const out = document.getElementById("quranOut");
-            out.textContent = "Loading...";
+            out.innerHTML = "<h4>Qur'an Output</h4><div class='line'></div><div class='out-muted'>Loading...</div>";
             const r = await fetch(`${apiBase}/quran/ayah/${s}/${a}?lang=en`);
             const j = await r.json();
-            out.textContent = fmt(j);
+            if (!j.found || !j.data) {
+              out.innerHTML = "<h4>Qur'an Output</h4><div class='line'></div><div class='out-muted'>No ayah found for the selected reference.</div>";
+              return;
+            }
+            out.innerHTML = `
+              <h4>Surah ${escapeHtml(j.data.surah_number)} - Ayah ${escapeHtml(j.data.ayah_number_in_surah)}</h4>
+              <div class='line'></div>
+              <div class='out-ar'>${escapeHtml(j.data.text_arabic_uthmani || "")}</div>
+              <div class='line'></div>
+              <div class='out-en'>${escapeHtml(j.data.text_english_sahih || "")}</div>
+              <div class='out-muted mono'>Juz ${escapeHtml(j.data.juz)} | Page ${escapeHtml(j.data.page)}</div>
+            `;
           }
 
           async function fetchHadith() {
             const c = document.getElementById("hadithCollection").value;
             const n = document.getElementById("hadithNumber").value || "1";
             const out = document.getElementById("hadithOut");
-            out.textContent = "Loading...";
+            out.innerHTML = "<h4>Hadith Output</h4><div class='line'></div><div class='out-muted'>Loading...</div>";
             const r = await fetch(`${apiBase}/hadith/${c}/${n}?lang=en`);
             const j = await r.json();
-            out.textContent = fmt(j);
+            if (!j.found || !j.data) {
+              out.innerHTML = "<h4>Hadith Output</h4><div class='line'></div><div class='out-muted'>No hadith found for this reference.</div>";
+              return;
+            }
+            out.innerHTML = `
+              <h4>${escapeHtml(j.data.collection_name)} - Hadith ${escapeHtml(j.data.hadith_number)}</h4>
+              <div class='line'></div>
+              <div class='out-ar'>${escapeHtml(j.data.text_arabic || "")}</div>
+              <div class='line'></div>
+              <div class='out-en'>${escapeHtml(j.data.text_english || "")}</div>
+              <div class='out-muted mono'>Book ${escapeHtml(j.data.book_number)} | Ref ${escapeHtml(j.data.hadith_ref_number)}</div>
+            `;
           }
 
           async function fromGregorian() {
             const d = document.getElementById("gregDate").value;
             const out = document.getElementById("hijriOut");
-            out.textContent = "Loading...";
+            out.innerHTML = "<h4>Date Output</h4><div class='line'></div><div class='out-muted'>Loading...</div>";
             const r = await fetch(`${apiBase}/hijri/from-gregorian?date=${encodeURIComponent(d)}&lang=en`);
             const j = await r.json();
-            out.textContent = fmt(j);
+            out.innerHTML = j.found
+              ? `<h4>Gregorian to Hijri</h4><div class='line'></div><div class='out-en'><strong>${escapeHtml(d)}</strong> corresponds to <strong>${escapeHtml(j.hijri_iso)}</strong>.</div>`
+              : "<h4>Date Output</h4><div class='line'></div><div class='out-muted'>Date not found in current table range.</div>";
           }
 
           async function toGregorian() {
             const p = (document.getElementById("hijriDateParts").value || "").split("-");
             const y = p[0], m = p[1], d = p[2];
             const out = document.getElementById("hijriOut");
-            out.textContent = "Loading...";
+            out.innerHTML = "<h4>Date Output</h4><div class='line'></div><div class='out-muted'>Loading...</div>";
             const r = await fetch(`${apiBase}/hijri/to-gregorian?year=${y}&month=${m}&day=${d}&lang=en`);
             const j = await r.json();
-            out.textContent = fmt(j);
+            out.innerHTML = j.found
+              ? `<h4>Hijri to Gregorian</h4><div class='line'></div><div class='out-en'><strong>${escapeHtml(y)}-${escapeHtml(m)}-${escapeHtml(d)}</strong> corresponds to <strong>${escapeHtml(j.gregorian_iso)}</strong>.</div>`
+              : "<h4>Date Output</h4><div class='line'></div><div class='out-muted'>Date not found in current table range.</div>";
           }
 
           async function fetchPrayer() {
             const country = document.getElementById("prCountry2").value;
             const city = document.getElementById("prCity2").value;
             const out = document.getElementById("prayerOut");
-            out.textContent = "Loading...";
+            out.innerHTML = "<h4>Prayer Output</h4><div class='line'></div><div class='out-muted'>Loading...</div>";
             const r = await fetch(`${apiBase}/prayer/times?country=${encodeURIComponent(country)}&city=${encodeURIComponent(city)}&lang=en`);
             const j = await r.json();
-            out.textContent = fmt(j);
+            if (!j.found || !j.data) {
+              out.innerHTML = "<h4>Prayer Output</h4><div class='line'></div><div class='out-muted'>No prayer record found for this location.</div>";
+              return;
+            }
+            const d = j.data;
+            out.innerHTML = `
+              <h4>${escapeHtml(d.city)}, ${escapeHtml(d.country)}</h4>
+              <div class='line'></div>
+              <div class='out-en'>Date: <strong>${escapeHtml(d.date_gregorian)}</strong> | Hijri: <strong>${escapeHtml(d.date_hijri)}</strong></div>
+              <div class='out-en'>Fajr: <strong>${escapeHtml(d.fajr)}</strong> | Dhuhr: <strong>${escapeHtml(d.dhuhr)}</strong> | Asr: <strong>${escapeHtml(d.asr)}</strong></div>
+              <div class='out-en'>Maghrib: <strong>${escapeHtml(d.maghrib)}</strong> | Isha: <strong>${escapeHtml(d.isha)}</strong></div>
+              <div class='out-muted mono'>Timezone: ${escapeHtml(d.timezone || "-")} | Method: ${escapeHtml(d.method || "-")}</div>
+            `;
           }
 
           function timeToMin(t) {
