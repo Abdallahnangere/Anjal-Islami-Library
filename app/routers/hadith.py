@@ -28,6 +28,26 @@ def get_hadith(request: Request, collection: str, hadith_number: int) -> dict:
     return {"found": True, "lang": lang, "data": dict(row)}
 
 
+@router.get("/collections")
+def list_collections(request: Request) -> dict:
+    lang = detect_lang(request)
+    conn = get_conn()
+    rows = conn.execute(
+        """
+        SELECT
+            collection_key,
+            collection_name,
+            arabic_count,
+            english_count,
+            merged_count
+        FROM hadith_collections
+        ORDER BY collection_name
+        """
+    ).fetchall()
+    conn.close()
+    return {"lang": lang, "count": len(rows), "collections": [dict(r) for r in rows]}
+
+
 @router.get("/search")
 def search_hadith(
     request: Request,

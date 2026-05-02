@@ -25,6 +25,27 @@ def get_ayah(request: Request, surah: int, ayah: int) -> dict:
     return {"found": True, "lang": lang, "data": dict(row)}
 
 
+@router.get("/surahs")
+def list_surahs(request: Request) -> dict:
+    lang = detect_lang(request)
+    conn = get_conn()
+    rows = conn.execute(
+        """
+        SELECT
+            surah_number,
+            name_arabic,
+            name_english,
+            name_english_translation,
+            revelation_type,
+            ayah_count
+        FROM quran_surahs
+        ORDER BY surah_number
+        """
+    ).fetchall()
+    conn.close()
+    return {"lang": lang, "count": len(rows), "surahs": [dict(r) for r in rows]}
+
+
 @router.get("/search")
 def search_quran(
     request: Request,
