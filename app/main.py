@@ -11,6 +11,7 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.responses import HTMLResponse
 from fastapi.responses import JSONResponse
 from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.bootstrap import ensure_db
 from app.i18n import detect_lang
@@ -25,12 +26,14 @@ ensure_db()
 
 app = FastAPI(
     title=tr("service_name", "en"),
-    version="1.1.0",
+    version="1.2.0",
     description=tr("service_desc", "en"),
     docs_url=None,
     redoc_url=None,
     openapi_url=None,
 )
+
+app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static")), name="static")
 
 app.include_router(meta_router)
 app.include_router(quran_router)
@@ -102,7 +105,6 @@ async def v1_auth_and_rate_limit(request: Request, call_next):
                 content={"ok": False, "lang": lang, "error": tr("rate_limit_exceeded", lang)},
                 headers={"Retry-After": str(retry_after)},
             )
-
     return await call_next(request)
 
 
@@ -118,395 +120,385 @@ async def enforce_utf8_content_type(request: Request, call_next):
 
 
 @app.get("/", response_class=HTMLResponse, tags=["home"])
-def home(request: Request) -> str:
-    lang = detect_lang(request)
-    is_ar = lang == "ar"
-    dir_attr = "rtl" if is_ar else "ltr"
-    switch_lang = "en" if is_ar else "ar"
-
-    title = tr("home_title", lang) if is_ar else "Anjal Islamic Library API"
-    subtitle = tr("home_subtitle", lang) if is_ar else "Versioned Islamic data infrastructure for building reliable year-round products: Quran, Hadith, Hijri, and Prayer Times."
-    docs_label = tr("docs", lang) if is_ar else "Docs"
-    meta_label = tr("meta", lang) if is_ar else "Meta"
-    language_switch = tr("english", lang) if is_ar else tr("arabic", lang)
-
-    project_heading = "Islamic Library Platform and API" if not is_ar else "منصة ومكتبة إسلامية مع واجهة برمجية"
-    project_intro = (
-        "An Islamic Library Platform and API designed to support students, researchers, and developers in accessing authentic Islamic knowledge in a structured and reliable way."
-        if not is_ar
-        else "منصة ومكتبة إسلامية مع واجهة برمجية صممت لدعم الطلاب والباحثين والمطورين للوصول إلى المعرفة الإسلامية الموثوقة بطريقة منظمة وموثوقة."
-    )
-    project_scope = "This project aims to provide a comprehensive data infrastructure that includes:" if not is_ar else "يهدف هذا المشروع إلى توفير بنية بيانات شاملة تتضمن:"
-    project_items = [
-        "The complete Quran (114 Surahs, 6,236 Ayahs) with Arabic and English support.",
-        "Extensive 10 Hadith collections covering Kutub al-Sitta such as Bukhari, Muslim, Abu Dawud, Tirmidhi, Nasai, Ibn Majah, and also Malik, Nawawi, and more.",
-        "Hijri date conversion based on Umm al-Qura calendar standards.",
-        "Prayer time datasets with regional and global coverage.",
-        "Standardized search, referencing, and data access for research and application development.",
-    ] if not is_ar else [
-        "القرآن الكريم كاملًا (114 سورة، 6,236 آية) مع دعم العربية والإنجليزية.",
-        "10 مجموعات حديث موسعة تشمل الكتب الستة مثل البخاري ومسلم وأبو داود والترمذي والنسائي وابن ماجه، إضافة إلى مالك والنووي وغيرهما.",
-        "تحويل التاريخ الهجري وفق معايير تقويم أم القرى.",
-        "بيانات مواقيت الصلاة بتغطية إقليمية وعالمية.",
-        "بحث وإسناد ووصول موحد للبيانات لدعم البحث والتطبيقات.",
-    ]
-    project_goal = (
-        "The goal is to make Islamic knowledge more accessible, reusable, and reliable for modern digital applications, academic research, and educational tools."
-        if not is_ar
-        else "الهدف هو جعل المعرفة الإسلامية أكثر إتاحة وقابلية لإعادة الاستخدام وموثوقية للتطبيقات الرقمية الحديثة والبحث الأكاديمي والأدوات التعليمية."
-    )
-
-    about_title = "About" if not is_ar else "عن المنصة"
-    about_text = (
-        "This API is a reusable backend for Islamic applications and research tools. It standardizes references, search, and date/prayer lookup."
-        if not is_ar
-        else "هذه الواجهة البرمجية تمثل خلفية قابلة لإعادة الاستخدام للتطبيقات الإسلامية وأدوات البحث، وتوحد الإسناد والبحث والتحويلات الزمنية."
-    )
-    coverage_title = "Coverage Summary" if not is_ar else "ملخص التغطية"
-    quick_start_title = "Quick Start" if not is_ar else "البدء السريع"
-    endpoint_title = "Endpoint Matrix" if not is_ar else "مصفوفة المسارات"
-    sample_title = "Request and Response Samples" if not is_ar else "أمثلة الطلب والاستجابة"
-    governance_title = "Governance, Licensing, and Usage" if not is_ar else "الحوكمة والترخيص والاستخدام"
-    resources_title = "Developer Resources" if not is_ar else "موارد المطور"
-    footer_line_2 = (
-        "Built by Abdallah Nangere for Ramadanbot and broader Islamic software ecosystem use."
-        if not is_ar
-        else "تم بناؤه بواسطة عبدالله نانجيري لخدمة رمضان بوت ومنظومة البرمجيات الإسلامية بشكل أوسع."
-    )
-
-    about_list = [
-        "Quran (Uthmani + English)",
-        "Hadith (10 collections)",
-        "Umm al-Qura Hijri conversion",
-        "Nigeria-complete prayer times",
-    ] if not is_ar else [
-        "القرآن (رسم عثماني + ترجمة إنجليزية)",
-        "الحديث (10 مجموعات)",
-        "تحويل هجري أم القرى",
-        "مواقيت صلاة كاملة لنيجيريا",
-    ]
-
-    governance_list = [
-        "License: see LICENSE in repository.",
-        "Attribution is recommended when redistributing transformed data.",
-        "For production clients, enforce API keys and rate limiting at gateway level.",
-        "Versioning policy: breaking changes move to next major path (for example /v2).",
-        "Support contact: founder@ramadanbot.app",
-    ] if not is_ar else [
-        "الترخيص: راجع ملف LICENSE داخل المستودع.",
-        "ينصح بإضافة الإسناد عند إعادة توزيع البيانات بعد معالجتها.",
-        "للاستخدام الإنتاجي: يفضل فرض مفاتيح API وتحديد المعدل على مستوى البوابة.",
-        "سياسة الإصدارات: التغييرات الكاسرة تنتقل إلى مسار رئيسي جديد (مثل /v2).",
-        "الدعم: founder@ramadanbot.app",
-    ]
-
-    dataset_head = "Dataset" if not is_ar else "البيانات"
-    coverage_head = "Coverage" if not is_ar else "التغطية"
-    rows_head = "Rows" if not is_ar else "عدد السجلات"
-    source_head = "Primary Source" if not is_ar else "المصدر الرئيسي"
-    domain_head = "Domain" if not is_ar else "المجال"
-    endpoint_head = "Endpoint" if not is_ar else "المسار"
-    purpose_head = "Purpose" if not is_ar else "الغرض"
-    maintainer_label = "Maintainer" if not is_ar else "المشرف"
-    production_label = "Production endpoint" if not is_ar else "نقطة الإنتاج"
-    http_note = "(HTTPS-only; HTTP returns 308 redirect)." if not is_ar else "(يدعم HTTPS فقط، وHTTP يرجع تحويل 308)."
-    base_url_label = "Base URL" if not is_ar else "المسار الأساسي"
-    api_version_label = "API Version: v1" if not is_ar else "إصدار الواجهة: v1"
-    public_reuse_label = "Public Reuse Friendly" if not is_ar else "مناسب لإعادة الاستخدام العام"
-    github_label = "GitHub Repository" if not is_ar else "مستودع GitHub"
-    swagger_label = "Swagger Docs" if not is_ar else "توثيق Swagger"
-    metadata_label = "Dataset Metadata" if not is_ar else "بيانات تعريف المجموعات"
-
-    project_items_html = "".join([f"<li>{item}</li>" for item in project_items])
-    about_items_html = "".join([f"<li>{item}</li>" for item in about_list])
-    governance_items_html = "".join([f"<li>{item}</li>" for item in governance_list])
-
-    return f"""
+def home() -> str:
+    return """
     <!doctype html>
-    <html lang="{lang}" dir="{dir_attr}">
+    <html lang="en">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{title}</title>
+        <title>At-Tibyan Centre | Sunnah and Islamic Sciences</title>
         <style>
-          :root {{ --bg:#f7f9fc; --panel:#ffffff; --muted:#4e5b76; --text:#0f1728; --line:#d8e0ef; --accent:#1f5eff; }}
-          * {{ box-sizing: border-box; }}
-          body {{ margin:0; font-family: Inter, Segoe UI, Arial, sans-serif; line-height:1.55; background:var(--bg); color:var(--text); }}
-          .wrap {{ max-width:1120px; margin:0 auto; padding:24px 18px 56px; }}
-          .top {{ background:var(--panel); border-bottom:1px solid var(--line); }}
-          .topin {{ max-width:1120px; margin:0 auto; padding:14px 18px; display:flex; justify-content:space-between; gap:12px; align-items:center; }}
-          .brand {{ font-weight:700; }}
-          .nav a {{ margin-inline-start:12px; font-size:14px; }}
-          .hero {{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px; }}
-          .mission {{ margin-top:16px; border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:18px; }}
-          h1 {{ margin:0 0 8px; font-size:34px; }}
-          .subtitle,.meta,p,li {{ color:var(--muted); }}
-          .meta {{ font-size:14px; }}
-          .pill {{ display:inline-block; border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; margin:6px 6px 0 0; background:#eef3ff; }}
-          .grid {{ margin-top:16px; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:14px; }}
-          .card {{ grid-column:span 12; border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:16px; }}
-          @media (min-width: 900px){{ .c4{{grid-column:span 4;}} .c6{{grid-column:span 6;}} .c8{{grid-column:span 8;}} }}
-          h2{{margin:0 0 10px; font-size:18px;}} h3{{margin:14px 0 8px; font-size:15px;}}
-          .footer {{ margin-top:16px; border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:14px; font-size:13px; color:var(--muted); }}
-          a {{ color: var(--accent); text-decoration: none; }}
-          a:hover {{ text-decoration: underline; }}
-          ul {{ margin:0; padding-left:18px; }}
-          table{{ width:100%; border-collapse:collapse; font-size:14px; }}
-          th,td{{ border:1px solid var(--line); padding:8px; text-align:left; vertical-align:top; }}
-          th{{ background:#f1f5ff; color:#233156; }}
-          pre{{ margin:8px 0 0; padding:10px; background:#f5f8ff; border:1px solid var(--line); border-radius:8px; overflow:auto; font-size:12px; color:#0e1a3a; }}
-          code{{ font-family:Consolas, Menlo, monospace; }}
+          :root{
+            --bg:#f8fbf9;
+            --panel:#ffffff;
+            --line:#d9e7de;
+            --text:#0f1e17;
+            --muted:#4e5f57;
+            --green:#119b52;
+            --deep:#1b144a;
+            --accent:#2f7dff;
+          }
+          *{box-sizing:border-box}
+          body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+          .wrap{max-width:1220px;margin:0 auto;padding:20px}
+          .top{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+          .topin{max-width:1220px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+          .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+          .brand img{width:44px;height:44px;border-radius:999px;object-fit:cover;border:2px solid var(--deep)}
+          .nav a{margin-left:14px;text-decoration:none;color:var(--deep);font-weight:600;font-size:14px}
+          .hero{margin-top:16px;display:grid;grid-template-columns:1.1fr 1fr;gap:14px}
+          .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+          .headline h1{margin:0 0 8px;font-size:38px;line-height:1.15}
+          .headline p{color:var(--muted);margin:8px 0}
+          .badges span{display:inline-block;margin:6px 6px 0 0;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:#eef9f2;font-size:12px}
+          .media{position:relative;min-height:380px;overflow:hidden}
+          .media img,.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:10px}
+          .media .overlay{position:absolute;inset:auto 10px 10px 10px;background:rgba(27,20,74,.86);color:#fff;padding:10px 12px;border-radius:8px;font-size:13px}
+          .slides{position:absolute;inset:0}
+          .slides img{opacity:0;transition:opacity .8s}
+          .slides img.active{opacity:1}
+          .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;margin-top:14px}
+          .c4{grid-column:span 4}.c6{grid-column:span 6}.c8{grid-column:span 8}.c12{grid-column:span 12}
+          h2{margin:0 0 10px;font-size:20px}
+          h3{margin:0 0 10px;font-size:16px}
+          ul{margin:0;padding-left:18px;color:var(--muted)}
+          table{width:100%;border-collapse:collapse;font-size:14px}
+          th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+          th{background:#f0f9f4}
+          .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+          .tabbtn{border:1px solid var(--line);background:#fff;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}
+          .tabbtn.active{background:var(--deep);color:#fff;border-color:var(--deep)}
+          .tab{display:none}
+          .tab.active{display:block}
+          .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+          .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+          .field input,.field select{width:100%;padding:9px;border-radius:8px;border:1px solid var(--line);background:#fff}
+          button.action{padding:10px 12px;border:0;border-radius:8px;background:var(--green);color:#fff;font-weight:700;cursor:pointer}
+          pre{white-space:pre-wrap;word-break:break-word;background:#f4f8f6;border:1px solid var(--line);padding:10px;border-radius:8px;max-height:320px;overflow:auto}
+          .progress{height:10px;background:#ecf2ee;border-radius:999px;overflow:hidden}
+          .bar{height:100%;background:linear-gradient(90deg,var(--green),var(--deep));width:0%}
+          .tree{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+          .leaf{padding:8px;border:1px solid var(--line);border-radius:8px;text-align:center;background:#fff}
+          .leaf.done{background:#eaf8ef;border-color:#b8dfc5}
+          .footer{margin:14px 0 40px;padding:14px;border:1px solid var(--line);background:var(--panel);border-radius:10px;color:var(--muted)}
+          .muted{color:var(--muted)}
+          @media (max-width:980px){
+            .hero{grid-template-columns:1fr}
+            .row{grid-template-columns:1fr}
+            .c4,.c6,.c8,.c12{grid-column:span 12}
+          }
         </style>
       </head>
       <body>
         <header class="top">
           <div class="topin">
-            <div class="brand">Anjal Islamic Library API</div>
+            <div class="brand">
+              <img src="/static/attibyan-logo.png" onerror="this.style.display='none'" alt="At-Tibyan Logo">
+              <span>AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES</span>
+            </div>
             <nav class="nav">
-              <a href="/docs?lang={lang}">{docs_label}</a>
-              <a href="/developers?lang={lang}">Developers</a>
-              <a href="/v1/meta?lang={lang}">{meta_label}</a>
-              <a href="https://github.com/Abdallahnangere/Anjal-Islamic-Library">GitHub</a>
-              <a href="/?lang={switch_lang}">{language_switch}</a>
+              <a href="#about">About</a>
+              <a href="#api">Interactive API</a>
+              <a href="/docs">Docs</a>
+              <a href="/developers">Developers</a>
             </nav>
           </div>
         </header>
+
         <div class="wrap">
           <section class="hero">
-            <h1>{title}</h1>
-            <p class="subtitle">{subtitle}</p>
-            <p class="meta">{maintainer_label}: <strong>Abdallah Nangere</strong> | <a href="mailto:founder@ramadanbot.app">founder@ramadanbot.app</a> | <a href="tel:+2348164135836">+2348164135836</a></p>
-            <p class="meta">{production_label}: <a href="https://islamiclibrary.anjalventures.com">https://islamiclibrary.anjalventures.com</a> {http_note}</p>
-            <div>
-              <span class="pill">{api_version_label}</span>
-              <span class="pill">FastAPI</span>
-              <span class="pill">SQLite + FTS5</span>
-              <span class="pill">Arabic + English</span>
-              <span class="pill">{public_reuse_label}</span>
-            </div>
+            <article class="card headline">
+              <h1>At-Tibyan Centre Website and Islamic Knowledge Platform</h1>
+              <p id="about">An Islamic Library Platform and API designed to support students, researchers, and developers in accessing authentic Islamic knowledge in a structured and reliable way.</p>
+              <p class="muted">Maintainer: <strong>Abdallah Nangere</strong> | founder@ramadanbot.app | +2348164135836</p>
+              <p class="muted">Production endpoint: <a href="https://islamiclibrary.anjalventures.com">https://islamiclibrary.anjalventures.com</a></p>
+              <div class="badges">
+                <span>Quran 6,236 Ayahs</span><span>10 Hadith Collections</span><span>Umm al-Qura Hijri</span><span>Prayer Time Datasets</span><span>Arabic + English</span>
+              </div>
+            </article>
+            <article class="card media">
+              <div class="slides">
+                <img src="/static/hero-1.png" class="active" alt="Hero 1">
+                <img src="/static/hero-2.png" alt="Hero 2">
+                <img src="/static/hero-3.png" alt="Hero 3">
+              </div>
+              <video id="heroVideo" controls style="display:none" poster="/static/hero-1.png">
+                <source src="/static/hero.mp4" type="video/mp4">
+              </video>
+              <div class="overlay">Drop your video as <code>app/static/hero.mp4</code> and it will appear here automatically.</div>
+            </article>
           </section>
-          <section class="mission">
-            <h2>{project_heading}</h2>
-            <p>{project_intro}</p>
-            <p><strong>{project_scope}</strong></p>
-            <ul>{project_items_html}</ul>
-            <p>{project_goal}</p>
-          </section>
+
           <section class="grid">
-            <article class="card c4">
-              <h2>{about_title}</h2>
-              <p>{about_text}</p>
-              <ul>{about_items_html}</ul>
-            </article>
-            <article class="card c8">
-              <h2>{coverage_title}</h2>
-              <table>
-                <tr><th>{dataset_head}</th><th>{coverage_head}</th><th>{rows_head}</th><th>{source_head}</th></tr>
-                <tr><td>Quran</td><td>114 Surahs, 6,236 Ayahs</td><td>6,236</td><td>AlQuran Cloud editions</td></tr>
-                <tr><td>Hadith</td><td>Arabic+English merged collections</td><td>36,512</td><td>Hadith API open corpus</td></tr>
-                <tr><td>Hijri</td><td>1343-01-01 AH to 1500-12-30 AH</td><td>55,991</td><td>Umm al-Qura table</td></tr>
-                <tr><td>Prayer Times</td><td>All Nigeria entries + selected global cities</td><td>836</td><td>AlAdhan API snapshots</td></tr>
-              </table>
-            </article>
-            <article class="card c4">
-              <h2>{quick_start_title}</h2>
-              <pre><code>pip install -r requirements.txt
-python scripts/build_db.py
-uvicorn app.main:app --host 127.0.0.1 --port 8000</code></pre>
-              <h3>{base_url_label}</h3>
-              <pre><code>/v1</code></pre>
-            </article>
-            <article class="card c8">
-              <h2>{endpoint_title}</h2>
-              <table>
-                <tr><th>{domain_head}</th><th>{endpoint_head}</th><th>{purpose_head}</th></tr>
-                <tr><td>Meta</td><td><code>GET /v1/health</code></td><td>Service health ping</td></tr>
-                <tr><td>Meta</td><td><code>GET /v1/meta</code></td><td>Counts and metadata</td></tr>
-                <tr><td>Quran</td><td><code>GET /v1/quran/ayah/{{surah}}/{{ayah}}</code></td><td>Direct ayah lookup</td></tr>
-                <tr><td>Quran</td><td><code>GET /v1/quran/search?q=</code></td><td>Full-text search</td></tr>
-                <tr><td>Hadith</td><td><code>GET /v1/hadith/{{collection}}/{{hadith_number}}</code></td><td>Canonical hadith lookup</td></tr>
-                <tr><td>Hadith</td><td><code>GET /v1/hadith/search?q=</code></td><td>Full-text search</td></tr>
-                <tr><td>Hijri</td><td><code>GET /v1/hijri/to-gregorian</code></td><td>Hijri to Gregorian</td></tr>
-                <tr><td>Hijri</td><td><code>GET /v1/hijri/from-gregorian</code></td><td>Gregorian to Hijri</td></tr>
-                <tr><td>Prayer</td><td><code>GET /v1/prayer/countries</code></td><td>Country list</td></tr>
-                <tr><td>Prayer</td><td><code>GET /v1/prayer/cities?country=</code></td><td>Cities by country</td></tr>
-                <tr><td>Prayer</td><td><code>GET /v1/prayer/times?country=&city=</code></td><td>Prayer times by location/date</td></tr>
-                <tr><td>Prayer</td><td><code>GET /v1/prayer/search-city?q=</code></td><td>City search helper</td></tr>
-              </table>
-            </article>
             <article class="card c6">
-              <h2>{sample_title}</h2>
-              <pre><code>GET /v1/quran/ayah/1/1
-{{"found":true,"data":{{"surah_number":1,"ayah_number_in_surah":1}}}}</code></pre>
-              <pre><code>GET /v1/hijri/from-gregorian?date=2026-04-29
-{{"found":true,"hijri_iso":"1447-11-12"}}</code></pre>
-              <pre><code>GET /v1/prayer/search-city?q=Lagos
-{{"query":"Lagos","count":2,"results":[{{"city":"Lagos Island"}}]}}</code></pre>
-            </article>
-            <article class="card c6">
-              <h2>{governance_title}</h2>
-              <ul>{governance_items_html}</ul>
-              <h3>{resources_title}</h3>
+              <h2>Mission and Scope</h2>
+              <p class="muted">This project aims to provide a comprehensive data infrastructure that includes:</p>
               <ul>
-                <li><a href="/docs?lang={lang}">{swagger_label}</a></li>
-                <li><a href="/v1/meta?lang={lang}">{metadata_label}</a></li>
-                <li><a href="https://github.com/Abdallahnangere/Anjal-Islamic-Library">{github_label}</a></li>
+                <li>The complete Qur'an (114 Surahs, 6,236 Ayahs) with Arabic and English support.</li>
+                <li>10 Hadith collections including Bukhari, Muslim, Abu Dawud, Tirmidhi, Nasai, Ibn Majah, Malik, Nawawi, and more.</li>
+                <li>Hijri date conversion based on Umm al-Qura calendar standards.</li>
+                <li>Prayer time datasets with regional and global coverage.</li>
+                <li>Standardized search, referencing, and data access for research and app development.</li>
               </ul>
             </article>
+            <article class="card c6">
+              <h2>Live Hijri / Gregorian + Prayer Progress</h2>
+              <p><strong>Gregorian:</strong> <span id="gregNow">-</span></p>
+              <p><strong>Hijri:</strong> <span id="hijriNow">-</span></p>
+              <div class="row">
+                <div class="field"><label>Country</label><input id="prCountry" value="Nigeria"></div>
+                <div class="field"><label>City</label><input id="prCity" value="Lagos Island"></div>
+              </div>
+              <div style="margin-top:8px"><button class="action" onclick="loadPrayerWidget()">Load Prayer Widget</button></div>
+              <p id="nextPrayer" class="muted" style="margin-top:8px">Next prayer: -</p>
+              <div class="progress"><div id="dayBar" class="bar"></div></div>
+              <div class="tree" id="tree" style="margin-top:10px"></div>
+            </article>
           </section>
+
+          <section class="card" id="api">
+            <h2>Interactive API Explorer</h2>
+            <div class="tabs">
+              <button class="tabbtn active" data-tab="quran">Quran</button>
+              <button class="tabbtn" data-tab="hadith">Hadith</button>
+              <button class="tabbtn" data-tab="hijri">Hijri</button>
+              <button class="tabbtn" data-tab="prayer">Prayer</button>
+            </div>
+
+            <div id="tab-quran" class="tab active">
+              <h3>Quran Lookup</h3>
+              <div class="row">
+                <div class="field"><label>Surah</label><select id="surah"></select></div>
+                <div class="field"><label>Ayah</label><input id="ayah" type="number" min="1" value="1"></div>
+              </div>
+              <div style="margin-top:8px"><button class="action" onclick="fetchQuran()">Fetch Ayah</button></div>
+              <pre id="quranOut">Awaiting request...</pre>
+            </div>
+
+            <div id="tab-hadith" class="tab">
+              <h3>Hadith Lookup</h3>
+              <div class="row">
+                <div class="field">
+                  <label>Collection</label>
+                  <select id="hadithCollection">
+                    <option>bukhari</option><option>muslim</option><option>abudawud</option><option>tirmidhi</option><option>nasai</option>
+                    <option>ibnmajah</option><option>malik</option><option>nawawi</option><option>riyadussalihin</option><option>qudsi</option>
+                  </select>
+                </div>
+                <div class="field"><label>Hadith Number</label><input id="hadithNumber" type="number" min="1" value="15"></div>
+              </div>
+              <div style="margin-top:8px"><button class="action" onclick="fetchHadith()">Fetch Hadith</button></div>
+              <pre id="hadithOut">Awaiting request...</pre>
+            </div>
+
+            <div id="tab-hijri" class="tab">
+              <h3>Hijri Conversion</h3>
+              <div class="row">
+                <div class="field"><label>Gregorian (YYYY-MM-DD)</label><input id="gregDate" value=""></div>
+                <div class="field"><label>Hijri (Y-M-D)</label><input id="hijriDateParts" value="1447-11-12"></div>
+              </div>
+              <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+                <button class="action" onclick="fromGregorian()">Gregorian -> Hijri</button>
+                <button class="action" onclick="toGregorian()">Hijri -> Gregorian</button>
+              </div>
+              <pre id="hijriOut">Awaiting request...</pre>
+            </div>
+
+            <div id="tab-prayer" class="tab">
+              <h3>Prayer Times Lookup</h3>
+              <div class="row">
+                <div class="field"><label>Country</label><input id="prCountry2" value="Nigeria"></div>
+                <div class="field"><label>City</label><input id="prCity2" value="Lagos Island"></div>
+              </div>
+              <div style="margin-top:8px"><button class="action" onclick="fetchPrayer()">Fetch Prayer Times</button></div>
+              <pre id="prayerOut">Awaiting request...</pre>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Coverage Summary</h2>
+            <table>
+              <tr><th>Dataset</th><th>Coverage</th><th>Rows</th><th>Primary Source</th></tr>
+              <tr><td>Quran</td><td>114 Surahs, 6,236 Ayahs</td><td>6,236</td><td>AlQuran Cloud editions</td></tr>
+              <tr><td>Hadith</td><td>Arabic + English merged collections</td><td>36,512</td><td>Hadith API open corpus</td></tr>
+              <tr><td>Hijri</td><td>1343-01-01 AH to 1500-12-30 AH</td><td>55,991</td><td>Umm al-Qura table</td></tr>
+              <tr><td>Prayer Times</td><td>All Nigeria entries + selected global cities</td><td>836</td><td>AlAdhan API snapshots</td></tr>
+            </table>
+          </section>
+
           <section class="footer">
-            <div><strong>Anjal Islamic Library API</strong> (c) 2026 Anjal Ventures. All rights reserved.</div>
-            <div>{footer_line_2}</div>
-            <div>Primary contact: <a href="mailto:founder@ramadanbot.app">founder@ramadanbot.app</a> | <a href="tel:+2348164135836">+2348164135836</a></div>
+            <div><strong>AT-TIBYAN CENTRE FOR SUNNAH AND ISLAMIC SCIENCES</strong></div>
+            <div>Built as a robust Islamic knowledge platform and API infrastructure for modern learning and research use-cases.</div>
           </section>
         </div>
+
+        <script>
+          const apiBase = "/v1";
+
+          // slideshow
+          const slides = [...document.querySelectorAll('.slides img')];
+          let sIndex = 0;
+          setInterval(() => {
+            if (document.getElementById('heroVideo').style.display === 'block') return;
+            slides[sIndex].classList.remove('active');
+            sIndex = (sIndex + 1) % slides.length;
+            slides[sIndex].classList.add('active');
+          }, 2800);
+
+          // optional video in hero
+          const hv = document.getElementById("heroVideo");
+          hv.addEventListener("error", () => {});
+          fetch("/static/hero.mp4", { method: "HEAD" }).then(r => {
+            if (r.ok) {
+              document.querySelector('.slides').style.display = "none";
+              hv.style.display = "block";
+            }
+          }).catch(() => {});
+
+          // tabs
+          const btns = [...document.querySelectorAll('.tabbtn')];
+          btns.forEach(b => b.onclick = () => {
+            btns.forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + b.dataset.tab).classList.add('active');
+          });
+
+          // surah dropdown
+          const surahSelect = document.getElementById("surah");
+          for (let i = 1; i <= 114; i++) {
+            const o = document.createElement("option");
+            o.value = i;
+            o.textContent = "Surah " + i;
+            surahSelect.appendChild(o);
+          }
+
+          function fmt(obj) { return JSON.stringify(obj, null, 2); }
+
+          async function fetchQuran() {
+            const s = surahSelect.value;
+            const a = document.getElementById("ayah").value || "1";
+            const out = document.getElementById("quranOut");
+            out.textContent = "Loading...";
+            const r = await fetch(`${apiBase}/quran/ayah/${s}/${a}?lang=en`);
+            const j = await r.json();
+            out.textContent = fmt(j);
+          }
+
+          async function fetchHadith() {
+            const c = document.getElementById("hadithCollection").value;
+            const n = document.getElementById("hadithNumber").value || "1";
+            const out = document.getElementById("hadithOut");
+            out.textContent = "Loading...";
+            const r = await fetch(`${apiBase}/hadith/${c}/${n}?lang=en`);
+            const j = await r.json();
+            out.textContent = fmt(j);
+          }
+
+          async function fromGregorian() {
+            const d = document.getElementById("gregDate").value;
+            const out = document.getElementById("hijriOut");
+            out.textContent = "Loading...";
+            const r = await fetch(`${apiBase}/hijri/from-gregorian?date=${encodeURIComponent(d)}&lang=en`);
+            const j = await r.json();
+            out.textContent = fmt(j);
+          }
+
+          async function toGregorian() {
+            const p = (document.getElementById("hijriDateParts").value || "").split("-");
+            const y = p[0], m = p[1], d = p[2];
+            const out = document.getElementById("hijriOut");
+            out.textContent = "Loading...";
+            const r = await fetch(`${apiBase}/hijri/to-gregorian?year=${y}&month=${m}&day=${d}&lang=en`);
+            const j = await r.json();
+            out.textContent = fmt(j);
+          }
+
+          async function fetchPrayer() {
+            const country = document.getElementById("prCountry2").value;
+            const city = document.getElementById("prCity2").value;
+            const out = document.getElementById("prayerOut");
+            out.textContent = "Loading...";
+            const r = await fetch(`${apiBase}/prayer/times?country=${encodeURIComponent(country)}&city=${encodeURIComponent(city)}&lang=en`);
+            const j = await r.json();
+            out.textContent = fmt(j);
+          }
+
+          function timeToMin(t) {
+            const m = /^([0-2]?\\d):([0-5]\\d)$/.exec((t || "").trim());
+            if (!m) return null;
+            return (parseInt(m[1], 10) * 60) + parseInt(m[2], 10);
+          }
+
+          async function loadPrayerWidget() {
+            const c = document.getElementById("prCountry").value;
+            const city = document.getElementById("prCity").value;
+            const res = await fetch(`${apiBase}/prayer/times?country=${encodeURIComponent(c)}&city=${encodeURIComponent(city)}&lang=en`);
+            const json = await res.json();
+            const now = new Date();
+            document.getElementById("gregNow").textContent = now.toISOString().slice(0,10) + " " + now.toLocaleTimeString();
+            const h = await fetch(`${apiBase}/hijri/from-gregorian?date=${now.toISOString().slice(0,10)}&lang=en`);
+            const hj = await h.json();
+            document.getElementById("hijriNow").textContent = hj.hijri_iso || "Not found";
+
+            if (!json.found || !json.data) return;
+            const pt = json.data;
+            const names = ["fajr","dhuhr","asr","maghrib","isha"];
+            const mins = names.map(n => timeToMin(pt[n]));
+            const current = now.getHours() * 60 + now.getMinutes();
+            let nextIdx = mins.findIndex(v => v !== null && v > current);
+            if (nextIdx === -1) nextIdx = 0;
+            const nextName = names[nextIdx];
+            let diff = mins[nextIdx] - current;
+            if (diff < 0) diff += 24*60;
+            const hh = Math.floor(diff / 60), mm = diff % 60;
+            document.getElementById("nextPrayer").textContent = `Next prayer: ${nextName.toUpperCase()} in ${hh}h ${mm}m`;
+
+            const complete = mins.filter(v => v !== null && v <= current).length;
+            const pct = Math.round((complete / 5) * 100);
+            document.getElementById("dayBar").style.width = pct + "%";
+
+            const tree = document.getElementById("tree");
+            tree.innerHTML = "";
+            names.forEach((n, i) => {
+              const d = document.createElement("div");
+              d.className = "leaf" + (i < complete ? " done" : "");
+              d.textContent = n.toUpperCase();
+              tree.appendChild(d);
+            });
+          }
+
+          // defaults
+          document.getElementById("gregDate").value = new Date().toISOString().slice(0,10);
+          loadPrayerWidget();
+        </script>
       </body>
     </html>
     """
 
 
 @app.get("/developers", response_class=HTMLResponse, include_in_schema=False)
-def developers_page(request: Request) -> str:
-    lang = detect_lang(request)
-    is_ar = lang == "ar"
-    dir_attr = "rtl" if is_ar else "ltr"
-    switch_lang = "en" if is_ar else "ar"
-    switch_label = "English" if is_ar else "العربية"
-    title = "Developer Guide" if not is_ar else "دليل المطور"
-    intro = (
-        "Full setup and integration guide for Anjal Islamic Library API."
-        if not is_ar
-        else "دليل كامل للإعداد والتكامل مع واجهة مكتبة أنجل الإسلامية."
-    )
-    return f"""
+def developers_page() -> str:
+    return """
     <!doctype html>
-    <html lang="{lang}" dir="{dir_attr}">
-      <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{title} | Anjal Islamic Library API</title>
-        <style>
-          :root {{ --bg:#f7f9fc; --panel:#ffffff; --muted:#4e5b76; --text:#0f1728; --line:#d8e0ef; --accent:#1f5eff; }}
-          * {{ box-sizing: border-box; }}
-          body {{ margin:0; font-family: Inter, Segoe UI, Arial, sans-serif; line-height:1.55; background:var(--bg); color:var(--text); }}
-          .wrap {{ max-width:1120px; margin:0 auto; padding:24px 18px 56px; }}
-          .top {{ background:var(--panel); border-bottom:1px solid var(--line); }}
-          .topin {{ max-width:1120px; margin:0 auto; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; }}
-          .brand {{ font-weight:700; }}
-          .nav a {{ margin-inline-start:12px; font-size:14px; color:var(--accent); text-decoration:none; }}
-          .card {{ background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px; margin-top:14px; }}
-          h1 {{ margin:0 0 8px; font-size:30px; }}
-          h2 {{ margin:0 0 10px; font-size:20px; }}
-          pre {{ margin:8px 0 0; padding:10px; background:#f5f8ff; border:1px solid var(--line); border-radius:8px; overflow:auto; font-size:12px; }}
-          code {{ font-family:Consolas, Menlo, monospace; }}
-          ul {{ margin:0; padding-left:18px; color:var(--muted); }}
-          p {{ color:var(--muted); }}
-          a {{ color:var(--accent); }}
-          table {{ width:100%; border-collapse:collapse; font-size:14px; }}
-          th,td {{ border:1px solid var(--line); padding:8px; text-align:left; vertical-align:top; }}
-          th {{ background:#f1f5ff; color:#233156; }}
-        </style>
-      </head>
-      <body>
-        <header class="top">
-          <div class="topin">
-            <div class="brand">Anjal Islamic Library API</div>
-            <nav class="nav">
-              <a href="/?lang={lang}">Home</a>
-              <a href="/docs?lang={lang}">Docs</a>
-              <a href="/v1/meta?lang={lang}">Meta</a>
-              <a href="/developers?lang={switch_lang}">{switch_label}</a>
-            </nav>
-          </div>
-        </header>
-        <div class="wrap">
-          <section class="card">
-            <h1>{title}</h1>
-            <p>{intro}</p>
-            <p>Base URL: <code>https://islamiclibrary.anjalventures.com/v1</code></p>
-            <p>Interactive API docs: <a href="/docs?lang={lang}">/docs</a></p>
-          </section>
-
-          <section class="card">
-            <h2>1) Local Install</h2>
-            <pre><code>python -m venv .venv
+    <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Developers | At-Tibyan Centre API</title>
+    <style>body{font-family:Inter,Segoe UI,Arial,sans-serif;background:#f8fbf9;padding:20px;color:#10201a}pre{background:#fff;border:1px solid #d9e7de;padding:10px;border-radius:8px;overflow:auto}a{color:#1b144a}</style></head>
+    <body>
+      <h1>Developers Guide</h1>
+      <p>Interactive docs: <a href="/docs">/docs</a> | Homepage: <a href="/">/</a></p>
+      <h2>Install</h2>
+      <pre>python -m venv .venv
 .venv\\Scripts\\activate
 pip install -r requirements.txt
 python scripts/build_db.py
-uvicorn app.main:app --host 127.0.0.1 --port 8000</code></pre>
-          </section>
-
-          <section class="card">
-            <h2>2) Authentication</h2>
-            <p>Some deployments may require API keys. Send either <code>X-API-Key</code> or <code>Authorization: Bearer ...</code>.</p>
-            <pre><code>curl -H "X-API-Key: YOUR_API_KEY" "https://islamiclibrary.anjalventures.com/v1/meta"</code></pre>
-          </section>
-
-          <section class="card">
-            <h2>3) Windows PowerShell UTF-8 Note</h2>
-            <p>Before API calls, force UTF-8 output to avoid garbled Arabic text.</p>
-            <pre><code>chcp 65001
+uvicorn app.main:app --host 127.0.0.1 --port 8000</pre>
+      <h2>PowerShell UTF-8</h2>
+      <pre>chcp 65001
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
-$OutputEncoding = [System.Text.UTF8Encoding]::new()
-
-$hadith = Invoke-RestMethod -Uri "https://islamiclibrary.anjalventures.com/v1/hadith/nawawi/30"
-$hadith.data.text_arabic
-$hadith.data.text_english</code></pre>
-          </section>
-
-          <section class="card">
-            <h2>4) cURL Examples</h2>
-            <pre><code>curl "https://islamiclibrary.anjalventures.com/v1/quran/ayah/1/1"
-curl "https://islamiclibrary.anjalventures.com/v1/hadith/bukhari/15"
-curl "https://islamiclibrary.anjalventures.com/v1/hijri/from-gregorian?date=2026-04-29"
-curl "https://islamiclibrary.anjalventures.com/v1/prayer/times?country=Nigeria&city=Lagos%20Island"</code></pre>
-          </section>
-
-          <section class="card">
-            <h2>5) Python (requests)</h2>
-            <pre><code>import requests
-
-base = "https://islamiclibrary.anjalventures.com/v1"
-r = requests.get(f"{{base}}/quran/search", params={{"q": "mercy", "limit": 5}}, timeout=30)
-print(r.json())</code></pre>
-          </section>
-
-          <section class="card">
-            <h2>6) Node.js (fetch)</h2>
-            <pre><code>const base = "https://islamiclibrary.anjalventures.com/v1";
-const res = await fetch(`${{base}}/hadith/search?q=prayer&collection=bukhari&limit=5`);
-const data = await res.json();
-console.log(data);</code></pre>
-          </section>
-
-          <section class="card">
-            <h2>7) Language Support</h2>
-            <p>Responses include a <code>lang</code> field. You can request language via query param or header.</p>
-            <pre><code>GET /v1/meta?lang=ar
-Accept-Language: ar</code></pre>
-          </section>
-
-          <section class="card">
-            <h2>8) Core Endpoints</h2>
-            <table>
-              <tr><th>Domain</th><th>Endpoint</th><th>Purpose</th></tr>
-              <tr><td>Meta</td><td><code>GET /v1/health</code></td><td>Health status</td></tr>
-              <tr><td>Meta</td><td><code>GET /v1/meta</code></td><td>Metadata and counts</td></tr>
-              <tr><td>Quran</td><td><code>GET /v1/quran/ayah/{'{surah}'}/{'{ayah}'}</code></td><td>Ayah lookup</td></tr>
-              <tr><td>Quran</td><td><code>GET /v1/quran/search?q=...</code></td><td>FTS search</td></tr>
-              <tr><td>Hadith</td><td><code>GET /v1/hadith/{'{collection}'}/{'{hadith_number}'}</code></td><td>Hadith lookup</td></tr>
-              <tr><td>Hadith</td><td><code>GET /v1/hadith/search?q=...</code></td><td>FTS search</td></tr>
-              <tr><td>Hijri</td><td><code>GET /v1/hijri/to-gregorian</code></td><td>Hijri to Gregorian</td></tr>
-              <tr><td>Hijri</td><td><code>GET /v1/hijri/from-gregorian</code></td><td>Gregorian to Hijri</td></tr>
-              <tr><td>Prayer</td><td><code>GET /v1/prayer/countries</code></td><td>Country list</td></tr>
-              <tr><td>Prayer</td><td><code>GET /v1/prayer/cities?country=...</code></td><td>Cities by country</td></tr>
-              <tr><td>Prayer</td><td><code>GET /v1/prayer/times?country=...&city=...</code></td><td>Prayer times</td></tr>
-              <tr><td>Prayer</td><td><code>GET /v1/prayer/search-city?q=...</code></td><td>City search</td></tr>
-            </table>
-          </section>
-        </div>
-      </body>
-    </html>
+$OutputEncoding = [System.Text.UTF8Encoding]::new()</pre>
+    </body></html>
     """
 
 
